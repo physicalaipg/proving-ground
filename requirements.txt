@@ -1,0 +1,7 @@
+mujoco>=3.3
+numpy
+pillow
+pyyaml
+anthropic>=0.60
+openai>=1.50
+opencv-contrib-python   # 真机相机脚本（real/）与色彩门色卡检测预留（cv2.mcc），内部工单 A2

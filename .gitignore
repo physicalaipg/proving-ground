@@ -1,0 +1,15 @@
+.env
+*.key
+__pycache__/
+.DS_Store
+.venv/
+twin/_assets/
+episodes/runs/*/logs/
+episodes/runs/*/frames/
+*.jsonl
+# 内部工单：发布包 episodes/editions/<期>/logs/ 的逐步日志随发入仓（例外于上面的 *.jsonl）
+!episodes/editions/**/*.jsonl
+episodes/editions/*/video/
+# real.smoke 真机模式的产物：帧不入库，判定表、清单与 meta 入库
+smoke_runs/*/frames/
+.cache/

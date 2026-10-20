@@ -1,0 +1,184 @@
+# 被测模型表（DEC-20260925-04；PG-001 补丁 4 P2／修订 1／修订 2，2026-09-25）。
+# 配置即身份：本表键＝榜单行名＝厂商模型 ID＋思考档＋端点（official 官方／aggregator 聚合），改任一项＝新行；思考档写进键名（nothink／think-low…）。
+# 首季名单（首期榜 10-29）＝国产三厂各一：qwen3-vl-plus、glm-5v-turbo、deepseek-flash，均「思考关·官方端点」；备胎＝火山方舟豆包视觉款；
+#   海外行保留为候选、标「待投稿／待合规通道」（补丁 3「≥1 海外」要求作废，见 DEC-20260925-18）；Kimi K3 标「待争议澄清」不进首季。
+# 密钥只从环境变量读（key_env），不入仓；runner 跑前打印 provider+model+thinking+endpoint。
+# price_*：美元/百万 token（人民币价 ÷ _settings.fx_cny_per_usd）；price_verified=false 的行成本记 0、run_batch 默认拒跑。
+# 每步请求量（harness 常量，protocol/v0.md §4）：图像 512×384 JPEG q85 ＋ system（≈230 词）＋ instruction（≈60 词）＋ 最近 3 条 note；
+#   估算口径（P5）：每回合 ≈60 次调用、每次输入 ≈700 tok、思考关时输出 ≈40 tok；N=30 → 1,800 次/模型。实测以 docs/pilot-run-01.md 为准。
+_settings:
+  fx_cny_per_usd: 7.1            # 汇率假设（2026-09 粗算，与 protocol/kit-candidates.md 同）；summary.csv 人民币列＝美元×此值
+  season: 2026Q4 首季＝国产三厂各一（补丁 4 修订 1／2）；海外行经投稿或后续批次
+
+# ── 首季三行（榜单行）────────────────────────────────────────────────────────────────
+qwen3-vl-plus--nothink--official:
+  row_name_zh: qwen3-vl-plus · 思考关 · 官方
+  row_name_en: qwen3-vl-plus · thinking off · official endpoint
+  vendor: 阿里云百炼（通义千问）
+  region: CN
+  provider: openai_compat
+  model: qwen3-vl-plus              # 官网「当前能力等同于 qwen3-vl-plus-2025-12-19」（2026-09-25 核）
+  thinking: off
+  endpoint: official
+  base_url: https://dashscope.aliyuncs.com/compatible-mode/v1
+  key_env: DASHSCOPE_API_KEY
+  request_kwargs:
+    extra_body: {enable_thinking: false}       # 官网：qwen3-vl-plus 默认 false；显式写死＝行身份的一部分
+  price_native: "¥1 in / ¥10 out per MTok（0–32K 档；思考与非思考同价）"
+  price_in: 0.141
+  price_out: 1.408
+  price_source: https://help.aliyun.com/zh/model-studio/models#qwen3-vl
+  price_verified: true
+  image_tokens_rule: "每 32×32 像素 1 token ＋2 → 512×384 ≈ 194 tok"
+  free_quota: "北京地域开通 90 天内 100 万 token 免费额度（官网 2026-09-25）"
+  est_n30: "¥2.0 ≈ $0.28（1800 次 × (700×¥1 + 40×¥10)/1e6）"
+glm-5v-turbo--nothink--official:
+  row_name_zh: glm-5v-turbo · 思考关 · 官方
+  row_name_en: glm-5v-turbo · thinking off · official endpoint
+  vendor: 智谱 BigModel
+  region: CN
+  provider: openai_compat
+  model: glm-5v-turbo               # 官网模型页 2026-09-25：多模态 Coding 基座，200K 上下文，支持开/关思考
+  thinking: off
+  endpoint: official
+  base_url: https://open.bigmodel.cn/api/paas/v4
+  key_env: ZHIPU_API_KEY
+  request_kwargs:
+    extra_body: {thinking: {type: disabled}}   # 官网示例 thinking.type=enabled/disabled；关思考＝行身份
+  price_native: "¥5 in / ¥22 out per MTok（输入长度 0–32K 档）；缓存命中 ¥1.2"
+  price_in: 0.704
+  price_out: 3.099
+  price_source: https://docs.bigmodel.cn/cn/guide/start/pricing
+  price_verified: true
+  image_tokens_rule: "官网未给公式；按 ≈260 tok/图估，以 usage 为准"
+  est_n30: "¥7.9 ≈ $1.1（1800 × (700×¥5 + 40×¥22)/1e6）"
+deepseek-flash--nothink--official:
+  row_name_zh: deepseek-flash · 思考关 · 官方
+  row_name_en: deepseek-flash · thinking off · official endpoint
+  vendor: DeepSeek 开放平台
+  region: CN
+  provider: openai_compat
+  model: deepseek-flash             # ＝DeepSeek-V4.1-Flash（2026-09-10 发布，原生视觉）；旧名 deepseek-v4-flash* 路由至此（官网 2026-09-25）
+  thinking: off
+  endpoint: official
+  base_url: https://api.deepseek.com
+  key_env: DEEPSEEK_API_KEY
+  request_kwargs:
+    extra_body: {thinking: {type: disabled}}   # 官网：思考默认开且 effort=high；关思考＝行身份（与 Qwen 行同为最低/关）
+  price_native: "峰谷两档（缓存未命中）：闲时 ¥1 in / ¥4 out；高峰 ¥2 in / ¥8 out per MTok；缓存命中 ¥0.02／¥0.04"
+  price_tiers:                      # 高峰＝北京时间周一至周五（不含法定节假日）9:00–12:00、14:00–18:00；其余时段含周末全天为闲时（官网）
+    peak: {price_in: 0.282, price_out: 1.127}
+    offpeak: {price_in: 0.141, price_out: 0.563}
+  peak_hours_beijing: [[9, 12], [14, 18]]
+  peak_weekdays_only: true          # 法定节假日按工作日计（保守：多计不少计）；成本列 price_tier 注明实际所用时段
+  price_in: 0.282                   # 无时段信息时的默认档＝高峰（保守）
+  price_out: 1.127
+  price_source: https://api-docs.deepseek.com/zh-cn/quick_start/pricing
+  price_verified: true
+  image_tokens_rule: "官网：总像素 <544² 放大、>1300² 缩小，单图上限 1024 tok；512×384 估 ≈250 tok，以 usage 为准"
+  est_n30: "闲时 ¥1.6 ≈ $0.23；高峰 ¥3.2 ≈ $0.45；runbook 把试跑排在闲时段"
+  runbook_note: 试跑与正式批排在闲时段（周末全天或工作日 12:00–14:00／18:00–次日 9:00）
+
+# ── 备胎（探活或限流不过时替换第三厂；启用前核 ID 与价并置 price_verified: true）──────────
+doubao-seed-vision--nothink--official:
+  row_name_zh: 豆包视觉款 · 思考关 · 官方（备胎）
+  row_name_en: Doubao vision · thinking off · official endpoint (backup)
+  vendor: 火山方舟（字节）
+  region: CN
+  provider: openai_compat
+  model: REPLACE_WITH_ARK_VISION_MODEL_ID      # 方舟模型 ID／接入点待核（官网价目页为 JS 渲染，2026-09-25 未落盘）
+  thinking: off
+  endpoint: official
+  base_url: https://ark.cn-beijing.volces.com/api/v3
+  key_env: ARK_API_KEY
+  price_in: 0
+  price_out: 0
+  price_verified: false
+  season_role: backup
+
+# ── 候选（不进首季）────────────────────────────────────────────────────────────────
+glm-4.6v--nothink--official:
+  row_name_zh: glm-4.6v · 思考关 · 官方
+  vendor: 智谱 BigModel
+  region: CN
+  provider: openai_compat
+  model: glm-4.6v
+  thinking: off
+  endpoint: official
+  base_url: https://open.bigmodel.cn/api/paas/v4
+  key_env: ZHIPU_API_KEY
+  request_kwargs:
+    extra_body: {thinking: {type: disabled}}
+  price_native: "¥1 in / ¥3 out per MTok（0–32K 档）"
+  price_in: 0.141
+  price_out: 0.423
+  price_verified: false             # 价已抄官网 2026-09-25，ID 未实测；作智谱低价档候选
+  season_role: candidate
+qwen3-vl-flash--nothink--official:
+  row_name_zh: qwen3-vl-flash · 思考关 · 官方
+  vendor: 阿里云百炼（通义千问）
+  region: CN
+  provider: openai_compat
+  model: qwen3-vl-flash
+  thinking: off
+  endpoint: official
+  base_url: https://dashscope.aliyuncs.com/compatible-mode/v1
+  key_env: DASHSCOPE_API_KEY
+  request_kwargs:
+    extra_body: {enable_thinking: false}
+  price_native: "¥0.15 in / ¥1.5 out per MTok（0–32K 档）"
+  price_in: 0.021
+  price_out: 0.211
+  price_verified: false
+  season_role: candidate
+kimi-k3-vision--pending:
+  row_name_zh: Kimi K3 视觉款（待争议澄清，不进首季）
+  vendor: Moonshot（月之暗面）
+  region: CN
+  provider: openai_compat
+  model: REPLACE_WITH_KIMI_K3_MODEL_ID
+  thinking: unknown
+  endpoint: official
+  base_url: https://api.moonshot.cn/v1
+  key_env: MOONSHOT_API_KEY
+  price_in: 0
+  price_out: 0
+  price_verified: false
+  season_role: candidate
+  status: 待争议澄清（补丁 4 修订 2）
+claude-opus-5--effort-low--official:
+  row_name_zh: claude-opus-5 · effort=low · 官方（海外，待投稿／待合规通道）
+  row_name_en: claude-opus-5 · effort low · official endpoint (overseas; via submission / compliance channel)
+  vendor: Anthropic
+  region: US
+  provider: anthropic
+  model: claude-opus-5
+  thinking: low
+  endpoint: official
+  key_env: ANTHROPIC_API_KEY
+  effort: low
+  price_native: "$5 in / $25 out per MTok（2026-09-25 官网）"
+  price_in: 5.0
+  price_out: 25.0
+  price_verified: true
+  season_role: candidate
+  status: 待投稿／待合规通道
+gemini-3.8-flash--reasoning-low--official:
+  row_name_zh: gemini-3.8-flash · reasoning_effort=low · 官方（海外，待投稿／待合规通道）
+  row_name_en: gemini-3.8-flash · reasoning low · official endpoint (overseas; via submission / compliance channel)
+  vendor: Google（Gemini API，OpenAI 兼容端点）
+  region: US
+  provider: openai_compat
+  model: gemini-3.8-flash
+  thinking: low
+  endpoint: official
+  base_url: https://generativelanguage.googleapis.com/v1beta/openai/
+  key_env: GEMINI_API_KEY
+  request_kwargs:
+    reasoning_effort: low
+  price_native: "$0.75 in / $3.75 out per MTok（优惠价至 2026-12-31；之后 $1.5/$7.5）"
+  price_in: 0.75
+  price_out: 3.75
+  price_verified: true
+  season_role: candidate
+  status: 待投稿／待合规通道

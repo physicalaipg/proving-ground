@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+# pre-commit —— 提交侧闸（10-20 公开清场批装）：① gitleaks 扫暂存区；② tools/public_scan.py 扫暂存区（内置编号形态＋仓外词表）。
+# 任一步非零即拒绝提交。启用：git config core.hooksPath tools/githooks。推送侧另有 tools/push_gate.sh。
+set -uo pipefail
+cd "$(git rev-parse --show-toplevel)" || exit 2
+if command -v gitleaks >/dev/null; then
+  gitleaks git --pre-commit --staged --no-banner --redact; rc=$?
+  [ "$rc" -eq 0 ] || { echo "✘ pre-commit：gitleaks rc=${rc}，拒绝提交"; exit 1; }
+else
+  echo "⚠ pre-commit：缺 gitleaks，跳过密钥扫描（请安装）"
+fi
+python3 tools/public_scan.py --staged --exclude-list tools/public_scan_exclude.txt --quiet; rc=$?
+[ "$rc" -eq 0 ] || { echo "✘ pre-commit：public_scan rc=${rc}，拒绝提交"; exit 1; }

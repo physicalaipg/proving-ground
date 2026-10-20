@@ -1,0 +1,27 @@
+{
+ "started": "2026-09-24T22:57:24",
+ "n": 100,
+ "seed0": 1000,
+ "max_steps": 80,
+ "config": "twin/configs/course01.yaml",
+ "config_sha256": "7fcf28e75212b7c62a569916574035f9d97988df4e1c88ac5b2641f20d4fcfd0",
+ "prompt_sha256": "f120b825a4b2f1e8d9d98fc929910eeb6aa1ca06f4bc883e791a75827d7f005b",
+ "agents": [
+  "oracle",
+  "random"
+ ],
+ "randomization": {
+  "enabled": true,
+  "light": true,
+  "textures": true,
+  "friction": true,
+  "slip": [
+   0.9,
+   1.0
+  ],
+  "motion_noise_pct": 3
+ },
+ "finished": "2026-09-24T22:58:12",
+ "wall_s": 47.9,
+ "usd_total": 0.0
+}

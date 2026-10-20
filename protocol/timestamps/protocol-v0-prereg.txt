@@ -1,0 +1,39 @@
+# protocol-v0-prereg · 预注册锚点外部时间戳清单（OpenTimestamps）
+# 口径：OTS 凭证只证明「内容不晚于凭证所载区块时间已存在」；tag 的 2026-09-25 为 git 自报日期，第三方时间证据自本次盖章起算（dream-os DEC-20261010-02）。
+
+[a] tag 与提交
+tag_object   cb3efd364cb74ae2186fdd56f8dd08a1a09ca119   # git rev-parse protocol-v0-prereg
+tag_commit   cd63010d55ca150a8c67667d45c1a9cf96f5a063   # git rev-parse 'protocol-v0-prereg^{commit}'
+
+[b] prereg_check 监视清单（twin/、harness/ 全部跟踪文件 ∪ 四件规则文本）逐文件 tag 内内容 sha256；shasum 原生行格式；按路径排序；tag 内不存在记「无」
+7ce285500fb1ae97041f072c37d849a8a01e297189d902618f5ab940b7ccfa2a  episodes/runs/2026-09-25-pilot01-baselines/meta.json
+d86f98f7c3733f3294ed314d334280e6397567232372f78751255478532aed08  episodes/runs/2026-09-25-pilot01-baselines/seeds.csv
+fb6edd904d1489a5710292f76584293f0c1559a0ca65cdccbdef47b36d68b135  harness/__init__.py
+fcf0ad65ae97ebcfc6488219824c769a24ed7b1a11f5f79668db5bdef49c52ee  harness/agents/__init__.py
+1eb53724d8b21fe7535e41c68a7c4ea299b20b303519d21373ecb3b2c80dfd23  harness/agents/llm.py
+479c5b6af344c68c2991f13a9d1985639fc7eb4e11963988416f3012d8d9968c  harness/agents/registry.py
+0199e8ca3cc0e085f79ce9e8e2e8a0d73d7ec1bf6e326fd873102cecf230fb66  harness/agents/scripted.py
+09fd03f8a832da9c340f2e76f6ee75a49a243e9960fa8c47d035efea5acab54c  harness/episode.py
+448ca26bc64e41bf2098dea2e30950817cfb30a24d7d3691501513897fbd7c6d  harness/interface.py
+41be4a8a5d81a19de91bfec3f5cfbc62e2374b5a308477bf1d2f7919d3ea404c  harness/models.yaml
+08b0c6a5ba32820196ce0784e467eda6a34a223428971d0967a3c176347d55e5  harness/robot_real.py
+6406db30ce022ac80866be5675024233789da0744b7d11383e1061b36dfe4da9  harness/run_batch.py
+c35bddae6e734cb2afd1f17388b224beb93dff7ae1bcc5000763c42145cb83ab  harness/scoring.py
+894ba796c8c22bd3182f405121fa4c0b57396fa73ca5aebd75c7a0e810a5da43  harness/task.py
+b9006b83327d4fc3c57026601542ff811697cf335b2b5e56a452a7ecb5d08b40  protocol/prompt_v0.md
+f6a11f3b13fc177c23cf03c133ed0ff6bb354d6e11f53eb8a590ce63d84cee0c  protocol/v0.md
+b818bcd52d34e7216a6fc2988c3c7bd8b0c0d3cb5f7e5b715e9eff5737fb951b  twin/__init__.py
+46b3384358efd1fea364e322bbc29a8d19e3c6310506a54aeaf008ea14efa351  twin/arena.py
+594e60171a427349b5cad018fa5ed03e0f2ac8941ffc5ea37119a67e416eac73  twin/config.py
+7fcf28e75212b7c62a569916574035f9d97988df4e1c88ac5b2641f20d4fcfd0  twin/configs/course01.yaml
+ddcebfa5aa2e44d6bba8ca6db2462757de951b92315772ebc6496e35f53f900d  twin/mjcf.py
+43a6538cca69b5842bbebd17cc8db4855f42cf29069b8614296380fc1c4a2d32  twin/planner.py
+89d1b09ec258d119b0a96e6908a1e6517e868697f77853fbf5a7ea9c73a2734e  twin/robot_twin.py
+45f594f16a743fb4d756e51da52d678df6adf607b261529b6480a895fd2307b9  twin/selftest.py
+0b3f7a0c19bffa962286c7dd9243a92e3a9536d61803c2fc1fadb8f5f0d9d2ad  twin/textures.py
+
+[c] 工具与命令
+git   git version 2.50.1 (Apple Git-155)
+ots   v0.7.2
+generated_by   bash protocol/timestamps/gen_list.sh   # 等价于本文件 [b] 段的 git ls-tree/ls-files ∪ RULES_TEXT 管道（与 tools/prereg_check.sh 的 MONITORED 同一表达式）
+stamp   ots stamp protocol/timestamps/protocol-v0-prereg.txt   # 产出同名 .ots，满 12 小时后 ots upgrade

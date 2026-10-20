@@ -1,0 +1,855 @@
+{
+ "source": "protocol/v0.md",
+ "blocks": {
+  "b7c6c4e934da": {
+   "type": "heading",
+   "zh": "# Course 01「看图走路」协议 v0（Twin-01 v0）",
+   "en": "# Course 01 \"Look-and-Go\" Protocol v0 (Twin-01 v0)",
+   "reviewed": true,
+   "translator": "claude-code (Claude Fable 5.1, in-session)",
+   "translated_at": "2026-09-25",
+   "reviewed_by": "claude-code (blind back-translation check 2026-09-25)",
+   "reviewed_at": "2026-09-25"
+  },
+  "be09cabe346f": {
+   "type": "quote",
+   "zh": "> 依据：DEC-20260925-04（Course 01 规格）／05（Twin-01 做不做清单）；PG-001 P2–P5 ＋ **PG-001 补丁 3 Q1–Q6**（CSO 2026-09-25）。\n> 状态：v0 定稿，候 CSO 过目后冻结。**冻结物**＝本文 §4「harness 常量」全部数值、提示模板全文（`protocol/prompt_v0.md`，sha256 `b9006b83327d4fc3c57026601542ff811697cf335b2b5e56a452a7ecb5d08b40`）、孪生配置 `twin/configs/course01.yaml`（sha256 `7fcf28e75212b7c62a569916574035f9d97988df4e1c88ac5b2641f20d4fcfd0`）。改动任一项即换版本号并整批重跑；只在每期真机后升版、每次只修迁移差最大一项（DEC-20260925-05）。\n> 中英双语渲染属 PG-003；本文为中文真源。",
+   "en": "> Basis: DEC-20260925-04 (Course 01 specification) / 05 (Twin-01 do / don't list); PG-001 P2–P5 + **PG-001 Patch 3 Q1–Q6** (CSO, 2026-09-25).\n> Status: v0 final, to be frozen after CSO review. **Frozen artifacts** = every value in §4 \"harness constants\" of this document, the full prompt template (`protocol/prompt_v0.md`, sha256 `b9006b83327d4fc3c57026601542ff811697cf335b2b5e56a452a7ecb5d08b40`) and the twin configuration `twin/configs/course01.yaml` (sha256 `7fcf28e75212b7c62a569916574035f9d97988df4e1c88ac5b2641f20d4fcfd0`). Changing any of them bumps the version number and re-runs the whole batch; the twin is revised only after each real-robot edition, fixing only the single largest transfer gap each time (DEC-20260925-05).\n> The bilingual rendering belongs to PG-003; this Chinese document is the source of truth.",
+   "reviewed": false,
+   "translator": "claude-code (Claude Fable 5.1, in-session)",
+   "translated_at": "2026-09-25",
+   "reviewed_by": null,
+   "reviewed_at": null
+  },
+  "93ae56488b3f": {
+   "type": "heading",
+   "zh": "## 1 任务",
+   "en": "## 1 Task",
+   "reviewed": true,
+   "translator": "claude-code (Claude Fable 5.1, in-session)",
+   "translated_at": "2026-09-25",
+   "reviewed_by": "claude-code (blind back-translation check 2026-09-25)",
+   "reviewed_at": "2026-09-25"
+  },
+  "3e586e88e59a": {
+   "type": "item",
+   "zh": "- 场地：2×2 m 方形，四面墙高 0.25 m。5 根检查点立柱（半径 0.03 m、高 0.30 m），柱顶 0.16 m 数字牌 1–5，牌边框色依次 **红／绿／蓝／黄／紫**（真机牌照此印）。3–5 个障碍（箱或圆柱，边长/直径 0.10–0.25 m，高 0.20 m）。",
+   "en": "- Arena: a 2×2 m square with 0.25 m walls on all four sides. Five checkpoint posts (radius 0.03 m, height 0.30 m), each topped by a 0.16 m numbered sign 1–5 whose border colors are **red / green / blue / yellow / purple** in that order (the real-robot signs are printed the same way). 3–5 obstacles (boxes or cylinders, side / diameter 0.10–0.25 m, height 0.20 m).",
+   "reviewed": true,
+   "translator": "claude-code (Claude Fable 5.1, in-session)",
+   "translated_at": "2026-09-25",
+   "reviewed_by": "claude-code (blind back-translation check 2026-09-25)",
+   "reviewed_at": "2026-09-25"
+  },
+  "8d47419c7fe8": {
+   "type": "item",
+   "zh": "- 机器人自角落起点出发，按 1→2→3→4→5 顺序到达；**到达**＝机器人中心进入立柱中心 0.40 m 内；5 个全到达＝成功。模型可答 stop 提前结束。",
+   "en": "- The robot starts from a corner and must reach the checkpoints in the order 1→2→3→4→5; **reached** = the robot's center comes within 0.40 m of the post's center; reaching all five = success. The model may answer stop to end the episode early.",
+   "reviewed": true,
+   "translator": "claude-code (Claude Fable 5.1, in-session)",
+   "translated_at": "2026-09-25",
+   "reviewed_by": "claude-code (blind back-translation check 2026-09-25)",
+   "reviewed_at": "2026-09-25"
+  },
+  "663ae9181e6a": {
+   "type": "item",
+   "zh": "- 布局全部由种子决定（起点抖动、检查点、障碍、域随机化：光照／纹理／打滑／运动噪声）。同一批次所有被测对象共用同一组种子（配对比较）；**不可解种子剔除并记剔除率**（§5）。",
+   "en": "- The layout is fully determined by the seed (start-pose jitter, checkpoints, obstacles, domain randomization: lighting / textures / wheel slip / motion noise). Every agent under test in a batch shares the same set of seeds (paired comparison); **unsolvable seeds are rejected and the rejection rate is recorded** (§5).",
+   "reviewed": false,
+   "translator": "claude-code (Claude Fable 5.1, in-session)",
+   "translated_at": "2026-09-25",
+   "reviewed_by": null,
+   "reviewed_at": null
+  },
+  "9c097c12beb4": {
+   "type": "item",
+   "zh": "- 真机侧：同一接口（`harness/interface.py`），碰撞与位姿由俯拍判定（PG-002）；相机高度、视场、分辨率以真机实测值回填孪生配置。",
+   "en": "- Real-robot side: the same interface (`harness/interface.py`); collisions and poses are judged from the overhead camera (PG-002); camera height, field of view and resolution measured on the real robot are written back into the twin configuration.",
+   "reviewed": true,
+   "translator": "claude-code (Claude Fable 5.1, in-session)",
+   "translated_at": "2026-09-25",
+   "reviewed_by": "claude-code (blind back-translation check 2026-09-25)",
+   "reviewed_at": "2026-09-25"
+  },
+  "48bc50326273": {
+   "type": "heading",
+   "zh": "## 2 参考单元（Q6）",
+   "en": "## 2 Reference unit (Q6)",
+   "reviewed": true,
+   "translator": "claude-code (Claude Fable 5.1, in-session)",
+   "translated_at": "2026-09-25",
+   "reviewed_by": "claude-code (blind back-translation check 2026-09-25)",
+   "reviewed_at": "2026-09-25"
+  },
+  "d0b4893755ae": {
+   "type": "para",
+   "zh": "**参考单元＝UGV02（v0）；LeKiwi 为第二参考平台候选；同类差速底盘可按协议申报。**",
+   "en": "**Reference unit = UGV02 (v0); LeKiwi is the second reference platform candidate; any comparable differential-drive chassis may be registered under this protocol.**",
+   "reviewed": true,
+   "translator": "claude-code (Claude Fable 5.1, in-session)",
+   "translated_at": "2026-09-25",
+   "reviewed_by": "claude-code (blind back-translation check 2026-09-25)",
+   "reviewed_at": "2026-09-25"
+  },
+  "44108e18c350": {
+   "type": "item",
+   "zh": "- v0 孪生底盘取 UGV02 公开尺寸 252×230×94 mm（`protocol/kit-candidates.md`）；相机高 0.15 m、水平视场 70°、640×480 为**假定值**，套件到货实测后改配置值不改码。",
+   "en": "- The v0 twin chassis uses the published UGV02 dimensions 252×230×94 mm (`protocol/kit-candidates.md`); camera height 0.15 m, horizontal field of view 70° and 640×480 are **assumed values**, to be replaced by measurements once the kit arrives; configuration values change, code does not.",
+   "reviewed": true,
+   "translator": "claude-code (Claude Fable 5.1, in-session)",
+   "translated_at": "2026-09-25",
+   "reviewed_by": "claude-code (blind back-translation check 2026-09-25)",
+   "reviewed_at": "2026-09-25"
+  },
+  "46fdabf3ff31": {
+   "type": "item",
+   "zh": "- 「同类差速底盘」＝可原地转向（差速／履带／多轮四驱）、可执行固定步长离散动作、固件有限速与心跳自停；申报须给出底盘尺寸、相机高度与视场，并以一份孪生配置登记。",
+   "en": "- A \"comparable differential-drive chassis\" = one that can turn in place (differential / tracked / multi-wheel 4WD), can execute fixed-step discrete actions, and whose firmware has a speed limit and a heartbeat auto-stop; a registration must state chassis dimensions, camera height and field of view, and be filed as one twin configuration.",
+   "reviewed": true,
+   "translator": "claude-code (Claude Fable 5.1, in-session)",
+   "translated_at": "2026-09-25",
+   "reviewed_by": "claude-code (blind back-translation check 2026-09-25)",
+   "reviewed_at": "2026-09-25"
+  },
+  "37115aca19a5": {
+   "type": "heading",
+   "zh": "## 3 接口：停-看-想-动",
+   "en": "## 3 Interface: stop–look–think–act",
+   "reviewed": true,
+   "translator": "claude-code (Claude Fable 5.1, in-session)",
+   "translated_at": "2026-09-25",
+   "reviewed_by": "claude-code (blind back-translation check 2026-09-25)",
+   "reviewed_at": "2026-09-25"
+  },
+  "c99767d258ad": {
+   "type": "item",
+   "zh": "- **停**：observe／decide 期间机器人静止；**看**：一帧前视 RGB ＋ 自然语言指令，不含位姿、地图、真值；**想**：Agent 只看观测，输出 forward／left／right／stop 之一；**动**：恰好一个固定步长动作，完全静止后返回。",
+   "en": "- **Stop**: the robot is stationary during observe / decide; **look**: one forward-facing RGB frame + a natural-language instruction, with no pose, map or ground truth; **think**: the agent sees only the observation and outputs one of forward / left / right / stop; **act**: exactly one fixed-step action, returning only after the robot is fully at rest.",
+   "reviewed": true,
+   "translator": "claude-code (Claude Fable 5.1, in-session)",
+   "translated_at": "2026-09-25",
+   "reviewed_by": "claude-code (blind back-translation check 2026-09-25)",
+   "reviewed_at": "2026-09-25"
+  },
+  "74e59866a6d9": {
+   "type": "item",
+   "zh": "- 动作步长（孪生与真机固件同一组数）：forward **0.20 m**；left／right **30°**；线速上限 0.20 m/s；角速上限 60°/s；动作后静置 0.30 s。",
+   "en": "- Action step sizes (the same numbers in the twin and in the real-robot firmware): forward **0.20 m**; left / right **30°**; linear speed cap 0.20 m/s; angular speed cap 60°/s; 0.30 s settle time after each action.",
+   "reviewed": true,
+   "translator": "claude-code (Claude Fable 5.1, in-session)",
+   "translated_at": "2026-09-25",
+   "reviewed_by": "claude-code (blind back-translation check 2026-09-25)",
+   "reviewed_at": "2026-09-25"
+  },
+  "71b362bd360b": {
+   "type": "item",
+   "zh": "- 真值隔离：孪生真值只给计分器与脚本化基线（greedy／astar），送模前剥离（`Observation.for_model()`）。",
+   "en": "- Ground-truth isolation: the twin's ground truth is available only to the scorer and the scripted baselines (greedy / astar) and is stripped before anything is sent to a model (`Observation.for_model()`).",
+   "reviewed": true,
+   "translator": "claude-code (Claude Fable 5.1, in-session)",
+   "translated_at": "2026-09-25",
+   "reviewed_by": "claude-code (blind back-translation check 2026-09-25)",
+   "reviewed_at": "2026-09-25"
+  },
+  "4b050ebcce77": {
+   "type": "heading",
+   "zh": "## 4 harness 常量（冻结；Q2）",
+   "en": "## 4 Harness constants (frozen; Q2)",
+   "reviewed": true,
+   "translator": "claude-code (Claude Fable 5.1, in-session)",
+   "translated_at": "2026-09-25",
+   "reviewed_by": "claude-code (blind back-translation check 2026-09-25)",
+   "reviewed_at": "2026-09-25"
+  },
+  "bcf233f94e7a": {
+   "type": "table",
+   "zh": "| 常量 | 值 | 说明 |\n|---|---|---|\n| 到达半径 | **0.40 m** | 中心入圈即到达；真机俯拍同值。下限＝步长 0.20＋车身半长 0.126＋柱半径 0.03 ≈ 0.36，0.30 时直行接近必撞柱 |\n| 回合上限 | **80 步** | 每步一次模型调用；超限回合结束（未成功） |\n| 碰撞扣分 | **0.5 分/次** | 车身与墙／柱／障碍在一个动作内发生接触计 1 次（边沿触发，一动作最多 1 次） |\n| 检查点分 | 0–5 连续 | 已到达数 ＋ 向下一检查点最佳进度 (1 − d_best/d_start)，裁到 [0, 0.99] |\n| 总分 | 检查点分 − 罚分 | 可为负，不裁 |\n| **路程比** | 实际轨迹长 ÷ 理想路径长 | 理想路径＝折线 start→c1→…→c5 各段长之和，**每段扣除一个到达半径**（入圈即算到达，不必走到柱心）；只对成功回合汇总 |\n| 观测图像 | 渲染 640×480 → 送模前等比缩到宽 512（512×384）JPEG q85 | 各模型同一张图；真机相机分辨率回填后同规则缩放 |\n| **记忆** | 模型自己最近 **3 条 note**，按时间顺序回传 | 对所有模型固定（`harness/task.py` MEMORY_NOTES），`models.yaml` 不可覆盖；无对话历史，每步独立请求 |\n| **提示边界** | 下一检查点提示**只含身份（编号）与外观（牌边框色）** | **不含方位、距离、朝向**；由计分器真值填入（真机由俯拍判定给出） |\n| 不可解析／API 错 | 同一观测重问 2 次，仍不行本回合结束 | 分别计 invalid_outputs／api_errors |\n| 拒答 | 记拒答，不接 fallback | 如 Anthropic stop_reason=refusal |\n| 成本 | 每次调用按官网单价计美元（`harness/models.yaml`） | 单价未核实（price_verified=false）默认拒跑 |\n| 时延 | 每次调用 API 侧时延（发出请求→收到完整响应） | 汇总均值与 P95 |",
+   "en": "| Constant | Value | Notes |\n|---|---|---|\n| Reach radius | **0.40 m** | Reached once the robot's center enters the circle; the real-robot overhead camera uses the same value. Lower bound = step 0.20 + half body length 0.126 + post radius 0.03 ≈ 0.36; at 0.30 a straight approach almost always hits the post |\n| Step cap | **80 steps** | One model call per step; an episode that exceeds the cap ends (not a success) |\n| Collision penalty | **0.5 points per collision** | Contact between the body and a wall / post / obstacle within one action counts as 1 (edge-triggered, at most 1 per action) |\n| Checkpoint score | 0–5, continuous | Checkpoints reached + best progress toward the next checkpoint (1 − d_best/d_start), clipped to [0, 0.99] |\n| Total score | checkpoint score − penalty | May be negative; not clipped |\n| **Path ratio** | actual trajectory length ÷ ideal path length | Ideal path = the sum of the polyline segments start→c1→…→c5, **minus one reach radius per segment** (entering the circle counts as reached; no need to drive to the post's center); aggregated over successful episodes only |\n| Observation image | Rendered at 640×480 → scaled proportionally to width 512 (512×384) JPEG q85 before sending | Every model gets the same image; once the real camera's resolution is written back, the same scaling rule applies |\n| **Memory** | The model's own most recent **3 notes**, returned in chronological order | Fixed for all models (`harness/task.py` MEMORY_NOTES) and not overridable in `models.yaml`; no conversation history, every step is an independent request |\n| **Prompt boundary** | The next-checkpoint hint **contains only identity (number) and appearance (sign border color)** | **No bearing, distance or heading**; filled in by the scorer from ground truth (on the real robot, from the overhead-camera judgment) |\n| Unparseable / API error | Re-ask twice on the same observation; if it still fails, the episode ends | Counted separately as invalid_outputs / api_errors |\n| Refusal | Recorded as a refusal; no fallback | e.g. Anthropic stop_reason=refusal |\n| Cost | Each call is priced in USD at the vendor's list price (`harness/models.yaml`) | Unverified prices (price_verified=false) refuse to run by default |\n| Latency | API-side latency per call (request sent → full response received) | Aggregated as mean and P95 |",
+   "reviewed": false,
+   "translator": "claude-code (Claude Fable 5.1, in-session)",
+   "translated_at": "2026-09-25",
+   "reviewed_by": null,
+   "reviewed_at": null
+  },
+  "3e25c4cad200": {
+   "type": "heading",
+   "zh": "### 提示模板全文（`protocol/prompt_v0.md`，sha256 `b9006b83…08b40`；英文为 API 主文）",
+   "en": "### Full prompt template (`protocol/prompt_v0.md`, sha256 `b9006b83…08b40`; English is the primary text sent to the API)",
+   "reviewed": true,
+   "translator": "claude-code (Claude Fable 5.1, in-session)",
+   "translated_at": "2026-09-25",
+   "reviewed_by": "claude-code (blind back-translation check 2026-09-25)",
+   "reviewed_at": "2026-09-25"
+  },
+  "53034c8a805c": {
+   "type": "para",
+   "zh": "**system**（`{forward_m}`＝0.2、`{turn_deg}`＝30 由配置填入）：",
+   "en": "**system** (`{forward_m}` = 0.2 and `{turn_deg}` = 30 are filled in from the configuration):",
+   "reviewed": true,
+   "translator": "claude-code (Claude Fable 5.1, in-session)",
+   "translated_at": "2026-09-25",
+   "reviewed_by": "claude-code (blind back-translation check 2026-09-25)",
+   "reviewed_at": "2026-09-25"
+  },
+  "fc885abbe10e": {
+   "type": "para",
+   "zh": "**instruction**（每回合随图送出；`{reach_radius_m}`＝0.4，`{next_checkpoint}`／`{next_color}` 由计分器填入）：",
+   "en": "**instruction** (sent with the image at every step of the episode; `{reach_radius_m}` = 0.4, `{next_checkpoint}` / `{next_color}` are filled in by the scorer):",
+   "reviewed": true,
+   "translator": "claude-code (Claude Fable 5.1, in-session)",
+   "translated_at": "2026-09-25",
+   "reviewed_by": "claude-code (blind back-translation check 2026-09-25)",
+   "reviewed_at": "2026-09-25"
+  },
+  "eb47867e40ba": {
+   "type": "para",
+   "zh": "有 note 时追加一行：`Your notes from previous steps (oldest first): <note1> | <note2> | <note3>`。",
+   "en": "When notes exist, one more line is appended: `Your notes from previous steps (oldest first): <note1> | <note2> | <note3>`.",
+   "reviewed": true,
+   "translator": "claude-code (Claude Fable 5.1, in-session)",
+   "translated_at": "2026-09-25",
+   "reviewed_by": "claude-code (blind back-translation check 2026-09-25)",
+   "reviewed_at": "2026-09-25"
+  },
+  "7f2559e21cad": {
+   "type": "heading",
+   "zh": "## 5 基线、天花板与可解性（Q1）",
+   "en": "## 5 Baselines, ceiling and solvability (Q1)",
+   "reviewed": false,
+   "translator": "claude-code (Claude Fable 5.1, in-session)",
+   "translated_at": "2026-09-25",
+   "reviewed_by": null,
+   "reviewed_at": null
+  },
+  "6c3d73d9e5d4": {
+   "type": "table",
+   "zh": "| 名 | 性质 | 说明 |\n|---|---|---|\n| random | 基线（下界） | forward 权重 2、left／right 各 1、每步 1% 概率 stop；成本 0 |\n| greedy | 基线 | 贪心真值导航：朝下一检查点转向、对准即前进，不避障（PG-001 原 oracle，本补丁降为基线）；成本 0 |\n| **astar** | **天花板基准** | 已知地图 A*：在离散动作格上搜索到下一检查点的最少动作序列（`twin/planner.py`），碰撞模型精确到车身矩形＋0.02 m 安全余量；读真值（布局、位姿、该回合打滑系数）＝「全知」上界；余下计划每步从真实位姿重放复核不过即重规划；成本 0。基线批 N=30：成功 1.00、碰撞 0、路程比 1.27（`docs/pilot-run-01.md` §3） |",
+   "en": "| Name | Role | Notes |\n|---|---|---|\n| random | baseline (lower bound) | forward weight 2, left / right weight 1 each, 1% chance of stop per step; zero cost |\n| greedy | baseline | Greedy ground-truth navigation: turn toward the next checkpoint, drive forward once aligned, no obstacle avoidance (the original PG-001 oracle, demoted to a baseline by this patch); zero cost |\n| **astar** | **ceiling baseline** | A* on the known map: searches the discrete action grid for the shortest action sequence to the next checkpoint (`twin/planner.py`); the collision model is exact to the body rectangle plus a 0.02 m safety margin; it reads ground truth (layout, pose, this episode's slip factor) = an \"omniscient\" upper bound; at every step the remaining plan is re-checked by replay from the true pose and re-planned if the check fails; zero cost. Baseline batch N=30: success 1.00, collisions 0, path ratio 1.27 (`docs/pilot-run-01.md` §3) |",
+   "reviewed": false,
+   "translator": "claude-code (Claude Fable 5.1, in-session)",
+   "translated_at": "2026-09-25",
+   "reviewed_by": null,
+   "reviewed_at": null
+  },
+  "1c813910983f": {
+   "type": "item",
+   "zh": "- **可解性判定**：每个种子在标称条件（无打滑、无噪声）下由 A* 顺序规划 5 段；任一段无解、或总步数 > 80，即判**不可解并剔除**。批次自 seed0 起逐个筛选到凑够 N，剔除种子与理由、剔除率写入 run 目录 `seeds.csv`／`meta.json`。首批 100 个种子（1000–1099）剔除 3 个（3%）：1005 第 3 段无解、1019 超 80 步、1056 第 1 段无解。",
+   "en": "- **Solvability test**: for each seed, A* plans the 5 legs in sequence under nominal conditions (no slip, no noise); if any leg has no path, or the total exceeds 80 steps, the seed is judged **unsolvable and rejected**. A batch screens seeds one by one from seed0 until N are collected; the rejected seeds with reasons and the rejection rate are written to `seeds.csv` / `meta.json` in the run directory. Of the first 100 seeds (1000–1099), 3 were rejected (3%): 1005 no path on leg 3, 1019 over 80 steps, 1056 no path on leg 1.",
+   "reviewed": false,
+   "translator": "claude-code (Claude Fable 5.1, in-session)",
+   "translated_at": "2026-09-25",
+   "reviewed_by": null,
+   "reviewed_at": null
+  },
+  "55e7bfd03d60": {
+   "type": "item",
+   "zh": "- 三者成本 0、不进榜单；榜单只列模型。A* 的标称步数（seeds.csv `astar_steps`）可作每个种子的难度参考。",
+   "en": "- All three cost nothing and are not ranked; the leaderboard lists models only. The nominal A* step count (`astar_steps` in seeds.csv) can serve as a difficulty reference for each seed.",
+   "reviewed": false,
+   "translator": "claude-code (Claude Fable 5.1, in-session)",
+   "translated_at": "2026-09-25",
+   "reviewed_by": null,
+   "reviewed_at": null
+  },
+  "241824f46853": {
+   "type": "heading",
+   "zh": "## 6 被测模型与单价（Q3；真源 `harness/models.yaml`，2026-09-25 官网核对）",
+   "en": "## 6 Models under test and unit prices (Q3; source of truth `harness/models.yaml`, checked against vendor sites on 2026-09-25)",
+   "reviewed": false,
+   "translator": "claude-code (Claude Fable 5.1, in-session)",
+   "translated_at": "2026-09-25",
+   "reviewed_by": null,
+   "reviewed_at": null
+  },
+  "21fe2b39cb25": {
+   "type": "table",
+   "zh": "| 模型 | 厂商／地区 | 接入 | 单价（美元/百万 token，in／out） | N=30 预计花费 |\n|---|---|---|---|---|\n| qwen3-vl-plus（≡ qwen3-vl-plus-2025-12-19） | 阿里云百炼／中国 | OpenAI 兼容端点，思考关闭 | ¥1／¥10（0–32K 档）≈ $0.141／$1.408（按 ¥7.1） | ≈ $0.3 |\n| claude-opus-5 | Anthropic／海外 | 官方 SDK，effort=low | $5／$25 | ≈ $15（思考 ≈200 tok/次；若思考≈0 则 ≈ $8） |\n| gemini-3.8-flash | Google／海外 | OpenAI 兼容端点，reasoning_effort=low | $0.75／$3.75（优惠价至 2026-12-31，之后 $1.5／$7.5） | ≈ $3 |",
+   "en": "| Model | Vendor / region | Access | Unit price (USD per million tokens, in / out) | Estimated cost at N=30 |\n|---|---|---|---|---|\n| qwen3-vl-plus (≡ qwen3-vl-plus-2025-12-19) | Alibaba Cloud Model Studio / China | OpenAI-compatible endpoint, thinking off | ¥1 / ¥10 (0–32K tier) ≈ $0.141 / $1.408 (at ¥7.1 per USD) | ≈ $0.3 |\n| claude-opus-5 | Anthropic / overseas | official SDK, effort=low | $5 / $25 | ≈ $15 (thinking ≈200 tokens per call; ≈ $8 if thinking ≈ 0) |\n| gemini-3.8-flash | Google / overseas | OpenAI-compatible endpoint, reasoning_effort=low | $0.75 / $3.75 (promotional price until 2026-12-31, then $1.5 / $7.5) | ≈ $3 |",
+   "reviewed": false,
+   "translator": "claude-code (Claude Fable 5.1, in-session)",
+   "translated_at": "2026-09-25",
+   "reviewed_by": null,
+   "reviewed_at": null
+  },
+  "6437bdcef2ad": {
+   "type": "para",
+   "zh": "估算口径（P5）：每回合 ≈60 步＝60 次调用，N=30 → 1,800 次/模型；每次输入 ≈700 token（图像 194–266 ＋ system ≈330 ＋ instruction 与 note ≈150）。三模型合计 **≈ $19**，在 $60 试跑上限内；备选（glm-5v-turbo、glm-4.6v、qwen3-vl-flash、claude-sonnet-5、gpt-6-sol）已抄价但未核 ID／端点，默认拒跑。",
+   "en": "Estimation basis (P5): ≈60 steps = 60 calls per episode, N=30 → 1,800 calls per model; ≈700 input tokens per call (image 194–266 + system ≈330 + instruction and notes ≈150). The three models together come to **≈ $19**, within the $60 pilot cap; the alternates (glm-5v-turbo, glm-4.6v, qwen3-vl-flash, claude-sonnet-5, gpt-6-sol) have prices copied but IDs / endpoints unverified, and refuse to run by default.",
+   "reviewed": false,
+   "translator": "claude-code (Claude Fable 5.1, in-session)",
+   "translated_at": "2026-09-25",
+   "reviewed_by": null,
+   "reviewed_at": null
+  },
+  "68d31dedae49": {
+   "type": "heading",
+   "zh": "## 7 试跑与正式 N（Q4／Q5）",
+   "en": "## 7 Pilot run and formal N (Q4 / Q5)",
+   "reviewed": false,
+   "translator": "claude-code (Claude Fable 5.1, in-session)",
+   "translated_at": "2026-09-25",
+   "reviewed_by": null,
+   "reviewed_at": null
+  },
+  "5eb5c3de80a8": {
+   "type": "item",
+   "zh": "- **试跑 01**：3 模型 × N=30，同一组筛过的种子；预算上限 $60，累计 ≥90% 或再跑一回合会越界即停并报告；跑前每模型真实调用 1 次探活。命令与记录见 `docs/pilot-run-01.md`。",
+   "en": "- **Pilot run 01**: 3 models × N=30 on the same screened set of seeds; budget cap $60, stopping and reporting once cumulative spend reaches ≥90% or one more episode would exceed the cap; before the run, each model gets 1 real preflight call. Command and records in `docs/pilot-run-01.md`.",
+   "reviewed": false,
+   "translator": "claude-code (Claude Fable 5.1, in-session)",
+   "translated_at": "2026-09-25",
+   "reviewed_by": null,
+   "reviewed_at": null
+  },
+  "2a8f2469b835": {
+   "type": "item",
+   "zh": "- **正式 N 规则（Q5）**：单期仿真总花费 ≤ **$150**。取 N = ⌊0.8 × 150 ÷ Σ_m c_m⌋ 向下取 10 的倍数，上限 100、下限 30；c_m＝模型 m 在试跑 01 的**实测**每回合美元成本（含探活与重问）。按 §6 估算 Σc ≈ 0.51＋0.10＋0.01 ≈ $0.62/回合套 → N ≈ 190 → **取上限 N=100**（预计每期 ≈ $62）；**此值待试跑实测后改写**。",
+   "en": "- **Formal N rule (Q5)**: total simulation spend per edition ≤ **$150**. N = ⌊0.8 × 150 ÷ Σ_m c_m⌋ rounded down to a multiple of 10, capped at 100 with a floor of 30; c_m = the **measured** USD cost per episode of model m in pilot run 01 (including preflight and re-asks). By the §6 estimate Σc ≈ 0.51 + 0.10 + 0.01 ≈ $0.62 per episode-set → N ≈ 190 → **take the cap, N=100** (≈ $62 per edition); **this value is to be rewritten after the pilot is measured**.",
+   "reviewed": false,
+   "translator": "claude-code (Claude Fable 5.1, in-session)",
+   "translated_at": "2026-09-25",
+   "reviewed_by": null,
+   "reviewed_at": null
+  },
+  "af468275e3cd": {
+   "type": "item",
+   "zh": "- 发布日节奏（ONE-017 卡 D）：发布日 N=10 快评，7 日内 N=正式 N。",
+   "en": "- Release-day cadence (ONE-017 card D): a quick take at N=10 on release day, then N = formal N within 7 days.",
+   "reviewed": true,
+   "translator": "claude-code (Claude Fable 5.1, in-session)",
+   "translated_at": "2026-09-25",
+   "reviewed_by": "claude-code (blind back-translation check 2026-09-25)",
+   "reviewed_at": "2026-09-25"
+  },
+  "df6e07b4675e": {
+   "type": "heading",
+   "zh": "## 8 版本",
+   "en": "## 8 Versions",
+   "reviewed": false,
+   "translator": "claude-code (Claude Fable 5.1, in-session)",
+   "translated_at": "2026-09-25",
+   "reviewed_by": null,
+   "reviewed_at": null
+  },
+  "5da02a7b2312": {
+   "type": "item",
+   "zh": "- **v0**（2026-09-25）：PG-001 P2–P5 接口／任务／计分／批量跑测 ＋ 补丁 3 Q1（A* 天花板、贪心降基线、可解性剔除）、Q2（提示边界、记忆固定、常量成文）、Q3（三模型与单价）、Q5（正式 N 规则）、Q6（参考单元）。",
+   "en": "- **v0** (2026-09-25): PG-001 P2–P5 interface / task / scoring / batch runner + Patch 3 Q1 (A* ceiling, greedy demoted to baseline, solvability rejection), Q2 (prompt boundary, fixed memory, constants written down), Q3 (three models and unit prices), Q5 (formal N rule), Q6 (reference unit).",
+   "reviewed": false,
+   "translator": "claude-code (Claude Fable 5.1, in-session)",
+   "translated_at": "2026-09-25",
+   "reviewed_by": null,
+   "reviewed_at": null
+  },
+  "7a2914ef9252": {
+   "type": "item",
+   "zh": "- 变更记录：`prompt_v0.md` 在 system 加牌边框色说明、instruction 加 `({next_color} border)`、注改提示边界口径（sha256 `f120b825…f005b` → `b9006b83…08b40`）；此前无任何模型批次使用旧版，无需重跑。`twin/arena.py` 起点抖动改为夹在墙内（外接圆＋3 cm），否则约 4 成种子一出生即顶墙；布局随机流不变、只改越界起点。",
+   "en": "- Change log: `prompt_v0.md` adds the sign border colors to the system prompt, adds `({next_color} border)` to the instruction, and rewords the prompt boundary note (sha256 `f120b825…f005b` → `b9006b83…08b40`); no model batch ever used the old version, so no re-run is needed. `twin/arena.py` now clamps the start-pose jitter inside the walls (circumscribed circle + 3 cm); otherwise about 40% of seeds spawned already touching a wall. The layout random stream is unchanged; only out-of-bounds starts are moved.",
+   "reviewed": false,
+   "translator": "claude-code (Claude Fable 5.1, in-session)",
+   "translated_at": "2026-09-25",
+   "reviewed_by": null,
+   "reviewed_at": null
+  },
+  "23628f1332a2": {
+   "type": "quote",
+   "zh": "> 依据：DEC-20260925-04（Course 01 规格）／05（Twin-01 做不做清单）；PG-001 P2–P5 ＋ 补丁 3 Q1–Q6 ＋ **补丁 4 P1–P3（含修订 1／2）**（CSO 2026-09-25）。\n> 状态：**v0 预注册**。**冻结物＝以下五件＋ git tag `protocol-v0-prereg`**：①本文（规则区；§9.2 结果区除外）②`protocol/prompt_v0.md`（sha256 `b9006b83327d4fc3c57026601542ff811697cf335b2b5e56a452a7ecb5d08b40`）③`harness/models.yaml` ④`episodes/runs/2026-09-25-pilot01-baselines/seeds.csv`＋`meta.json`（种子集与筛选记录）⑤`twin/planner.py`（可解性判定与天花板规划器）。孪生配置 `twin/configs/course01.yaml` sha256 `7fcf28e75212b7c62a569916574035f9d97988df4e1c88ac5b2641f20d4fcfd0` 随 meta.json 冻结。\n> **tag 之后动任一规则＝v1 新一季**，整批重跑；填 §9.2 的实测数字属结果、不属规则。真模型批次开跑前先 `bash tools/prereg_check.sh`：工作树规则区与 tag 零差异才开跑。只在每期真机后升版、每次只修迁移差最大一项（DEC-20260925-05）。\n> 中英双语渲染属 PG-003（`protocol/v0.en.md` 由 `tools/render_en.py` 生成）；本文为中文真源。",
+   "en": "> Basis: DEC-20260925-04 (Course 01 spec) / 05 (Twin-01 do / don't list); PG-001 P2–P5 + Patch 3 Q1–Q6 + **Patch 4 P1–P3 (incl. revisions 1/2)** (CSO 2026-09-25).\n> Status: **v0 pre-registered**. **Frozen artifacts = the five items below + git tag `protocol-v0-prereg`**: ① this document (rules area; §9.2 results area excluded) ② `protocol/prompt_v0.md` (sha256 `b9006b83327d4fc3c57026601542ff811697cf335b2b5e56a452a7ecb5d08b40`) ③ `harness/models.yaml` ④ `episodes/runs/2026-09-25-pilot01-baselines/seeds.csv` + `meta.json` (seed set and screening record) ⑤ `twin/planner.py` (solvability check and ceiling planner). The twin config `twin/configs/course01.yaml`, sha256 `7fcf28e75212b7c62a569916574035f9d97988df4e1c88ac5b2641f20d4fcfd0`, is frozen with meta.json.\n> **Changing any rule after the tag = v1, a new season**, with the whole batch rerun; filling in the measured numbers of §9.2 is a result, not a rule. Before any real-model batch run `bash tools/prereg_check.sh`: the working tree's rules area must show zero difference from the tag. The twin is upgraded only after each real-robot edition, fixing the single largest transfer gap each time (DEC-20260925-05).\n> Bilingual rendering belongs to PG-003 (`protocol/v0.en.md` is generated by `tools/render_en.py`); this document is the Chinese source of truth.",
+   "reviewed": true,
+   "translator": "claude-code",
+   "translated_at": "2026-09-25",
+   "reviewed_by": "claude-code (blind back-translation check 2026-09-25)",
+   "reviewed_at": "2026-09-25"
+  },
+  "3889ca70692b": {
+   "type": "item",
+   "zh": "- 布局全部由种子决定（起点抖动、检查点、障碍、域随机化：光照／纹理／打滑／运动噪声）。同一批次所有被测对象共用同一组种子（配对比较）；**不可解种子剔除并记剔除率**（§6）。",
+   "en": "- The layout is fully determined by the seed (start jitter, checkpoints, obstacles, domain randomization: lighting / textures / slip / motion noise). All systems under test in one batch share the same seed set (paired comparison); **unsolvable seeds are rejected and the rejection rate recorded** (§6).",
+   "reviewed": true,
+   "translator": "claude-code",
+   "translated_at": "2026-09-25",
+   "reviewed_by": "claude-code (blind back-translation check 2026-09-25)",
+   "reviewed_at": "2026-09-25"
+  },
+  "9672a18aa7ad": {
+   "type": "table",
+   "zh": "| 常量 | 值 | 说明 |\n|---|---|---|\n| 到达半径 | **0.40 m** | 中心入圈即到达；真机俯拍同值。下限＝步长 0.20＋车身半长 0.126＋柱半径 0.03 ≈ 0.36，0.30 时直行接近必撞柱 |\n| 回合上限 | **80 步** | 每步一次模型调用；超限回合结束（未成功） |\n| 碰撞计数 | 接触步数 与 **接触起始事件数** 两列 | 接触步数＝车身与墙／柱／障碍在一个动作内发生接触的动作数（持续贴着每步都计）；接触起始事件＝前一动作无接触、本动作有接触计 1（持续贴着算 1 次）。**仿真分用事件数**（§5） |\n| 碰撞扣分（旧口径） | 0.5 分/接触步 | 只用于对照列 total_score（检查点分 − 罚分，可为负）；不排序 |\n| 检查点分 | 0–5 连续 | 已到达数 ＋ 向下一检查点最佳进度 (1 − d_best/d_start)，裁到 [0, 0.99]；对照列 |\n| **路程比** | 实际轨迹长 ÷ 理想路径长 | 理想路径＝折线 start→c1→…→c5 各段长之和，**每段扣除一个到达半径**（入圈即算到达，不必走到柱心）；只对成功回合汇总；**不进仿真分** |\n| 观测图像 | 渲染 640×480 → 送模前等比缩到宽 512（512×384）JPEG q85 | 各模型同一张图；真机相机分辨率回填后同规则缩放 |\n| **记忆** | 模型自己最近 **3 条 note**，按时间顺序回传 | 对所有模型固定（`harness/task.py` MEMORY_NOTES），`models.yaml` 不可覆盖；无对话历史，每步独立请求 |\n| **提示边界** | 下一检查点提示**只含身份（编号）与外观（牌边框色）** | **不含方位、距离、朝向**；由计分器真值填入（真机由俯拍判定给出） |\n| 不可解析／API 错 | 同一观测重问 2 次，仍不行本回合结束 | 分别计 invalid_outputs／api_errors |\n| 拒答 | 记拒答，不接 fallback | 如 stop_reason=refusal |\n| 成本 | 每次调用按官网单价计，美元与人民币并列（¥7.1/$，`models.yaml` `_settings`） | 单价未核实（price_verified=false）默认拒跑；峰谷两档按北京时间计并记 price_tier |\n| 时延 | 每次调用 API 侧时延（发出请求→收到完整响应） | 汇总均值与 P95 |",
+   "en": "| Constant | Value | Notes |\n|---|---|---|\n| Reach radius | **0.40 m** | Reached once the robot center enters the circle; the real-robot overhead camera uses the same value. Lower bound = step 0.20 + half body length 0.126 + post radius 0.03 ≈ 0.36 m; with a radius of 0.30 m a straight-line approach would necessarily hit the post |\n| Step cap | **80 steps** | One model call per step; the episode ends (unsuccessful) when the cap is hit |\n| Collision counting | Two columns: contact steps and **contact-onset events** | Contact steps = number of actions during which the body touched a wall / post / obstacle (counted every step while touching); a contact-onset event = 1 when the previous action had no contact and this one does (staying in contact counts once). **The sim score uses the event count** (§5) |\n| Collision penalty (legacy) | 0.5 points per contact step | Only for the comparison column total_score (checkpoint score − penalty, may be negative); not used for ranking |\n| Checkpoint score | 0–5, continuous | Checkpoints reached + best progress toward the next checkpoint (1 − d_best/d_start), clipped to [0, 0.99]; comparison column |\n| **Path ratio** | Actual path length ÷ ideal path length | Ideal path = sum of the polyline segments start→c1→…→c5, **each segment minus one reach radius** (entering the circle counts as reached; no need to drive to the post center); aggregated over successful episodes only; **not part of the sim score** |\n| Observation image | Rendered 640×480 → scaled to width 512 (512×384) JPEG q85 before sending | The same image for every model; after the real camera resolution is filled in, the same scaling rule applies |\n| **Memory** | The model's own last **3 notes**, returned in time order | Fixed for all models (`harness/task.py` MEMORY_NOTES); `models.yaml` cannot override it; no conversation history, every step is an independent request |\n| **Prompt boundary** | The next-checkpoint hint **contains only identity (number) and appearance (sign border color)** | **No bearing, distance or heading**; filled in from the scorer's ground truth (on the real robot from the overhead camera) |\n| Unparsable / API error | Re-ask up to 2 times on the same observation, then end the episode | Counted as invalid_outputs / api_errors respectively |\n| Refusal | Recorded as a refusal, no fallback | e.g. stop_reason=refusal |\n| Cost | Every call priced at the vendor's list price, USD and CNY side by side (¥7.1/$, `models.yaml` `_settings`) | An unverified price (price_verified=false) blocks the run by default; peak / off-peak tiers are applied by Beijing time and recorded as price_tier |\n| Latency | API-side latency per call (request sent → full response received) | Aggregated as mean and P95 |",
+   "reviewed": true,
+   "translator": "claude-code",
+   "translated_at": "2026-09-25",
+   "reviewed_by": "claude-code (blind back-translation check 2026-09-25)",
+   "reviewed_at": "2026-09-25"
+  },
+  "05e7d00cc638": {
+   "type": "heading",
+   "zh": "## 5 仿真分（榜单分；补丁 4 P1）",
+   "en": "## 5 Sim score (leaderboard score; Patch 4 P1)",
+   "reviewed": true,
+   "translator": "claude-code",
+   "translated_at": "2026-09-25",
+   "reviewed_by": "claude-code (blind back-translation check 2026-09-25)",
+   "reviewed_at": "2026-09-25"
+  },
+  "e27ad9e0a94a": {
+   "type": "para",
+   "zh": "**计分单一真源＝`harness/scoring.py`**；发布栈（`tools/build_site.py`）只读 `summary.csv` 的 `sim_score_mean`，不另写公式。真机分同一公式（P、E 由俯拍判定）。",
+   "en": "**Single source of truth for scoring = `harness/scoring.py`**; the publishing stack (`tools/build_site.py`) only reads `sim_score_mean` from `summary.csv` and implements no formula of its own. The real-robot score uses the same formula (P and E judged by the overhead camera).",
+   "reviewed": true,
+   "translator": "claude-code",
+   "translated_at": "2026-09-25",
+   "reviewed_by": "claude-code (blind back-translation check 2026-09-25)",
+   "reviewed_at": "2026-09-25"
+  },
+  "9c8df3777c7d": {
+   "type": "heading",
+   "zh": "### 5.1 单回合",
+   "en": "### 5.1 Single episode",
+   "reviewed": true,
+   "translator": "claude-code",
+   "translated_at": "2026-09-25",
+   "reviewed_by": "claude-code (blind back-translation check 2026-09-25)",
+   "reviewed_at": "2026-09-25"
+  },
+  "95cd72211438": {
+   "type": "para",
+   "zh": "s = max(0, P − C)，s ∈ [0, 1]",
+   "en": "s = max(0, P − C), s ∈ [0, 1]",
+   "reviewed": true,
+   "translator": "claude-code",
+   "translated_at": "2026-09-25",
+   "reviewed_by": "claude-code (blind back-translation check 2026-09-25)",
+   "reviewed_at": "2026-09-25"
+  },
+  "007cb15b68db": {
+   "type": "item",
+   "zh": "- **P（成功项）＝到达检查点数 ÷ 5** ∈ {0, 0.2, 0.4, 0.6, 0.8, 1.0}，全到＝1。按到达占比而非全有全无，防止视觉模型一列全零。（令文①写「每段 1/3」，与 5 检查点课程不合，按占比口径每段 1/5 执行；请 CSO 确认。）",
+   "en": "- **P (success term) = checkpoints reached ÷ 5** ∈ {0, 0.2, 0.4, 0.6, 0.8, 1.0}; all reached = 1. Share of checkpoints reached rather than all-or-nothing, to keep a vision model's column from being all zeros. (The order's item ① says \"1/3 per segment\", which does not fit a 5-checkpoint course; implemented as 1/5 per segment under the share rule; CSO to confirm.)",
+   "reviewed": true,
+   "translator": "claude-code",
+   "translated_at": "2026-09-25",
+   "reviewed_by": "claude-code (blind back-translation check 2026-09-25)",
+   "reviewed_at": "2026-09-25"
+  },
+  "abf0fd22e2e8": {
+   "type": "item",
+   "zh": "- **C（碰撞项）＝min(0.1 × E, 0.5)**：E＝**接触起始事件数**（不是接触步数）；每事件扣 0.1（＝旧口径 0.5 分/次 ÷ 5 分满分）；**单回合扣分封顶 0.5**；总分**不低于 0**。",
+   "en": "- **C (collision term) = min(0.1 × E, 0.5)**: E = **number of contact-onset events** (not contact steps); 0.1 per event (= the legacy 0.5 points per collision ÷ the 5-point maximum); **the per-episode penalty is capped at 0.5**; the **total score never drops below 0**.",
+   "reviewed": true,
+   "translator": "claude-code",
+   "translated_at": "2026-09-25",
+   "reviewed_by": "claude-code (blind back-translation check 2026-09-25)",
+   "reviewed_at": "2026-09-25"
+  },
+  "df1c6b31fa80": {
+   "type": "item",
+   "zh": "- 路程比不进仿真分：分母＝理想路径长（折线扣到达半径），样本＝成功回合，另列。",
+   "en": "- The path ratio is not part of the sim score: denominator = ideal path length (polyline minus the reach radius), sample = successful episodes, reported as a separate column.",
+   "reviewed": true,
+   "translator": "claude-code",
+   "translated_at": "2026-09-25",
+   "reviewed_by": "claude-code (blind back-translation check 2026-09-25)",
+   "reviewed_at": "2026-09-25"
+  },
+  "63a88bd63cf7": {
+   "type": "heading",
+   "zh": "### 5.2 N 回合聚合",
+   "en": "### 5.2 Aggregation over N episodes",
+   "reviewed": true,
+   "translator": "claude-code",
+   "translated_at": "2026-09-25",
+   "reviewed_by": "claude-code (blind back-translation check 2026-09-25)",
+   "reviewed_at": "2026-09-25"
+  },
+  "96d1f4768e29": {
+   "type": "para",
+   "zh": "仿真分(N)＝同一组筛过种子上 N 个 s 的**算术平均**，附 95% 置信半宽 1.96·sd/√N（sd＝样本标准差）；成功率、碰撞事件均值、路程比作解释列。榜单按仿真分／真机分排序；迁移差＝真机分 − 仿真分（同模型、同种子集）。",
+   "en": "Sim score(N) = the **arithmetic mean** of the N single-episode scores s on the same screened seed set, with a 95% confidence half-width 1.96·sd/√N (sd = sample standard deviation); success rate, mean collision events and path ratio are explanatory columns. The leaderboard ranks by sim score / real-robot score; transfer gap = real-robot score − sim score (same model, same seed set).",
+   "reviewed": true,
+   "translator": "claude-code",
+   "translated_at": "2026-09-25",
+   "reviewed_by": "claude-code (blind back-translation check 2026-09-25)",
+   "reviewed_at": "2026-09-25"
+  },
+  "00098a52015d": {
+   "type": "heading",
+   "zh": "### 5.3 自检（N=30 基线批，`episodes/runs/2026-09-25-pilot01-baselines/`）",
+   "en": "### 5.3 Self-check (N=30 baseline batch, `episodes/runs/2026-09-25-pilot01-baselines/`)",
+   "reviewed": true,
+   "translator": "claude-code",
+   "translated_at": "2026-09-25",
+   "reviewed_by": "claude-code (blind back-translation check 2026-09-25)",
+   "reviewed_at": "2026-09-25"
+  },
+  "360c5ba41081": {
+   "type": "table",
+   "zh": "| 版本 | 单回合公式 | astar | greedy | random | 判据 astar＞greedy＞random 且 ∈[0,1] |\n|---|---|---|---|---|---|\n| v1 旧口径直译 | (检查点分 − 0.5×接触步数) ÷ 5，不裁 | +1.000 | −1.245 | −2.934 | 单调 ✓；区间 ✗（两项为负，最低 −7.73）→ **公式缺陷** |\n| **v2 采用** | max(0, 到达占比 − min(0.1×接触事件数, 0.5)) | **1.000 ± 0.000** | **0.707 ± 0.106** | **0.010 ± 0.014** | 单调 ✓；区间 ✓ |",
+   "en": "| Version | Single-episode formula | astar | greedy | random | Criterion astar > greedy > random and ∈ [0,1] |\n|---|---|---|---|---|---|\n| v1 legacy rule transcribed | (checkpoint score − 0.5 × contact steps) ÷ 5, unclipped | +1.000 | −1.245 | −2.934 | Monotone ✓; range ✗ (two negative, minimum −7.73) → **formula defect** |\n| **v2 adopted** | max(0, share reached − min(0.1 × contact events, 0.5)) | **1.000 ± 0.000** | **0.707 ± 0.106** | **0.010 ± 0.014** | Monotone ✓; range ✓ |",
+   "reviewed": true,
+   "translator": "claude-code",
+   "translated_at": "2026-09-25",
+   "reviewed_by": "claude-code (blind back-translation check 2026-09-25)",
+   "reviewed_at": "2026-09-25"
+  },
+  "07865b052be1": {
+   "type": "para",
+   "zh": "同批：接触事件/回合 astar 0.0、greedy 2.1、random 5.0（接触步数 0.0／21.5／30.7）；到达占比 1.000／0.900／0.087。v1 失败原因＝接触步数无上限、总分不裁负；v2 按令文改为「碰撞按接触起始事件计、单回合扣分封顶、总分不低于 0」。",
+   "en": "Same batch: contact events per episode astar 0.0, greedy 2.1, random 5.0 (contact steps 0.0 / 21.5 / 30.7); share reached 1.000 / 0.900 / 0.087. v1 fails because contact steps are unbounded and the total score is not clipped at zero; v2 follows the order: \"count collisions as contact-onset events, cap the per-episode penalty, total never below 0\".",
+   "reviewed": true,
+   "translator": "claude-code",
+   "translated_at": "2026-09-25",
+   "reviewed_by": "claude-code (blind back-translation check 2026-09-25)",
+   "reviewed_at": "2026-09-25"
+  },
+  "9cf2b21a717b": {
+   "type": "heading",
+   "zh": "## 6 基线、天花板与可解性（Q1；读真值·非视觉，与模型行分栏）",
+   "en": "## 6 Baselines, ceiling and solvability (Q1; ground truth, non-visual, shown apart from model rows)",
+   "reviewed": true,
+   "translator": "claude-code",
+   "translated_at": "2026-09-25",
+   "reviewed_by": "claude-code (blind back-translation check 2026-09-25)",
+   "reviewed_at": "2026-09-25"
+  },
+  "bc2a1cd2e7bc": {
+   "type": "table",
+   "zh": "| 名 | 性质 | 读真值 | 说明 |\n|---|---|---|---|\n| random | 基线（下界） | 否（不看图也不读真值） | forward 权重 2、left／right 各 1、每步 1% 概率 stop；成本 0 |\n| greedy | 基线 | **是（非视觉）** | 贪心真值导航：朝下一检查点转向、对准即前进，不避障（PG-001 原 oracle，补丁 3 降为基线）；成本 0 |\n| **astar** | **天花板基准** | **是（非视觉）** | 已知地图 A*：在离散动作格上搜索到下一检查点的最少动作序列（`twin/planner.py`），碰撞模型精确到车身矩形＋0.02 m 安全余量；读真值（布局、位姿、该回合打滑系数）＝「全知」上界；余下计划每步从真实位姿重放复核不过即重规划；成本 0。基线批 N=30：仿真分 1.000、成功 1.00、碰撞事件 0、路程比 1.27 |",
+   "en": "| Name | Role | Reads ground truth | Notes |\n|---|---|---|---|\n| random | Baseline (lower bound) | No (sees neither the image nor the ground truth) | forward weight 2, left / right 1 each, 1% chance of stop per step; zero cost |\n| greedy | Baseline | **Yes (non-visual)** | Greedy ground-truth navigation: turn toward the next checkpoint, drive when aligned, no obstacle avoidance (the original PG-001 oracle, demoted to baseline in Patch 3); zero cost |\n| **astar** | **Ceiling baseline** | **Yes (non-visual)** | A* on the known map: the shortest action sequence to the next checkpoint on the discrete action lattice (`twin/planner.py`), collision model exact to the body rectangle plus a 0.02 m safety margin; reads ground truth (layout, pose, the episode's slip factor) = an \"omniscient\" upper bound; the remaining plan is re-validated from the true pose every step and replanned when it fails; zero cost. Baseline batch N=30: sim score 1.000, success 1.00, collision events 0, path ratio 1.27 |",
+   "reviewed": true,
+   "translator": "claude-code",
+   "translated_at": "2026-09-25",
+   "reviewed_by": "claude-code (blind back-translation check 2026-09-25)",
+   "reviewed_at": "2026-09-25"
+  },
+  "c0e68eae4551": {
+   "type": "item",
+   "zh": "- **可解性判定**：每个种子在标称条件（无打滑、无噪声）下由 A* 顺序规划 5 段；任一段无解、或总步数 > 80，即判**不可解并剔除**。批次自 seed0 起逐个筛选到凑够 N，剔除种子与理由、剔除率写入 run 目录 `seeds.csv`／`meta.json`。首批 100 个种子（1000–1099）剔除 3 个（3%）：1005 第 3 段无解、1019 超 80 步、1056 第 1 段无解；冻结种子集＝1000–1031 去 1005／1019 的 30 个。",
+   "en": "- **Solvability check**: for each seed, A* plans the 5 legs in order under nominal conditions (no slip, no noise); if any leg has no path or the total exceeds 80 steps, the seed is **unsolvable and rejected**. A batch screens seeds one by one from seed0 until N are collected; rejected seeds, reasons and the rejection rate are written to the run directory's `seeds.csv` / `meta.json`. Of the first 100 seeds (1000–1099) 3 were rejected (3%): 1005 no path on leg 3, 1019 over 80 steps, 1056 no path on leg 1; the frozen seed set = the 30 seeds 1000–1031 minus 1005 / 1019.",
+   "reviewed": true,
+   "translator": "claude-code",
+   "translated_at": "2026-09-25",
+   "reviewed_by": "claude-code (blind back-translation check 2026-09-25)",
+   "reviewed_at": "2026-09-25"
+  },
+  "219b6cdc3648": {
+   "type": "item",
+   "zh": "- 三者成本 0、**不进榜单**，站点单列「基线与天花板（读真值·非视觉）」；榜单只列模型。A* 标称步数（seeds.csv `astar_steps`）可作每个种子的难度参考。",
+   "en": "- All three cost zero and are **not ranked on the leaderboard**; the site lists them separately as \"Baselines & ceiling (ground truth, non-visual)\"; the leaderboard lists models only. The A* nominal step count (seeds.csv `astar_steps`) can serve as a per-seed difficulty reference.",
+   "reviewed": true,
+   "translator": "claude-code",
+   "translated_at": "2026-09-25",
+   "reviewed_by": "claude-code (blind back-translation check 2026-09-25)",
+   "reviewed_at": "2026-09-25"
+  },
+  "34f75a1726ff": {
+   "type": "heading",
+   "zh": "## 7 被测模型：配置即身份、首季名单（补丁 4 P2 修订 1／2；真源 `harness/models.yaml`）",
+   "en": "## 7 Models under test: configuration is identity, first-season roster (Patch 4 P2 revisions 1/2; source of truth `harness/models.yaml`)",
+   "reviewed": true,
+   "translator": "claude-code",
+   "translated_at": "2026-09-25",
+   "reviewed_by": "claude-code (blind back-translation check 2026-09-25)",
+   "reviewed_at": "2026-09-25"
+  },
+  "e5064b843010": {
+   "type": "para",
+   "zh": "**配置即身份**：榜单行名＝**厂商模型 ID＋思考档＋端点（官方／聚合）**，改任一项＝新行，不覆盖旧行。行名同时是 `models.yaml` 的键、`run_batch --agents` 的名字与 `summary.csv` 的 `agent`。",
+   "en": "**Configuration is identity**: a leaderboard row name = **vendor model ID + thinking mode + endpoint (official / aggregator)**; changing any one of them = a new row, never overwriting the old one. The row name is also the `models.yaml` key, the name passed to `run_batch --agents` and the `agent` in `summary.csv`.",
+   "reviewed": true,
+   "translator": "claude-code",
+   "translated_at": "2026-09-25",
+   "reviewed_by": "claude-code (blind back-translation check 2026-09-25)",
+   "reviewed_at": "2026-09-25"
+  },
+  "9257b855eea5": {
+   "type": "para",
+   "zh": "**首季名单（首期榜 10-29）＝国产三厂各一，均「思考关·官方端点」**（单价 2026-09-25 官网 curl 落盘核对；人民币 ÷ 7.1 ≈ 美元）：",
+   "en": "**First-season roster (Edition 01, 10-29) = one model from each of three Chinese vendors, all \"thinking off · official endpoint\"** (prices verified on 2026-09-25 against vendor pages saved with curl; CNY ÷ 7.1 ≈ USD):",
+   "reviewed": true,
+   "translator": "claude-code",
+   "translated_at": "2026-09-25",
+   "reviewed_by": "claude-code (blind back-translation check 2026-09-25)",
+   "reviewed_at": "2026-09-25"
+  },
+  "108450a72237": {
+   "type": "table",
+   "zh": "| 行名 | 厂商 | 思考档 | 端点 | 单价（元／百万 token，in／out） | ≈ 美元 | N=30 预计（≈60 次/回合、700 tok 入、40 tok 出） |\n|---|---|---|---|---|---|---|\n| qwen3-vl-plus · 思考关 · 官方 | 阿里云百炼（≡ qwen3-vl-plus-2025-12-19） | 关（enable_thinking=false） | 官方 dashscope 兼容端点 | ¥1／¥10（0–32K 档） | $0.141／$1.408 | ≈ ¥2.0（$0.28） |\n| glm-5v-turbo · 思考关 · 官方 | 智谱 BigModel | 关（thinking.type=disabled） | 官方 open.bigmodel.cn/api/paas/v4 | ¥5／¥22（输入 0–32K 档） | $0.70／$3.10 | ≈ ¥7.9（$1.1） |\n| deepseek-flash · 思考关 · 官方 | DeepSeek（＝DeepSeek-V4.1-Flash，原生视觉，2026-09-10 发布） | 关（thinking.type=disabled；官网默认开、effort=high） | 官方 api.deepseek.com | **峰谷两档**：闲时 ¥1／¥4，高峰 ¥2／¥8（高峰＝北京时间工作日 9–12、14–18） | $0.14／$0.56；$0.28／$1.13 | 闲时 ≈ ¥1.6（$0.23）、高峰 ≈ ¥3.2（$0.45）；**runbook 排闲时段**，成本列注明 price_tier |\n| **合计** | | | | | | **≈ ¥11.5–13.1 ≈ $1.6–1.8**（上限 $60 不动） |",
+   "en": "| Row | Vendor | Thinking | Endpoint | Price (CNY per million tokens, in / out) | ≈ USD | N=30 estimate (≈60 calls per episode, 700 tokens in, 40 out) |\n|---|---|---|---|---|---|---|\n| qwen3-vl-plus · thinking off · official | Alibaba Cloud Model Studio (≡ qwen3-vl-plus-2025-12-19) | off (enable_thinking=false) | official DashScope compatible endpoint | ¥1 / ¥10 (0–32K tier) | $0.141 / $1.408 | ≈ ¥2.0 ($0.28) |\n| glm-5v-turbo · thinking off · official | Zhipu BigModel | off (thinking.type=disabled) | official open.bigmodel.cn/api/paas/v4 | ¥5 / ¥22 (input 0–32K tier) | $0.70 / $3.10 | ≈ ¥7.9 ($1.1) |\n| deepseek-flash · thinking off · official | DeepSeek (= DeepSeek-V4.1-Flash, native vision, released 2026-09-10) | off (thinking.type=disabled; the vendor default is on with effort=high, so it is switched off explicitly) | official api.deepseek.com | **Two price tiers**: off-peak ¥1 / ¥4, peak ¥2 / ¥8 (peak = Beijing-time weekdays 9–12, 14–18) | $0.14 / $0.56; $0.28 / $1.13 | off-peak ≈ ¥1.6 ($0.23), peak ≈ ¥3.2 ($0.45); **the runbook schedules off-peak**, the cost column records price_tier |\n| **Total** | | | | | | **≈ ¥11.5–13.1 ≈ $1.6–1.8** (the $60 cap is unchanged) |",
+   "reviewed": true,
+   "translator": "claude-code",
+   "translated_at": "2026-09-25",
+   "reviewed_by": "claude-code (blind back-translation check 2026-09-25)",
+   "reviewed_at": "2026-09-25"
+  },
+  "a718471bcfb5": {
+   "type": "item",
+   "zh": "- 备胎：第三厂探活或限流不过 → 火山方舟豆包视觉款（`models.yaml` doubao 行，ID 与价待核后置 price_verified）。",
+   "en": "- Backup: if the third vendor fails preflight or rate limits → Volcengine Ark Doubao vision model (`models.yaml` doubao row; verify ID and price, then set price_verified).",
+   "reviewed": true,
+   "translator": "claude-code",
+   "translated_at": "2026-09-25",
+   "reviewed_by": "claude-code (blind back-translation check 2026-09-25)",
+   "reviewed_at": "2026-09-25"
+  },
+  "4230e49346b3": {
+   "type": "item",
+   "zh": "- 候选表（不进首季，保留不删）：glm-4.6v（¥1／¥3）、qwen3-vl-flash（¥0.15／¥1.5）为国产低价档；**Kimi K3 视觉款标「待争议澄清」**；**海外行 claude-opus-5 · effort=low（$5／$25）、gemini-3.8-flash · reasoning_effort=low（$0.75／$3.75，优惠价至 2026-12-31）标「待投稿／待合规通道」**——补丁 3「≥1 中国≥1 海外」改为「首季全国产，海外行经投稿或后续批次」（DEC-20260925-18）。",
+   "en": "- Candidate table (not in the first season, kept, not deleted): glm-4.6v (¥1 / ¥3) and qwen3-vl-flash (¥0.15 / ¥1.5) as low-price domestic tiers; **Kimi K3 vision model marked \"pending dispute clarification\"**; **overseas rows claude-opus-5 · effort=low ($5 / $25) and gemini-3.8-flash · reasoning_effort=low ($0.75 / $3.75, promotional price until 2026-12-31) marked \"pending submission / pending compliance channel\"** — Patch 3's \"≥1 Chinese, ≥1 overseas\" becomes \"first season all domestic; overseas rows via submission or later batches\" (DEC-20260925-18).",
+   "reviewed": true,
+   "translator": "claude-code",
+   "translated_at": "2026-09-25",
+   "reviewed_by": "claude-code (blind back-translation check 2026-09-25)",
+   "reviewed_at": "2026-09-25"
+  },
+  "14a4ee135df5": {
+   "type": "item",
+   "zh": "- 三家开户与密钥（主理人只做开户与充值）见 `docs/pilot-run-01.md` §1。",
+   "en": "- Account opening and keys for the three vendors (the principal only opens the accounts and tops up) are in `docs/pilot-run-01.md` §1.",
+   "reviewed": true,
+   "translator": "claude-code",
+   "translated_at": "2026-09-25",
+   "reviewed_by": "claude-code (blind back-translation check 2026-09-25)",
+   "reviewed_at": "2026-09-25"
+  },
+  "0a3b49b21285": {
+   "type": "heading",
+   "zh": "## 8 投稿规则（补丁 4 修订 1）",
+   "en": "## 8 Submission rules (Patch 4 revision 1)",
+   "reviewed": true,
+   "translator": "claude-code",
+   "translated_at": "2026-09-25",
+   "reviewed_by": "claude-code (blind back-translation check 2026-09-25)",
+   "reviewed_at": "2026-09-25"
+  },
+  "aa65357d0722": {
+   "type": "para",
+   "zh": "任何人可按**冻结协议**（tag `protocol-v0-prereg`，含 §4 常量、§5 仿真分、种子集、提示模板）跑任意模型并提交。提交物＝run 目录（`seeds.csv`／`results.csv`／`summary.csv`／`meta.json`＋完整逐步 jsonl）＋行名（模型 ID · 思考档 · 端点）。操作方用同一冻结协议复跑过的行标「**已复跑**」，否则标「**自报**」；榜单两类并列显示、`runs.csv` 的 `verified` 字段区分。基线（§6）不接受投稿；更换协议版本的提交按新一季处理。",
+   "en": "Anyone may run any model under the **frozen protocol** (tag `protocol-v0-prereg`, including the §4 constants, the §5 sim score, the seed set and the prompt template) and submit. A submission = the run directory (`seeds.csv` / `results.csv` / `summary.csv` / `meta.json` + the full step-by-step jsonl) + the row name (model ID · thinking mode · endpoint). Rows the operator has re-run under the same frozen protocol are marked \"**re-run**\", all others \"**self-reported**\"; the leaderboard shows both kinds side by side, distinguished by the `verified` field in `runs.csv`. Baselines (§6) do not accept submissions; submissions under a different protocol version are treated as a new season.",
+   "reviewed": true,
+   "translator": "claude-code",
+   "translated_at": "2026-09-25",
+   "reviewed_by": "claude-code (blind back-translation check 2026-09-25)",
+   "reviewed_at": "2026-09-25"
+  },
+  "1842371e9501": {
+   "type": "heading",
+   "zh": "## 9 试跑与正式 N（Q4／Q5）",
+   "en": "## 9 Pilot run and formal N (Q4 / Q5)",
+   "reviewed": true,
+   "translator": "claude-code",
+   "translated_at": "2026-09-25",
+   "reviewed_by": "claude-code (blind back-translation check 2026-09-25)",
+   "reviewed_at": "2026-09-25"
+  },
+  "0765c3496bcc": {
+   "type": "heading",
+   "zh": "### 9.1 规则",
+   "en": "### 9.1 Rules",
+   "reviewed": true,
+   "translator": "claude-code",
+   "translated_at": "2026-09-25",
+   "reviewed_by": "claude-code (blind back-translation check 2026-09-25)",
+   "reviewed_at": "2026-09-25"
+  },
+  "d77181d624e6": {
+   "type": "item",
+   "zh": "- **试跑 01**：首季三行 × N=30，冻结种子集；预算上限 **$60 不动**（≈¥426；预计只用 ≈¥13）；累计 ≥90% 或再跑一回合会越界即停并报告；跑前每模型真实调用 1 次探活；DeepSeek 行排闲时段。命令与记录见 `docs/pilot-run-01.md`。",
+   "en": "- **Pilot run 01**: the three first-season rows × N=30 on the frozen seed set; budget cap **$60 unchanged** (≈ ¥426; expected use ≈ ¥13); stop and report when cumulative spend reaches 90% or one more episode would exceed the cap; one real preflight call per model before the batch; the DeepSeek row is scheduled off-peak. Commands and records in `docs/pilot-run-01.md`.",
+   "reviewed": true,
+   "translator": "claude-code",
+   "translated_at": "2026-09-25",
+   "reviewed_by": "claude-code (blind back-translation check 2026-09-25)",
+   "reviewed_at": "2026-09-25"
+  },
+  "f92b002ed388": {
+   "type": "item",
+   "zh": "- **正式 N 规则（Q5）**：单期仿真总花费 ≤ **$150**。取 N = ⌊0.8 × 150 ÷ Σ_m c_m⌋ 向下取 10 的倍数，上限 100、下限 30；c_m＝行 m 在试跑 01 的**实测**每回合美元成本（含探活与重问）。按 §7 估算 Σc ≈ ¥0.39/回合套 ≈ $0.055 → 公式值 2,181 → **取上限 N=100**（预计每期 ≈ ¥39 ≈ $5.5）。",
+   "en": "- **Formal N rule (Q5)**: total simulation spend per edition ≤ **$150**. N = ⌊0.8 × 150 ÷ Σ_m c_m⌋ rounded down to a multiple of 10, capped at 100, floor 30; c_m = row m's **measured** USD cost per episode in pilot run 01 (including preflight and re-asks). By the §7 estimate Σc ≈ ¥0.39 per episode set (one episode of each of the three rows) ≈ $0.055 → formula value 2,181 → **capped at N=100** (≈ ¥39 ≈ $5.5 per edition).",
+   "reviewed": true,
+   "translator": "claude-code",
+   "translated_at": "2026-09-25",
+   "reviewed_by": "claude-code (blind back-translation check 2026-09-25)",
+   "reviewed_at": "2026-09-25"
+  },
+  "30812529e87c": {
+   "type": "heading",
+   "zh": "### 9.2 结果区（实测数字属结果不属规则；tag 后可填）",
+   "en": "### 9.2 Results area (measured numbers are results, not rules; may be filled after the tag)",
+   "reviewed": true,
+   "translator": "claude-code",
+   "translated_at": "2026-09-25",
+   "reviewed_by": "claude-code (blind back-translation check 2026-09-25)",
+   "reviewed_at": "2026-09-25"
+  },
+  "29205d72e4b8": {
+   "type": "item",
+   "zh": "- 试跑 01 实测：待密钥（三行实测每回合成本 c_m、仿真分、护栏是否触发填此处；数据源 `docs/pilot-run-01.md` §5）。",
+   "en": "- Pilot run 01 measurements: pending API keys (measured per-episode cost c_m for the three rows, sim scores and whether the budget guard fired go here; data source `docs/pilot-run-01.md` §5).",
+   "reviewed": true,
+   "translator": "claude-code",
+   "translated_at": "2026-09-25",
+   "reviewed_by": "claude-code (blind back-translation check 2026-09-25)",
+   "reviewed_at": "2026-09-25"
+  },
+  "a6aa985aa842": {
+   "type": "item",
+   "zh": "- 正式 N 改写值：待实测（规则见 §9.1，暂取 100）。",
+   "en": "- Formal N, revised value: pending measurement (rule in §9.1, provisionally 100).",
+   "reviewed": true,
+   "translator": "claude-code",
+   "translated_at": "2026-09-25",
+   "reviewed_by": "claude-code (blind back-translation check 2026-09-25)",
+   "reviewed_at": "2026-09-25"
+  },
+  "2ca61b67edc7": {
+   "type": "heading",
+   "zh": "## 10 版本",
+   "en": "## 10 Versions",
+   "reviewed": true,
+   "translator": "claude-code",
+   "translated_at": "2026-09-25",
+   "reviewed_by": "claude-code (blind back-translation check 2026-09-25)",
+   "reviewed_at": "2026-09-25"
+  },
+  "5cce550ba287": {
+   "type": "item",
+   "zh": "- **v0**（2026-09-25，预注册 tag `protocol-v0-prereg`）：PG-001 P2–P5 接口／任务／计分／批量跑测 ＋ 补丁 3 Q1（A* 天花板、贪心降基线、可解性剔除）、Q2（提示边界、记忆固定、常量成文）、Q5（正式 N 规则）、Q6（参考单元）＋ 补丁 4 P1（仿真分 v2：到达占比、事件计数、封顶、不低于 0）、P2 修订 1／2（配置即身份、首季国产三厂 Qwen／GLM／DeepSeek、投稿规则、海外行待投稿）、P3（预注册五件＋tag）。",
+   "en": "- **v0** (2026-09-25, pre-registration tag `protocol-v0-prereg`): PG-001 P2–P5 interface / task / scoring / batch runner + Patch 3 Q1 (A* ceiling, greedy demoted to baseline, solvability check with unsolvable-seed rejection), Q2 (prompt boundary, fixed memory, constants written down), Q5 (formal N rule), Q6 (reference unit) + Patch 4 P1 (sim score v2: share reached, event counting, cap, never below 0), P2 revisions 1/2 (configuration is identity, first-season domestic trio Qwen / GLM / DeepSeek, submission rules, overseas rows pending submission), P3 (five pre-registered artifacts + tag).",
+   "reviewed": true,
+   "translator": "claude-code",
+   "translated_at": "2026-09-25",
+   "reviewed_by": "claude-code (blind back-translation check 2026-09-25)",
+   "reviewed_at": "2026-09-25"
+  },
+  "90aa69b54c17": {
+   "type": "item",
+   "zh": "- 变更记录：补丁 3——`prompt_v0.md` 加牌边框色与边界注（sha `f120b825…f005b` → `b9006b83…08b40`；此前无模型批用过旧版）；`twin/arena.py` 起点抖动夹墙内。补丁 4——`harness/scoring.py` 加 `collision_events`、`sim_score`；`summary.csv` 加 `sim_score_mean`／`sim_score_ci95`／`collision_events_mean`／`cny_*`／`price_tier`／`vendor`／`thinking`／`endpoint`；榜单分列由 `total_score_mean` 换为 `sim_score_mean`（旧列保留对照）；`models.yaml` 首季三行换国产三厂并改行名。",
+   "en": "- Change log: Patch 3 — `prompt_v0.md` gains the sign border colors and the boundary note (sha `f120b825…f005b` → `b9006b83…08b40`; no model batch had used the old version); `twin/arena.py` clamps the start jitter inside the walls. Patch 4 — `harness/scoring.py` gains `collision_events` and `sim_score`; `summary.csv` gains `sim_score_mean` / `sim_score_ci95` / `collision_events_mean` / `cny_*` / `price_tier` / `vendor` / `thinking` / `endpoint`; the leaderboard score column changes from `total_score_mean` to `sim_score_mean` (old column kept for comparison); the first-season rows in `models.yaml` change to the three domestic vendors with new row names.",
+   "reviewed": true,
+   "translator": "claude-code",
+   "translated_at": "2026-09-25",
+   "reviewed_by": "claude-code (blind back-translation check 2026-09-25)",
+   "reviewed_at": "2026-09-25"
+  },
+  "c05aa59850d1": {
+   "type": "quote",
+   "zh": "> 依据：DEC-20260925-04（Course 01 规格）／05（Twin-01 做不做清单）；PG-001 P2–P5 ＋ 补丁 3 Q1–Q6 ＋ **补丁 4 P1–P3（含修订 1／2）**（CSO 2026-09-25）。\n> 状态：**v0 预注册**。**冻结物＝以下五件＋ git tag `protocol-v0-prereg`**：①本文（规则区；§9.2 结果区除外）②`protocol/prompt_v0.md`（sha256 `b9006b83327d4fc3c57026601542ff811697cf335b2b5e56a452a7ecb5d08b40`）③`harness/models.yaml` ④`episodes/runs/2026-09-25-pilot01-baselines/seeds.csv`＋`meta.json`（种子集与筛选记录）⑤`twin/planner.py`（可解性判定与天花板规划器）。孪生配置 `twin/configs/course01.yaml` sha256 `7fcf28e75212b7c62a569916574035f9d97988df4e1c88ac5b2641f20d4fcfd0` 随 meta.json 冻结。\n> **tag 之后动任一规则＝v1 新一季**，整批重跑；填 §9.2 的实测数字属结果、不属规则。真模型批次开跑前先 `bash tools/prereg_check.sh`：工作树监视表与 tag 零差异、或差异仅为 §9.3 登记的勘误且三基线逐位不变，才开跑。只在每期真机后升版、每次只修迁移差最大一项（DEC-20260925-05）。\n> 中英双语渲染属 PG-003（`protocol/v0.en.md` 由 `tools/render_en.py` 生成）；本文为中文真源，**中文为准，英文为便利译本**。",
+   "en": "> Basis: DEC-20260925-04 (Course 01 spec) / 05 (Twin-01 do / don't list); PG-001 P2–P5 + Patch 3 Q1–Q6 + **Patch 4 P1–P3 (incl. revisions 1/2)** (CSO 2026-09-25).\n> Status: **v0 pre-registered**. **Frozen artifacts = the five items below + git tag `protocol-v0-prereg`**: ① this document (rules area; §9.2 results area excluded) ② `protocol/prompt_v0.md` (sha256 `b9006b83327d4fc3c57026601542ff811697cf335b2b5e56a452a7ecb5d08b40`) ③ `harness/models.yaml` ④ `episodes/runs/2026-09-25-pilot01-baselines/seeds.csv` + `meta.json` (seed set and screening record) ⑤ `twin/planner.py` (solvability check and ceiling planner). The twin config `twin/configs/course01.yaml`, sha256 `7fcf28e75212b7c62a569916574035f9d97988df4e1c88ac5b2641f20d4fcfd0`, is frozen with meta.json.\n> **Changing any rule after the tag = v1, a new season**, with the whole batch rerun; filling in the measured numbers of §9.2 is a result, not a rule. Before any real-model batch run `bash tools/prereg_check.sh`: the run may start only if the working tree's watch list shows zero difference from the tag, or the differences are solely errata registered under §9.3 and the three baselines reproduce digit for digit. The twin is upgraded only after each real-robot edition, fixing the single largest transfer gap each time (DEC-20260925-05).\n> Bilingual rendering belongs to PG-003 (`protocol/v0.en.md` is generated by `tools/render_en.py`); this document is the Chinese source of truth, **the Chinese version governs and the English is a convenience translation**.",
+   "reviewed": true,
+   "translator": "claude-code",
+   "translated_at": "2026-09-25",
+   "reviewed_by": "claude-code",
+   "reviewed_at": "2026-09-25"
+  },
+  "a5bcbf073290": {
+   "type": "table",
+   "zh": "| 常量 | 值 | 说明 |\n|---|---|---|\n| 到达半径 | **0.40 m** | 中心入圈即到达；真机俯拍同值。下限＝步长 0.20＋车身半长 0.126＋柱半径 0.03 ≈ 0.36，0.30 时直行接近必撞柱 |\n| 回合上限 | **80 步** | 每步一次模型调用；超限回合结束（未成功） |\n| 碰撞计数 | 接触步数 与 **接触起始事件数** 两列 | 接触步数＝车身与墙／柱／障碍在一个动作内发生接触的动作数（持续贴着每步都计）；接触起始事件＝前一动作无接触、本动作有接触计 1（持续贴着算 1 次）。**仿真分用事件数**（§5） |\n| 碰撞扣分（旧口径） | 0.5 分/接触步 | 只用于对照列 total_score（检查点分 − 罚分，可为负）；不排序 |\n| **碰撞扣分（仿真分）** | **0.1 分/接触起始事件，单回合封顶 0.5** | 榜单用，公式见 §5.1；勘误 ①（CHANGELOG）补入本表，上一行为旧口径对照列 |\n| 检查点分 | 0–5 连续 | 已到达数 ＋ 向下一检查点最佳进度 (1 − d_best/d_start)，裁到 [0, 0.99]；对照列 |\n| **路程比** | 实际轨迹长 ÷ 理想路径长 | 理想路径＝折线 start→c1→…→c5 各段长之和，**每段扣除一个到达半径**（入圈即算到达，不必走到柱心）；只对成功回合汇总；**不进仿真分** |\n| 观测图像 | 渲染 640×480 → 送模前等比缩到宽 512（512×384）JPEG q85 | 各模型同一张图；真机相机分辨率回填后同规则缩放 |\n| **记忆** | 模型自己最近 **3 条 note**，按时间顺序回传 | 对所有模型固定（`harness/task.py` MEMORY_NOTES），`models.yaml` 不可覆盖；无对话历史，每步独立请求 |\n| **提示边界** | 下一检查点提示**只含身份（编号）与外观（牌边框色）** | **不含方位、距离、朝向**；由计分器真值填入（真机由俯拍判定给出） |\n| 不可解析／API 错 | 同一观测重问 2 次，仍不行本回合结束 | 分别计 invalid_outputs／api_errors |\n| 拒答 | 记拒答，不接 fallback | 如 stop_reason=refusal |\n| 成本 | 每次调用按官网单价计，美元与人民币并列（¥7.1/$，`models.yaml` `_settings`） | 单价未核实（price_verified=false）默认拒跑；峰谷两档按北京时间计并记 price_tier |\n| 时延 | 每次调用 API 侧时延（发出请求→收到完整响应） | 汇总均值与 P95 |",
+   "en": "| Constant | Value | Notes |\n|---|---|---|\n| Reach radius | **0.40 m** | Reached once the robot center enters the circle; the real-robot overhead camera uses the same value. Lower bound = step 0.20 + half body length 0.126 + post radius 0.03 ≈ 0.36 m; with a radius of 0.30 m a straight-line approach would necessarily hit the post |\n| Step cap | **80 steps** | One model call per step; the episode ends (unsuccessful) when the cap is hit |\n| Collision counting | Two columns: contact steps and **contact-onset events** | Contact steps = number of actions during which the body touched a wall / post / obstacle (counted every step while touching); a contact-onset event = 1 when the previous action had no contact and this one does (staying in contact counts once). **The sim score uses the event count** (§5) |\n| Collision penalty (legacy) | 0.5 points per contact step | Only for the comparison column total_score (checkpoint score − penalty, may be negative); not used for ranking |\n| **Collision penalty (sim score)** | **0.1 points per contact-onset event, capped at 0.5 per episode** | Used for the leaderboard, formula in §5.1; added to this table by erratum ① (CHANGELOG); the row above is the legacy comparison column |\n| Checkpoint score | 0–5, continuous | Checkpoints reached + best progress toward the next checkpoint (1 − d_best/d_start), clipped to [0, 0.99]; comparison column |\n| **Path ratio** | Actual path length ÷ ideal path length | Ideal path = sum of the polyline segments start→c1→…→c5, **each segment minus one reach radius** (entering the circle counts as reached; no need to drive to the post center); aggregated over successful episodes only; **not part of the sim score** |\n| Observation image | Rendered 640×480 → scaled to width 512 (512×384) JPEG q85 before sending | The same image for every model; after the real camera resolution is filled in, the same scaling rule applies |\n| **Memory** | The model's own last **3 notes**, returned in time order | Fixed for all models (`harness/task.py` MEMORY_NOTES); `models.yaml` cannot override it; no conversation history, every step is an independent request |\n| **Prompt boundary** | The next-checkpoint hint **contains only identity (number) and appearance (sign border color)** | **No bearing, distance or heading**; filled in from the scorer's ground truth (on the real robot from the overhead camera) |\n| Unparsable / API error | Re-ask up to 2 times on the same observation, then end the episode | Counted as invalid_outputs / api_errors respectively |\n| Refusal | Recorded as a refusal, no fallback | e.g. stop_reason=refusal |\n| Cost | Every call priced at the vendor's list price, USD and CNY side by side (¥7.1/$, `models.yaml` `_settings`) | An unverified price (price_verified=false) blocks the run by default; peak / off-peak tiers are applied by Beijing time and recorded as price_tier |\n| Latency | API-side latency per call (request sent → full response received) | Aggregated as mean and P95 |",
+   "reviewed": true,
+   "translator": "claude-code",
+   "translated_at": "2026-09-25",
+   "reviewed_by": "claude-code",
+   "reviewed_at": "2026-09-25"
+  },
+  "e62e1e4e7484": {
+   "type": "para",
+   "zh": "**instruction**（每步随图送出，每步独立请求见 §4 记忆行；`{reach_radius_m}`＝0.4，`{next_checkpoint}`／`{next_color}` 由计分器填入）：",
+   "en": "**instruction** (sent with the image at every step, each step an independent request, see the Memory row of §4; `{reach_radius_m}` = 0.4, `{next_checkpoint}` / `{next_color}` are filled in by the scorer):",
+   "reviewed": true,
+   "translator": "claude-code",
+   "translated_at": "2026-09-25",
+   "reviewed_by": "claude-code",
+   "reviewed_at": "2026-09-25"
+  },
+  "0fe32e732483": {
+   "type": "quote",
+   "zh": "> 真机分与迁移差的定义在本 tag 冻结区（上两句）；孪生保真度（各模型 |迁移差| 均值、模型数 ≥5 另给 Spearman，DEC-20260925-05）与真机段其余规则**不在**本 tag 冻结区，于 PG-002 开跑前另打 tag `protocol-v0-real-prereg`；迁移差／保真度的实现同在 `harness/scoring.py`（`transfer_gap`／`fidelity`），站点只读。",
+   "en": "> The definitions of the real-robot score and the transfer gap are in the frozen area of this tag (the two sentences above); twin fidelity (mean |transfer gap| across models, plus Spearman from 5 models, DEC-20260925-05) and the remaining real-robot rules are **not** in the frozen area of this tag and get their own tag `protocol-v0-real-prereg` before PG-002 starts; the transfer gap / fidelity implementation also lives in `harness/scoring.py` (`transfer_gap` / `fidelity`), the site only reads it.",
+   "reviewed": true,
+   "translator": "claude-code",
+   "translated_at": "2026-09-25",
+   "reviewed_by": "claude-code",
+   "reviewed_at": "2026-09-25"
+  },
+  "482c45103cfa": {
+   "type": "heading",
+   "zh": "### 9.3 勘误规则（PG-003 补丁 3 P2；tag 后）",
+   "en": "### 9.3 Errata rules (PG-003 Patch 3 P2; after the tag)",
+   "reviewed": true,
+   "translator": "claude-code",
+   "translated_at": "2026-09-25",
+   "reviewed_by": "claude-code",
+   "reviewed_at": "2026-09-25"
+  },
+  "11f517daa5f2": {
+   "type": "item",
+   "zh": "- **协议文本**：不改规则语义的勘误（错字、口径重述、指针、补入已在他处生效的数字）可修，每条记 `CHANGELOG.md` 一行（日期｜类型｜文件＋改后登记态 sha256｜说明）。",
+   "en": "- **Protocol text**: errata that do not change the meaning of a rule (typos, restating a definition, pointers, adding a number already in force elsewhere) may be fixed, one line per item in `CHANGELOG.md` (date | type | file + registered sha256 after the change | description).",
+   "reviewed": true,
+   "translator": "claude-code",
+   "translated_at": "2026-09-25",
+   "reviewed_by": "claude-code",
+   "reviewed_at": "2026-09-25"
+  },
+  "497a330ae6b1": {
+   "type": "item",
+   "zh": "- **被监视代码**（`twin/`、`harness/` 全部，含 `scoring.py`／`interface.py`／`models.yaml`）：只许「三基线逐位不变」的修改——`tools/prereg_check.sh` 末尾重跑 astar／greedy／random 与 tag 时数字逐位比对为证，同样记 CHANGELOG 一行。",
+   "en": "- **Watched code** (all of `twin/` and `harness/`, incl. `scoring.py` / `interface.py` / `models.yaml`): only changes that leave the three baselines identical digit for digit are allowed — proven by `tools/prereg_check.sh`, which re-runs astar / greedy / random at the end and compares with the numbers at the tag digit for digit; likewise one CHANGELOG line each.",
+   "reviewed": true,
+   "translator": "claude-code",
+   "translated_at": "2026-09-25",
+   "reviewed_by": "claude-code",
+   "reviewed_at": "2026-09-25"
+  },
+  "affa3387c4a9": {
+   "type": "item",
+   "zh": "- **其余任何改动＝v1 新一季**（整批重跑、重打 tag）。`prereg_check.sh` 只认 CHANGELOG 登记的哈希：监视表中未登记的差异一律判新一季，不得按 v0 开跑。监视表与不入监视项（`v0.en.md`、`site/`、`docs/`）以脚本文首为准。",
+   "en": "- **Any other change = v1, a new season** (whole batch rerun, new tag). `prereg_check.sh` only accepts hashes registered in the CHANGELOG: any unregistered difference in the watch list is judged a new season and the run may not start under v0. The watch list and the excluded items (`v0.en.md`, `site/`, `docs/`) are as stated at the top of the script.",
+   "reviewed": true,
+   "translator": "claude-code",
+   "translated_at": "2026-09-25",
+   "reviewed_by": "claude-code",
+   "reviewed_at": "2026-09-25"
+  },
+  "aa6ad2d71381": {
+   "type": "item",
+   "zh": "- 勘误记录（tag 后、不改语义）：见 `CHANGELOG.md`（§9.3）。",
+   "en": "- Errata (after the tag, meaning unchanged): see `CHANGELOG.md` (§9.3).",
+   "reviewed": true,
+   "translator": "claude-code",
+   "translated_at": "2026-09-25",
+   "reviewed_by": "claude-code",
+   "reviewed_at": "2026-09-25"
+  },
+  "8bbbd9c81755": {
+   "type": "heading",
+   "zh": "# Course 01「看图走路」（英文名 Look-and-Go）协议 v0（Twin-01 v0）",
+   "en": "# Course 01 \"Look-and-Go\" (Chinese name: 看图走路) Protocol v0 (Twin-01 v0)",
+   "reviewed": true,
+   "translator": "claude-code (Claude Fable 5.1, in-session)",
+   "translated_at": "2026-09-29",
+   "reviewed_by": "claude-code (blind back-translation check 2026-09-29)",
+   "reviewed_at": "2026-09-29"
+  },
+  "3af5cd6d9288": {
+   "type": "item",
+   "zh": "- 试跑 01 实测（2026-09-26，run `episodes/runs/2026-09-25-pilot01/`，N=30 × 3，数据源 `docs/pilot-run-01.md` §5）：c_m（$/回合，含探活）qwen3-vl-plus 0.0074｜glm-5v-turbo 0.0077｜deepseek-flash 0.0071（闲时）；仿真分 0.077 ± 0.054｜0.007 ± 0.013｜0.067 ± 0.060；成功率 0.00｜0.00｜0.03；总花费 $0.665，护栏未触发。",
+   "en": "- Pilot run 01 measurements (2026-09-26, run `episodes/runs/2026-09-25-pilot01/`, N=30 × 3, data source `docs/pilot-run-01.md` §5): c_m (USD per episode, including preflight) qwen3-vl-plus 0.0074 | glm-5v-turbo 0.0077 | deepseek-flash 0.0071 (off-peak); sim score 0.077 ± 0.054 | 0.007 ± 0.013 | 0.067 ± 0.060; success rate 0.00 | 0.00 | 0.03; total spend $0.665, budget guard not triggered.",
+   "reviewed": true,
+   "translator": "claude-code (Claude Fable 5.1, in-session)",
+   "translated_at": "2026-09-29",
+   "reviewed_by": "claude-code (blind back-translation check 2026-09-29)",
+   "reviewed_at": "2026-09-29"
+  },
+  "7c5533ac4ac1": {
+   "type": "item",
+   "zh": "- 正式 N 改写值：Σc = $0.0222 → 公式值 5,405 → **N = 100（上限）**；每期仿真 ≈ $2.2。",
+   "en": "- Formal N, revised value: Σc = $0.0222 → formula value 5,405 → **N = 100 (the cap)**; simulation per edition ≈ $2.2.",
+   "reviewed": true,
+   "translator": "claude-code (Claude Fable 5.1, in-session)",
+   "translated_at": "2026-09-29",
+   "reviewed_by": "claude-code (blind back-translation check 2026-09-29)",
+   "reviewed_at": "2026-09-29"
+  }
+ }
+}

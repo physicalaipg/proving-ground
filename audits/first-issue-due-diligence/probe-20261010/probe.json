@@ -1,0 +1,143 @@
+{
+ "seed": 1000,
+ "frame": "probe-seed1000-t000.jpg",
+ "frame_hw": [
+  480,
+  640
+ ],
+ "jpeg_bytes": 16761,
+ "jpeg_sha12": "19118632cc33",
+ "truth_min_px": 100,
+ "truth": {
+  "1": {
+   "color": "red",
+   "sign_px": 11076,
+   "post_px": 11050
+  },
+  "2": {
+   "color": "green",
+   "sign_px": 0,
+   "post_px": 0
+  },
+  "3": {
+   "color": "blue",
+   "sign_px": 0,
+   "post_px": 0
+  },
+  "4": {
+   "color": "yellow",
+   "sign_px": 3184,
+   "post_px": 0
+  },
+  "5": {
+   "color": "purple",
+   "sign_px": 1492,
+   "post_px": 2662
+  }
+ },
+ "visible": [
+  "1:red",
+  "4:yellow",
+  "5:purple"
+ ],
+ "prompt": "This is one photo from a small robot's forward camera. How many checkpoint signs with a colored border are visible in this photo, and what is the border color of each visible sign? Answer in one short line.",
+ "results": [
+  {
+   "agent": "qwen3-vl-plus--nothink--official",
+   "model": "qwen3-vl-plus",
+   "seed": 1000,
+   "step": 0,
+   "prompt": "This is one photo from a small robot's forward camera. How many checkpoint signs with a colored border are visible in this photo, and what is the border color of each visible sign? Answer in one short line.",
+   "raw_answer": "Three checkpoint signs are visible: sign 1 with a red border, sign 5 with a purple border, and sign 4 with a yellow border.",
+   "error": null,
+   "finish_reason": "stop",
+   "tokens_in": 245,
+   "tokens_out": 32,
+   "usd": 8e-05,
+   "cny": 0.000565,
+   "price_tier": "flat",
+   "latency_s": 1.268,
+   "http": [
+    {
+     "t": 1791631869.727027,
+     "model": "qwen3-vl-plus",
+     "n_images": 1,
+     "encoding": "data:image/jpeg;base64",
+     "bytes": 16761,
+     "jpeg_sha12": "19118632cc33",
+     "width": 512,
+     "height": 384,
+     "format": "JPEG",
+     "b64_match_expected": true,
+     "text_match_expected": true,
+     "text_len": 206
+    }
+   ]
+  },
+  {
+   "agent": "glm-5v-turbo--nothink--official",
+   "model": "glm-5v-turbo",
+   "seed": 1000,
+   "step": 0,
+   "prompt": "This is one photo from a small robot's forward camera. How many checkpoint signs with a colored border are visible in this photo, and what is the border color of each visible sign? Answer in one short line.",
+   "raw_answer": "3 checkpoints: 1 (red), 5 (purple), 4 (yellow)",
+   "error": null,
+   "finish_reason": "stop",
+   "tokens_in": 290,
+   "tokens_out": 19,
+   "usd": 0.000263,
+   "cny": 0.001868,
+   "price_tier": "flat",
+   "latency_s": 1.064,
+   "http": [
+    {
+     "t": 1791631870.965649,
+     "model": "glm-5v-turbo",
+     "n_images": 1,
+     "encoding": "data:image/jpeg;base64",
+     "bytes": 16761,
+     "jpeg_sha12": "19118632cc33",
+     "width": 512,
+     "height": 384,
+     "format": "JPEG",
+     "b64_match_expected": true,
+     "text_match_expected": true,
+     "text_len": 206
+    }
+   ]
+  },
+  {
+   "agent": "deepseek-flash--nothink--official",
+   "model": "deepseek-flash",
+   "seed": 1000,
+   "step": 0,
+   "prompt": "This is one photo from a small robot's forward camera. How many checkpoint signs with a colored border are visible in this photo, and what is the border color of each visible sign? Answer in one short line.",
+   "raw_answer": "3 checkpoint signs are visible: one with a red border, one with a purple border, and one with a yellow border.",
+   "error": null,
+   "finish_reason": "stop",
+   "tokens_in": 242,
+   "tokens_out": 25,
+   "usd": 4.8e-05,
+   "cny": 0.000342,
+   "price_tier": "offpeak",
+   "latency_s": 1.246,
+   "http": [
+    {
+     "t": 1791631872.0321012,
+     "model": "deepseek-flash",
+     "n_images": 1,
+     "encoding": "data:image/jpeg;base64",
+     "bytes": 16761,
+     "jpeg_sha12": "19118632cc33",
+     "width": 512,
+     "height": 384,
+     "format": "JPEG",
+     "b64_match_expected": true,
+     "text_match_expected": true,
+     "text_len": 206
+    }
+   ]
+  }
+ ],
+ "ran": "2026-10-10T04:31:13"
+}

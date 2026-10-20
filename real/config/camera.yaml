@@ -1,0 +1,42 @@
+# 车载相机真机常量（内部工单 B；≤10-10 填；tag real-v0-prereg 后不得改）。null＝待实测。填法见 real/camera_measure.py。
+camera:
+  model: MF-200 1080p 模组，2.8 mm 镜头（内部工单 定型）
+  selector:
+    vid_pid: 0c45:636b
+
+
+            # 四位十六进制 VID:PID（`python -m real.camera_measure list`；system_profiler 报 VendorID_/ProductID_ 十进制，脚本转十六进制）
+    product: USB Camera
+
+
+            # USB 产品串（备用选择器）
+  capture: {width: 1280, height: 720}      # 采集口径：抓 1280×720 → 居中裁 4:3 → 缩 640×480（real/camera.py MF200）
+  output: {width: 640, height: 480}
+  mount:
+    height_m: 0.141          # 10-14 升级后主理人卷尺实测：软尺竖立尺端贴桌面，镜头中心约 14.1 cm（定稿，±0.5 cm；首报加高 2.2 cm 算得 0.146 作废）；10-06 的 0.124 为升级前值
+
+
+           # 镜头中心离地（装车后卷尺量；孪生假定 0.15）
+    forward_offset_m: 0.1095 # 10-14 升级后主理人实测：镜头中心在前轮轴前方约 5 cm → 前移＝轴距 0.119/2＋0.05（定稿）；10-06 的 0.0595（镜头在前轮轴正上方）为升级前值
+
+
+   # 镜头中心在车体中心前方的距离（孪生假定 0.10）
+    pitch_deg: 0.0           # 照片 1 镜头面垂直，按 0；10-14 升级后主理人报「平视」，仍 0
+
+
+          # 俯仰，水平为 0（孪生假定 0）
+  fov:
+    hfov_deg: 74.9           # 10-06 实测（裁 4:3 后）：竖尺贴墙、墙距镜头 0.50 m，画面高 57.4 cm → vfov 59.8°，按方像素 4:3 换算 74.9°（全幅 16:9 为 91.2°）；顶边读数 ±1 cm ≈ ±1.5°；与传感器算值 75° 一致
+    vfov_deg: 59.8           # 同上，直接量得
+    method: {distance_m: null, height_m: null, measured_at: null, width_m: null}
+  uvc_lock:                  # 首季缺省自动曝光＋自动白平衡（修订2 R1）；锁定可选，能设且读回相符才填
+    exposure: null
+
+
+
+    wb_temperature: null
+
+    readback: auto-exposure-mode=8 exposure-time-abs=157 auto-white-balance-temp=true white-balance-temp=4600 (uvc-util 2026-10-06 00:40；手动 1/157/false/4600 与改 200/5000 设后读回逐项相符，已复原自动)
+   # `uvc-util -V 0x0c45:0x636b -o …` 原文，一行
+twin_assumed: {height_m: 0.15, forward_offset_m: 0.10, hfov_deg: 70, width: 640, height: 480}   # twin/configs/course01.yaml camera 节（不改）
+delta: {forward_offset_m: 0.0095, height_m: -0.009, hfov_deg: 4.9}                  # camera_measure delta 写入：实测 − 孪生假定；记入 docs/fidelity-L1.md

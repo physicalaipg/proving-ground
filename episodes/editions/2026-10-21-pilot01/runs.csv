@@ -1,0 +1,4 @@
+model,sim_run,real_run,verified,note
+qwen3-vl-plus--nothink--official,runs/2026-10-15-v1,,rerun,阿里云百炼；思考关；官方端点；仿真 run＝v1 正式批 2026-10-15-v1（N=30，10-15 06:00Z 完成；c174ad7 只作对照，裁定 2026-10-09-09/-11）；真机列待锚（第二期）
+glm-5v-turbo--nothink--official,runs/2026-10-15-v1,,rerun,智谱；思考关；官方端点；同上
+deepseek-flash--nothink--official,runs/2026-10-15-v1,,rerun,DeepSeek V4.1 Flash；思考关；官方端点；闲时段跑；同上

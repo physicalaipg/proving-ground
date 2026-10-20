@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Proving Ground · 物理AI实验场</title>
+<meta name="description" content="Physical-AI proving ground: every frontier multimodal model, run through the same course in simulation and on a cheap real robot. Sim score, real-robot score, transfer gap. 物理AI实验场：仿真分／真机分／迁移差三列榜单。">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <div class="brand">
+      <span class="mark" aria-hidden="true">PG</span>
+      <div>
+        <h1 data-i18n="site.title">物理AI实验场</h1>
+        <p class="tagline" data-i18n="site.tagline"></p>
+      </div>
+    </div>
+    <nav class="controls" aria-label="controls">
+      <label><span class="sr" data-i18n="nav.edition"></span> <select id="edition" aria-label="edition"></select></label>
+      <div class="lang" role="group" aria-label="language">
+        <button type="button" data-lang="zh" aria-pressed="true">中文</button>
+        <button type="button" data-lang="en" aria-pressed="false">EN</button>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="hero" aria-labelledby="ed-title">
+    <div class="status">
+      <span class="ed" id="ed-title"></span>
+      <span class="course" data-i18n="site.course"></span>
+      <span class="badge" id="ed-status"></span>
+    </div>
+    <div class="kpis" id="kpis"></div>
+    <p class="note" id="ed-notes"></p>
+  </section>
+
+  <section aria-labelledby="board-h">
+    <h2 id="board-h" data-i18n="board.h"></h2>
+    <p class="sub" data-i18n="board.sub"></p>
+    <div class="tablewrap"><table id="board"></table></div>
+    <p class="note" id="board-empty" hidden data-i18n="board.empty"></p>
+    <p class="note" id="board-fn" hidden></p>
+  </section>
+
+  <section aria-labelledby="baseline-h">
+    <h2 id="baseline-h" data-i18n="baseline.h"></h2>
+    <p class="sub" data-i18n="baseline.sub"></p>
+    <div class="tablewrap"><table id="baselines"></table></div>
+  </section>
+
+  <section aria-labelledby="method-h">
+    <h2 id="method-h" data-i18n="method.h"></h2>
+    <dl class="method" id="method"></dl>
+  </section>
+
+  <section aria-labelledby="data-h">
+    <h2 id="data-h" data-i18n="data.h"></h2>
+    <p class="sub" data-i18n="data.sub"></p>
+    <ul class="links" id="datalinks"></ul>
+  </section>
+</main>
+
+<footer><div class="wrap" id="foot"></div></footer>
+<script src="app.js"></script>
+</body>
+</html>

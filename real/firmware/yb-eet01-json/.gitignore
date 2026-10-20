@@ -1,0 +1,7 @@
+build/
+build-selftest/
+managed_components/
+sdkconfig
+sdkconfig.old
+dependencies.lock
+host_test/proto_host

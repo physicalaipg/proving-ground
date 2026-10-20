@@ -1,0 +1,9 @@
+seed,sampled_3,steps,traveled_m,invalid_steps,forward,left,right,stop,stop_step,reached,last_raw_text,judgment
+1001,抽检,21,0.3769,0,2,14,4,1,20,0,"{""action"": ""stop"", ""note"": ""Checkpoint 1 (red border) reached - it's visible on the left within range. Task complete for checkpoint 1.""}",模型自行 stop（输出有效 JSON，action=stop）
+1003,抽检,3,0.3907,0,2,0,0,1,2,0,"{""action"": ""stop"", ""note"": ""At checkpoint 1 (red border). Task complete for this checkpoint.""}",模型自行 stop（输出有效 JSON，action=stop）
+1008,抽检,80,0.0000,0,0,49,31,0,,0,"{""action"": ""left"", ""note"": ""Image is uniform gray - likely facing wall. Turning left to find checkpoint 1 (red).""}",仅原地转向（无 stop、无不可解析步，前进步 ≤2）
+1010,,3,0.1845,0,1,1,0,1,2,0,"{""action"": ""stop"", ""note"": ""Reached checkpoint 1 (red border). Now need to find checkpoint 2 (green border).""}",模型自行 stop（输出有效 JSON，action=stop）
+1021,,3,0.1904,0,1,1,0,1,2,0,"{""action"": ""stop"", ""note"": ""Reached checkpoint 1 (red border). It is directly in front of me within 0.4 m.""}",模型自行 stop（输出有效 JSON，action=stop）
+1023,,13,0.0000,0,0,5,7,1,12,0,"{""action"": ""stop"", ""note"": ""Checkpoint 1 (red border) is directly in front, within 0.4 m. Task complete for checkpoint 1.""}",模型自行 stop（输出有效 JSON，action=stop）
+1025,,4,0.1825,0,1,2,0,1,3,0,"{""action"": ""stop"", ""note"": ""Reached checkpoint 1 (red). Now targeting checkpoint 2 (green).""}",模型自行 stop（输出有效 JSON，action=stop）
+1030,,3,0.1785,0,1,0,1,1,2,0,"{""action"": ""stop"", ""note"": ""Checkpoint 1 (red border) is directly ahead and within 0.4 m. Task complete for checkpoint 1.""}",模型自行 stop（输出有效 JSON，action=stop）

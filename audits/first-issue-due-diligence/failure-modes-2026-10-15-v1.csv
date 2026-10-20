@@ -1,0 +1,181 @@
+run,agent,seed,cls,why,steps,invalid_steps,forward_valid_steps,traveled_m,disp_log_m,disp_source,disp_cross_check,collisions,sim_score
+2026-10-15-v1,astar,1000,完成,success=1,33,0,18,3.3164,3.1319,results.traveled_m,一致,0,1.0
+2026-10-15-v1,astar,1001,完成,success=1,21,0,11,2.1798,2.1798,results.traveled_m,一致,0,1.0
+2026-10-15-v1,astar,1002,完成,success=1,27,0,13,2.3901,2.2076,results.traveled_m,一致,0,1.0
+2026-10-15-v1,astar,1003,完成,success=1,33,0,17,3.2945,3.1002,results.traveled_m,一致,0,1.0
+2026-10-15-v1,astar,1004,完成,success=1,39,0,20,3.6575,3.6575,results.traveled_m,一致,0,1.0
+2026-10-15-v1,astar,1006,完成,success=1,49,0,21,3.9174,3.7329,results.traveled_m,一致,0,1.0
+2026-10-15-v1,astar,1007,完成,success=1,35,0,18,3.3679,3.1855,results.traveled_m,一致,0,1.0
+2026-10-15-v1,astar,1008,完成,success=1,33,0,17,3.3402,3.1517,results.traveled_m,一致,0,1.0
+2026-10-15-v1,astar,1009,完成,success=1,21,0,11,2.0390,2.0390,results.traveled_m,一致,0,1.0
+2026-10-15-v1,astar,1010,完成,success=1,19,0,10,1.8268,1.6463,results.traveled_m,一致,0,1.0
+2026-10-15-v1,astar,1011,完成,success=1,25,0,12,2.1640,1.9815,results.traveled_m,一致,0,1.0
+2026-10-15-v1,astar,1012,完成,success=1,74,0,21,4.1078,3.9154,results.traveled_m,一致,0,1.0
+2026-10-15-v1,astar,1013,完成,success=1,49,0,29,5.2562,5.2562,results.traveled_m,一致,0,1.0
+2026-10-15-v1,astar,1014,完成,success=1,47,0,22,4.0780,4.0780,results.traveled_m,一致,0,1.0
+2026-10-15-v1,astar,1015,完成,success=1,26,0,13,2.3385,2.1640,results.traveled_m,一致,0,1.0
+2026-10-15-v1,astar,1016,完成,success=1,20,0,11,2.0112,1.8248,results.traveled_m,一致,0,1.0
+2026-10-15-v1,astar,1017,完成,success=1,48,0,24,4.2902,4.2902,results.traveled_m,一致,0,1.0
+2026-10-15-v1,astar,1018,完成,success=1,61,0,26,4.7841,4.5957,results.traveled_m,一致,0,1.0
+2026-10-15-v1,astar,1020,完成,success=1,29,0,14,2.6698,2.4813,results.traveled_m,一致,0,1.0
+2026-10-15-v1,astar,1021,完成,success=1,31,0,20,3.8063,3.6198,results.traveled_m,一致,0,1.0
+2026-10-15-v1,astar,1022,完成,success=1,31,0,14,2.7947,2.5983,results.traveled_m,一致,0,1.0
+2026-10-15-v1,astar,1023,完成,success=1,19,0,10,1.9874,1.9874,results.traveled_m,一致,0,1.0
+2026-10-15-v1,astar,1024,完成,success=1,51,0,25,4.7127,4.5283,results.traveled_m,一致,0,1.0
+2026-10-15-v1,astar,1025,完成,success=1,24,0,14,2.5111,2.3405,results.traveled_m,一致,0,1.0
+2026-10-15-v1,astar,1026,完成,success=1,27,0,14,2.5745,2.5745,results.traveled_m,一致,0,1.0
+2026-10-15-v1,astar,1027,完成,success=1,43,0,22,4.0086,3.8301,results.traveled_m,一致,0,1.0
+2026-10-15-v1,astar,1028,完成,success=1,46,0,20,3.7289,3.7289,results.traveled_m,一致,0,1.0
+2026-10-15-v1,astar,1029,完成,success=1,38,0,18,3.4988,3.3084,results.traveled_m,一致,0,1.0
+2026-10-15-v1,astar,1030,完成,success=1,65,0,26,4.6552,4.4727,results.traveled_m,一致,0,1.0
+2026-10-15-v1,astar,1031,完成,success=1,42,0,18,3.4334,3.2509,results.traveled_m,一致,0,1.0
+2026-10-15-v1,deepseek-flash--nothink--official,1000,F3,collisions=36 steps=72,72,0,40,4.3075,4.1230,results.traveled_m,一致,36,0.0
+2026-10-15-v1,deepseek-flash--nothink--official,1001,完成,success=1,75,0,36,4.2747,4.2747,results.traveled_m,一致,25,0.7
+2026-10-15-v1,deepseek-flash--nothink--official,1002,F3,collisions=30 steps=80,80,0,28,3.0884,3.0884,results.traveled_m,一致,30,0.0
+2026-10-15-v1,deepseek-flash--nothink--official,1003,F3,collisions=45 steps=64,64,0,41,4.1157,3.9213,results.traveled_m,一致,45,0.0
+2026-10-15-v1,deepseek-flash--nothink--official,1004,F3,collisions=30 steps=80,80,0,37,4.2174,4.2174,results.traveled_m,一致,30,0.0
+2026-10-15-v1,deepseek-flash--nothink--official,1006,F3,collisions=61 steps=80,80,0,58,3.5995,3.4151,results.traveled_m,一致,61,0.0
+2026-10-15-v1,deepseek-flash--nothink--official,1007,F3,collisions=48 steps=80,80,0,51,2.9480,2.7655,results.traveled_m,一致,48,0.0
+2026-10-15-v1,deepseek-flash--nothink--official,1008,F3,collisions=40 steps=44,44,0,40,0.6349,0.6349,results.traveled_m,一致,40,0.0
+2026-10-15-v1,deepseek-flash--nothink--official,1009,完成,success=1,79,0,50,3.9141,3.9141,results.traveled_m,一致,46,0.6
+2026-10-15-v1,deepseek-flash--nothink--official,1010,F3,collisions=70 steps=80,80,0,73,1.8652,1.6847,results.traveled_m,一致,70,0.0
+2026-10-15-v1,deepseek-flash--nothink--official,1011,F3,collisions=18 steps=39,39,0,30,2.8258,2.6433,results.traveled_m,一致,18,0.0
+2026-10-15-v1,deepseek-flash--nothink--official,1012,F3,collisions=72 steps=80,80,0,14,1.5578,1.3654,results.traveled_m,一致,72,0.0
+2026-10-15-v1,deepseek-flash--nothink--official,1013,F3,collisions=13 steps=17,17,0,12,1.1992,1.0147,results.traveled_m,一致,13,0.0
+2026-10-15-v1,deepseek-flash--nothink--official,1014,F3,collisions=32 steps=80,80,0,11,1.2016,1.2016,results.traveled_m,一致,32,0.0
+2026-10-15-v1,deepseek-flash--nothink--official,1015,F3,collisions=58 steps=80,80,0,45,3.7153,3.5408,results.traveled_m,一致,58,0.0
+2026-10-15-v1,deepseek-flash--nothink--official,1016,F3,collisions=60 steps=75,75,0,65,2.0889,1.9024,results.traveled_m,一致,60,0.3
+2026-10-15-v1,deepseek-flash--nothink--official,1017,F3,collisions=60 steps=80,80,0,58,2.8205,2.8205,results.traveled_m,一致,60,0.0
+2026-10-15-v1,deepseek-flash--nothink--official,1018,F3,collisions=50 steps=80,80,0,43,3.5170,3.3285,results.traveled_m,一致,50,0.0
+2026-10-15-v1,deepseek-flash--nothink--official,1020,F3,collisions=30 steps=80,80,0,26,3.0314,3.0314,results.traveled_m,一致,30,0.0
+2026-10-15-v1,deepseek-flash--nothink--official,1021,F3,collisions=47 steps=80,80,0,48,4.0955,3.9091,results.traveled_m,一致,47,0.1
+2026-10-15-v1,deepseek-flash--nothink--official,1022,F3,collisions=41 steps=80,80,0,51,5.0619,4.8655,results.traveled_m,一致,41,0.3
+2026-10-15-v1,deepseek-flash--nothink--official,1023,F3,collisions=30 steps=80,80,0,40,4.9267,4.9267,results.traveled_m,一致,30,0.1
+2026-10-15-v1,deepseek-flash--nothink--official,1024,F3,collisions=20 steps=35,35,0,20,2.0215,1.8370,results.traveled_m,一致,20,0.0
+2026-10-15-v1,deepseek-flash--nothink--official,1025,F3,collisions=51 steps=80,80,0,49,2.9709,2.8003,results.traveled_m,一致,51,0.0
+2026-10-15-v1,deepseek-flash--nothink--official,1026,F2,results.traveled_m 0.381 < 0.4,41,0,39,0.3808,0.2003,results.traveled_m,一致,38,0.0
+2026-10-15-v1,deepseek-flash--nothink--official,1027,F3,collisions=43 steps=80,80,0,41,2.7264,2.5479,results.traveled_m,一致,43,0.0
+2026-10-15-v1,deepseek-flash--nothink--official,1028,F3,collisions=42 steps=60,60,0,41,1.7951,1.6165,results.traveled_m,一致,42,0.0
+2026-10-15-v1,deepseek-flash--nothink--official,1029,F3,collisions=37 steps=80,80,0,37,3.9727,3.7823,results.traveled_m,一致,37,0.1
+2026-10-15-v1,deepseek-flash--nothink--official,1030,F3,collisions=58 steps=80,80,0,53,2.0025,1.8200,results.traveled_m,一致,58,0.0
+2026-10-15-v1,deepseek-flash--nothink--official,1031,F3,collisions=19 steps=40,40,0,14,1.1247,1.1247,results.traveled_m,一致,19,0.0
+2026-10-15-v1,glm-5v-turbo--nothink--official,1000,F3,collisions=4 steps=34,34,0,6,0.7613,0.7613,results.traveled_m,一致,4,0.1
+2026-10-15-v1,glm-5v-turbo--nothink--official,1001,F2,results.traveled_m 0.377 < 0.4,21,0,2,0.3769,0.3769,results.traveled_m,一致,0,0.0
+2026-10-15-v1,glm-5v-turbo--nothink--official,1002,F3,collisions=7 steps=30,30,0,8,1.3434,1.3434,results.traveled_m,一致,7,0.0
+2026-10-15-v1,glm-5v-turbo--nothink--official,1003,F2,results.traveled_m 0.391 < 0.4,3,0,2,0.3907,0.1964,results.traveled_m,一致,0,0.0
+2026-10-15-v1,glm-5v-turbo--nothink--official,1004,F3,collisions=3 steps=53,53,0,4,0.6329,0.6329,results.traveled_m,一致,3,0.0
+2026-10-15-v1,glm-5v-turbo--nothink--official,1006,F3,collisions=0 steps=7,7,0,4,0.7398,0.7398,results.traveled_m,一致,0,0.0
+2026-10-15-v1,glm-5v-turbo--nothink--official,1007,F3,collisions=3 steps=36,36,0,6,0.9499,0.7674,results.traveled_m,一致,3,0.0
+2026-10-15-v1,glm-5v-turbo--nothink--official,1008,F2,results.traveled_m 0.000 < 0.4,80,0,0,0.0000,0.0000,results.traveled_m,一致,0,0.0
+2026-10-15-v1,glm-5v-turbo--nothink--official,1009,F3,collisions=0 steps=6,6,0,4,0.7359,0.7359,results.traveled_m,一致,0,0.0
+2026-10-15-v1,glm-5v-turbo--nothink--official,1010,F2,results.traveled_m 0.184 < 0.4,3,0,1,0.1845,0.1845,results.traveled_m,一致,0,0.0
+2026-10-15-v1,glm-5v-turbo--nothink--official,1011,F3,collisions=1 steps=6,6,0,4,0.6802,0.6801,results.traveled_m,一致,1,0.0
+2026-10-15-v1,glm-5v-turbo--nothink--official,1012,F3,collisions=6 steps=10,10,0,7,0.8812,0.6888,results.traveled_m,一致,6,0.0
+2026-10-15-v1,glm-5v-turbo--nothink--official,1013,F3,collisions=0 steps=4,4,0,3,0.5474,0.3630,results.traveled_m,不一致,0,0.0
+2026-10-15-v1,glm-5v-turbo--nothink--official,1014,F3,collisions=4 steps=12,12,0,6,0.9244,0.9244,results.traveled_m,一致,4,0.0
+2026-10-15-v1,glm-5v-turbo--nothink--official,1015,F3,collisions=3 steps=6,6,0,4,0.4945,0.3199,results.traveled_m,不一致,3,0.0
+2026-10-15-v1,glm-5v-turbo--nothink--official,1016,F3,collisions=3 steps=8,8,0,5,0.6624,0.4760,results.traveled_m,一致,3,0.0
+2026-10-15-v1,glm-5v-turbo--nothink--official,1017,F3,collisions=0 steps=5,5,0,3,0.5494,0.5494,results.traveled_m,一致,0,0.0
+2026-10-15-v1,glm-5v-turbo--nothink--official,1018,F3,collisions=1 steps=7,7,0,4,0.6734,0.6734,results.traveled_m,一致,1,0.0
+2026-10-15-v1,glm-5v-turbo--nothink--official,1020,F3,collisions=1 steps=5,5,0,3,0.4922,0.4922,results.traveled_m,一致,1,0.0
+2026-10-15-v1,glm-5v-turbo--nothink--official,1021,F2,results.traveled_m 0.190 < 0.4,3,0,1,0.1904,0.1904,results.traveled_m,一致,0,0.0
+2026-10-15-v1,glm-5v-turbo--nothink--official,1022,F3,collisions=0 steps=4,4,0,3,0.5970,0.4007,results.traveled_m,一致,0,0.0
+2026-10-15-v1,glm-5v-turbo--nothink--official,1023,F2,results.traveled_m 0.000 < 0.4,13,0,0,0.0000,0.0000,results.traveled_m,一致,0,0.0
+2026-10-15-v1,glm-5v-turbo--nothink--official,1024,F3,collisions=4 steps=37,37,0,7,1.0016,1.0016,results.traveled_m,一致,4,0.0
+2026-10-15-v1,glm-5v-turbo--nothink--official,1025,F2,results.traveled_m 0.182 < 0.4,4,0,1,0.1825,0.1825,results.traveled_m,一致,0,0.0
+2026-10-15-v1,glm-5v-turbo--nothink--official,1026,F3,collisions=4 steps=30,30,0,3,0.4779,0.4779,results.traveled_m,一致,4,0.0
+2026-10-15-v1,glm-5v-turbo--nothink--official,1027,F3,collisions=1 steps=5,5,0,4,0.6652,0.4867,results.traveled_m,一致,1,0.0
+2026-10-15-v1,glm-5v-turbo--nothink--official,1028,F3,collisions=3 steps=18,18,0,6,0.7551,0.7551,results.traveled_m,一致,3,0.0
+2026-10-15-v1,glm-5v-turbo--nothink--official,1029,F3,collisions=0 steps=7,7,0,4,0.7775,0.7775,results.traveled_m,一致,0,0.0
+2026-10-15-v1,glm-5v-turbo--nothink--official,1030,F2,results.traveled_m 0.178 < 0.4,3,0,1,0.1785,0.1785,results.traveled_m,一致,0,0.0
+2026-10-15-v1,glm-5v-turbo--nothink--official,1031,F3,collisions=1 steps=45,45,0,3,0.5001,0.5001,results.traveled_m,一致,1,0.0
+2026-10-15-v1,greedy,1000,完成,success=1,39,0,24,2.8760,2.8760,results.traveled_m,一致,15,0.9
+2026-10-15-v1,greedy,1001,完成,success=1,35,0,13,2.5349,2.5349,results.traveled_m,一致,0,1.0
+2026-10-15-v1,greedy,1002,完成,success=1,32,0,15,2.7630,2.7630,results.traveled_m,一致,0,1.0
+2026-10-15-v1,greedy,1003,完成,success=1,51,0,25,3.0426,2.8482,results.traveled_m,一致,21,0.6
+2026-10-15-v1,greedy,1004,完成,success=1,40,0,18,3.2027,3.2027,results.traveled_m,一致,4,0.8
+2026-10-15-v1,greedy,1006,完成,success=1,55,0,30,3.7610,3.5765,results.traveled_m,一致,23,0.6
+2026-10-15-v1,greedy,1007,完成,success=1,55,0,31,3.5340,3.3516,results.traveled_m,一致,26,0.8
+2026-10-15-v1,greedy,1008,完成,success=1,44,0,24,3.1945,3.0061,results.traveled_m,一致,20,0.7
+2026-10-15-v1,greedy,1009,完成,success=1,34,0,14,2.5944,2.5944,results.traveled_m,一致,0,1.0
+2026-10-15-v1,greedy,1010,完成,success=1,29,0,16,2.1058,2.1058,results.traveled_m,一致,8,0.9
+2026-10-15-v1,greedy,1011,完成,success=1,32,0,15,2.4199,2.4199,results.traveled_m,一致,4,0.9
+2026-10-15-v1,greedy,1012,完成,success=1,36,0,21,3.4583,3.2659,results.traveled_m,一致,11,0.6
+2026-10-15-v1,greedy,1013,完成,success=1,69,0,42,3.8488,3.6644,results.traveled_m,一致,46,0.7
+2026-10-15-v1,greedy,1014,F3,collisions=62 steps=80,80,0,56,3.0364,3.0364,results.traveled_m,一致,62,0.2
+2026-10-15-v1,greedy,1015,完成,success=1,33,0,14,2.5547,2.3802,results.traveled_m,一致,0,1.0
+2026-10-15-v1,greedy,1016,完成,success=1,27,0,15,2.0508,1.8644,results.traveled_m,一致,9,0.9
+2026-10-15-v1,greedy,1017,完成,success=1,55,0,33,3.5442,3.5442,results.traveled_m,一致,22,0.8
+2026-10-15-v1,greedy,1018,F3,collisions=72 steps=80,80,0,67,1.4101,1.2217,results.traveled_m,一致,72,0.0
+2026-10-15-v1,greedy,1020,完成,success=1,39,0,18,2.5687,2.5687,results.traveled_m,一致,12,0.8
+2026-10-15-v1,greedy,1021,完成,success=1,38,0,22,2.9761,2.9761,results.traveled_m,一致,17,0.6
+2026-10-15-v1,greedy,1022,完成,success=1,35,0,13,2.5924,2.3960,results.traveled_m,一致,0,1.0
+2026-10-15-v1,greedy,1023,完成,success=1,32,0,17,2.5237,2.5237,results.traveled_m,一致,9,0.9
+2026-10-15-v1,greedy,1024,F3,collisions=69 steps=80,80,0,70,1.8146,1.6301,results.traveled_m,一致,69,0.0
+2026-10-15-v1,greedy,1025,完成,success=1,35,0,20,2.5449,2.5449,results.traveled_m,一致,12,0.9
+2026-10-15-v1,greedy,1026,F2,results.traveled_m 0.376 < 0.4,80,0,79,0.3757,0.3757,results.traveled_m,一致,78,0.0
+2026-10-15-v1,greedy,1027,完成,success=1,54,0,32,3.7181,3.5396,results.traveled_m,一致,20,0.8
+2026-10-15-v1,greedy,1028,完成,success=1,58,0,34,3.9307,3.9307,results.traveled_m,一致,30,0.6
+2026-10-15-v1,greedy,1029,完成,success=1,48,0,30,3.6881,3.4977,results.traveled_m,一致,19,0.8
+2026-10-15-v1,greedy,1030,完成,success=1,38,0,22,2.8111,2.8111,results.traveled_m,一致,22,0.6
+2026-10-15-v1,greedy,1031,完成,success=1,43,0,24,3.2878,3.2878,results.traveled_m,一致,14,0.8
+2026-10-15-v1,qwen3-vl-plus--nothink--official,1000,F3,collisions=7 steps=56,56,0,20,2.9925,2.8080,results.traveled_m,一致,7,0.4
+2026-10-15-v1,qwen3-vl-plus--nothink--official,1001,F3,collisions=3 steps=16,16,0,4,0.7995,0.7995,results.traveled_m,一致,3,0.0
+2026-10-15-v1,qwen3-vl-plus--nothink--official,1002,F2,results.traveled_m 0.365 < 0.4,80,0,2,0.3650,0.3650,results.traveled_m,一致,0,0.0
+2026-10-15-v1,qwen3-vl-plus--nothink--official,1003,F3,collisions=6 steps=67,67,0,14,2.5747,2.3803,results.traveled_m,一致,6,0.5
+2026-10-15-v1,qwen3-vl-plus--nothink--official,1004,F3,collisions=3 steps=80,80,0,9,1.6579,1.6579,results.traveled_m,一致,3,0.3
+2026-10-15-v1,qwen3-vl-plus--nothink--official,1006,F3,collisions=6 steps=22,22,0,10,1.3048,1.1203,results.traveled_m,一致,6,0.0
+2026-10-15-v1,qwen3-vl-plus--nothink--official,1007,F3,collisions=3 steps=8,8,0,7,0.8185,0.6361,results.traveled_m,一致,3,0.0
+2026-10-15-v1,qwen3-vl-plus--nothink--official,1008,F2,results.traveled_m 0.000 < 0.4,80,0,0,0.0000,0.0000,results.traveled_m,一致,0,0.0
+2026-10-15-v1,qwen3-vl-plus--nothink--official,1009,F3,collisions=65 steps=80,80,0,67,1.3832,1.3832,results.traveled_m,一致,65,0.0
+2026-10-15-v1,qwen3-vl-plus--nothink--official,1010,F3,collisions=75 steps=80,80,0,75,0.5018,0.5018,results.traveled_m,一致,75,0.1
+2026-10-15-v1,qwen3-vl-plus--nothink--official,1011,F3,collisions=0 steps=41,41,0,13,2.3623,2.1798,results.traveled_m,一致,0,0.6
+2026-10-15-v1,qwen3-vl-plus--nothink--official,1012,F3,collisions=2 steps=6,6,0,4,0.6785,0.4861,results.traveled_m,一致,2,0.0
+2026-10-15-v1,qwen3-vl-plus--nothink--official,1013,F3,collisions=0 steps=4,4,0,3,0.5474,0.3630,results.traveled_m,不一致,0,0.0
+2026-10-15-v1,qwen3-vl-plus--nothink--official,1014,F3,collisions=13 steps=80,80,0,10,0.8214,0.8214,results.traveled_m,一致,13,0.0
+2026-10-15-v1,qwen3-vl-plus--nothink--official,1015,F3,collisions=1 steps=17,17,0,6,0.9978,0.9978,results.traveled_m,一致,1,0.0
+2026-10-15-v1,qwen3-vl-plus--nothink--official,1016,F3,collisions=10 steps=80,80,0,14,1.7870,1.6006,results.traveled_m,一致,10,0.0
+2026-10-15-v1,qwen3-vl-plus--nothink--official,1017,F3,collisions=1 steps=80,80,0,5,0.9361,0.9361,results.traveled_m,一致,1,0.1
+2026-10-15-v1,qwen3-vl-plus--nothink--official,1018,F3,collisions=8 steps=80,80,0,9,1.1039,1.1039,results.traveled_m,一致,8,0.0
+2026-10-15-v1,qwen3-vl-plus--nothink--official,1020,F3,collisions=74 steps=80,80,0,6,1.1573,0.9688,results.traveled_m,一致,74,0.0
+2026-10-15-v1,qwen3-vl-plus--nothink--official,1021,F3,collisions=3 steps=18,18,0,5,0.8069,0.6205,results.traveled_m,一致,3,0.0
+2026-10-15-v1,qwen3-vl-plus--nothink--official,1022,F3,collisions=0 steps=80,80,0,5,0.9937,0.7974,results.traveled_m,一致,0,0.0
+2026-10-15-v1,qwen3-vl-plus--nothink--official,1023,F3,collisions=31 steps=80,80,0,27,3.1672,3.1672,results.traveled_m,一致,31,0.0
+2026-10-15-v1,qwen3-vl-plus--nothink--official,1024,F3,collisions=22 steps=34,34,0,20,1.2943,1.1098,results.traveled_m,一致,22,0.0
+2026-10-15-v1,qwen3-vl-plus--nothink--official,1025,F3,collisions=2 steps=7,7,0,4,0.7093,0.5387,results.traveled_m,一致,2,0.0
+2026-10-15-v1,qwen3-vl-plus--nothink--official,1026,F3,collisions=28 steps=80,80,0,26,0.6711,0.4906,results.traveled_m,一致,28,0.0
+2026-10-15-v1,qwen3-vl-plus--nothink--official,1027,F3,collisions=5 steps=9,9,0,7,0.7849,0.6064,results.traveled_m,一致,5,0.0
+2026-10-15-v1,qwen3-vl-plus--nothink--official,1028,F3,collisions=9 steps=80,80,0,6,0.8956,0.7171,results.traveled_m,一致,9,0.0
+2026-10-15-v1,qwen3-vl-plus--nothink--official,1029,F3,collisions=8 steps=20,20,0,7,0.7588,0.5683,results.traveled_m,一致,8,0.0
+2026-10-15-v1,qwen3-vl-plus--nothink--official,1030,F3,collisions=13 steps=39,39,0,17,1.7482,1.7482,results.traveled_m,一致,13,0.0
+2026-10-15-v1,qwen3-vl-plus--nothink--official,1031,F3,collisions=11 steps=64,64,0,18,2.6270,2.6270,results.traveled_m,一致,11,0.2
+2026-10-15-v1,random,1000,F3,collisions=49 steps=80,80,0,35,2.6802,2.6802,results.traveled_m,一致,49,0.0
+2026-10-15-v1,random,1001,F3,collisions=27 steps=42,42,0,24,2.3338,2.1454,results.traveled_m,一致,27,0.0
+2026-10-15-v1,random,1002,F3,collisions=11 steps=17,17,0,10,0.8082,0.6257,results.traveled_m,一致,11,0.0
+2026-10-15-v1,random,1003,F3,collisions=53 steps=80,80,0,40,3.8320,3.6376,results.traveled_m,一致,53,0.0
+2026-10-15-v1,random,1004,F3,collisions=28 steps=38,38,0,18,1.2956,1.1072,results.traveled_m,一致,28,0.0
+2026-10-15-v1,random,1006,F2,results.traveled_m 0.000 < 0.4,1,0,0,0.0000,0.0000,results.traveled_m,一致,0,0.0
+2026-10-15-v1,random,1007,F3,collisions=35 steps=63,63,0,32,2.7117,2.7117,results.traveled_m,一致,35,0.0
+2026-10-15-v1,random,1008,F3,collisions=38 steps=57,57,0,30,3.3491,3.1606,results.traveled_m,一致,38,0.0
+2026-10-15-v1,random,1009,F3,collisions=10 steps=23,23,0,10,1.0579,1.0579,results.traveled_m,一致,10,0.0
+2026-10-15-v1,random,1010,F2,results.traveled_m 0.186 < 0.4,5,0,1,0.1864,0.1864,results.traveled_m,一致,0,0.0
+2026-10-15-v1,random,1011,F2,results.traveled_m 0.156 < 0.4,4,0,1,0.1561,0.1561,results.traveled_m,一致,1,0.0
+2026-10-15-v1,random,1012,F3,collisions=2 steps=16,16,0,7,1.3899,1.1975,results.traveled_m,一致,2,0.0
+2026-10-15-v1,random,1013,F3,collisions=10 steps=25,25,0,10,1.1940,1.0095,results.traveled_m,一致,10,0.0
+2026-10-15-v1,random,1014,F3,collisions=38 steps=60,60,0,29,2.1946,2.0061,results.traveled_m,一致,38,0.0
+2026-10-15-v1,random,1015,F3,collisions=50 steps=69,69,0,34,2.1755,2.1755,results.traveled_m,一致,50,0.0
+2026-10-15-v1,random,1016,F3,collisions=52 steps=76,76,0,34,3.0733,2.8869,results.traveled_m,一致,52,0.0
+2026-10-15-v1,random,1017,F3,collisions=58 steps=80,80,0,34,2.1482,1.9598,results.traveled_m,一致,58,0.0
+2026-10-15-v1,random,1018,F3,collisions=69 steps=80,80,0,42,2.4470,2.4470,results.traveled_m,一致,69,0.0
+2026-10-15-v1,random,1020,F3,collisions=55 steps=80,80,0,40,3.1520,2.9635,results.traveled_m,一致,55,0.0
+2026-10-15-v1,random,1021,F3,collisions=22 steps=49,49,0,26,2.8437,2.6572,results.traveled_m,一致,22,0.0
+2026-10-15-v1,random,1022,F3,collisions=62 steps=80,80,0,44,2.5367,2.5367,results.traveled_m,一致,62,0.0
+2026-10-15-v1,random,1023,F3,collisions=9 steps=16,16,0,10,0.8023,0.8023,results.traveled_m,一致,9,0.0
+2026-10-15-v1,random,1024,F3,collisions=33 steps=57,57,0,29,2.0245,1.8400,results.traveled_m,一致,33,0.0
+2026-10-15-v1,random,1025,F3,collisions=72 steps=80,80,0,48,1.9864,1.9864,results.traveled_m,一致,72,0.0
+2026-10-15-v1,random,1026,F3,collisions=30 steps=69,69,0,30,3.0288,2.8483,results.traveled_m,一致,30,0.1
+2026-10-15-v1,random,1027,F3,collisions=58 steps=80,80,0,42,3.1921,3.0136,results.traveled_m,一致,58,0.0
+2026-10-15-v1,random,1028,F3,collisions=14 steps=24,24,0,12,1.3527,1.1742,results.traveled_m,一致,14,0.0
+2026-10-15-v1,random,1029,F3,collisions=11 steps=24,24,0,12,1.5210,1.3306,results.traveled_m,一致,11,0.0
+2026-10-15-v1,random,1030,F3,collisions=0 steps=11,11,0,4,0.7101,0.5276,results.traveled_m,一致,0,0.2
+2026-10-15-v1,random,1031,F3,collisions=24 steps=28,28,0,16,0.7437,0.5613,results.traveled_m,一致,24,0.0

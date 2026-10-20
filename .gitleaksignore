@@ -1,0 +1,3 @@
+# gitleaks 误报登记（内部工单 P1，2026-09-26）：翻译记忆块 id（12 位十六进制，非密钥）
+2cc93f258ef5c74279ad1983fc1853b78c38f071:protocol/i18n/v0.backtranslation-2026-09-25.json:generic-api-key:203
+protocol/i18n/v0.backtranslation-2026-09-25.json:generic-api-key:203

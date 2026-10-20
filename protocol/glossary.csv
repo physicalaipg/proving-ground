@@ -1,0 +1,61 @@
+zh,en,check,note
+物理AI实验场,Proving Ground|physical-AI proving ground,yes,"站名／线名；首现可写 ""Proving Ground (physical-AI proving ground)"""
+看图走路,Look-and-Go,yes,Course 01 英文名；主理人 09-28 定（裁定 2026-09-28-22；查重表所记撞名接受；备选 Look-Then-Move 未采）
+停-看-想-动,stop–look–think–act|stop-look-think-act,yes,回路名；四段用 en dash 连接
+仿真分,sim score,yes,榜单三列之一
+真机分,real-robot score|real score,yes,榜单三列之一
+迁移差,transfer gap,yes,头条指标；不用 sim-to-real gap 作主译
+孪生保真度,twin fidelity,yes,各模型 |迁移差| 均值
+保真度,fidelity,no,
+数字孪生,digital twin,yes,
+孪生,twin,no,单字太泛，不检
+每次成功美元成本,cost per success (USD)|USD per success|$ per success,yes,
+每步延迟,per-step latency|latency per step,yes,API 侧时延
+检查点,checkpoint,yes,
+到达半径,reach radius,yes,0.40 m
+回合,episode,yes,
+回合上限,step cap|episode cap,yes,80 步
+碰撞扣分,collision penalty,yes,0.5/次
+检查点分,checkpoint score,yes,0–5 连续
+总分,total score,yes,
+路程比,path ratio,yes,实际÷理想
+理想路径,ideal path,yes,
+天花板基准,ceiling baseline|ceiling,yes,A*
+基线,baseline,yes,
+可解性,solvability,yes,
+不可解种子,unsolvable seed,yes,
+剔除率,rejection rate,yes,
+域随机化,domain randomization,yes,
+参考单元,reference unit,yes,UGV02
+参考平台,reference platform,yes,
+底盘,chassis,yes,
+差速底盘,differential-drive chassis,yes,
+机载相机,onboard camera,yes,
+俯拍,overhead camera|overhead,yes,
+冻结物,frozen artifact,yes,
+提示模板,prompt template,yes,
+提示边界,prompt boundary,yes,
+记忆,memory,no,
+拒答,refusal,yes,
+探活,preflight,yes,
+预算护栏,budget guard,yes,
+正式 N,formal N,yes,
+快评,quick take,yes,发布日 N=10
+正式,formal,no,
+发布日,release day,yes,
+人手小时,human-hours,yes,KPI
+未剪辑视频,unedited video,yes,
+原始日志,raw logs,yes,
+榜单,leaderboard,yes,
+被测模型,model under test|models under test,yes,
+被测,under test,no,
+套件,kit,yes,
+自然语言指令,natural-language instruction,yes,
+固定步长,fixed step|fixed-step,yes,
+离散动作,discrete action,yes,
+线速,linear speed,yes,
+角速,angular speed,yes,
+真值,ground truth,yes,
+计分器,scorer,yes,
+配对比较,paired comparison,yes,同一组种子
+期,edition,no,单字，不检

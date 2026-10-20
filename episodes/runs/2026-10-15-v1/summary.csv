@@ -1,0 +1,7 @@
+agent,model_id,vendor,thinking,endpoint,n,n_planned,partial,sim_score_mean,sim_score_ci95,success_rate,reached_frac_mean,checkpoint_score_mean,collisions_mean,collision_events_mean,total_score_mean,path_ratio_mean_success,usd_total,usd_per_success,usd_per_episode,cny_total,cny_per_success,cny_per_episode,price_tier,api_latency_mean_s,api_latency_p95_s,steps_mean,invalid_outputs_total,api_errors_total,cost_unknown,wall_s
+astar,scripted/astar,scripted,n/a,scripted,30,30,0,1.0,0.0,1.0,1.0,5.0,0.0,0.0,5.0,1.2725,0.0,0.0,0.0,0.0,0.0,0.0,,0.0002,0.0012,36.87,0,0,0,5.3
+greedy,scripted/greedy,scripted,n/a,scripted,30,30,0,0.7067,0.1059,0.8667,0.9,4.5271,21.5,2.0667,-6.2229,1.2146,0.0,0.0,0.0,0.0,0.0,0.0,,0.0,0.0,46.87,0,0,0,7.5
+random,scripted/random,scripted,n/a,scripted,30,30,0,0.01,0.0144,0.0,0.0867,0.6815,30.7,5.0333,-14.6685,,0.0,,0.0,0.0,,0.0,,0.0,0.0,47.13,0,0,0,7.2
+qwen3-vl-plus--nothink--official,qwen3-vl-plus,阿里云百炼（通义千问）,False,official,30,30,0,0.0733,0.0579,0.0,0.16,1.1455,13.6333,1.9667,-5.6711,,0.1975,,0.0066,1.4021,,0.0467,flat,1.2493,2.3444,51.6,0,0,0,1961.6
+glm-5v-turbo--nothink--official,glm-5v-turbo,智谱 BigModel,False,official,30,30,0,0.0033,0.0065,0.0,0.0133,0.4337,1.6333,0.8,-0.3829,,0.2788,,0.0093,1.9792,,0.066,flat,1.1938,3.8147,16.83,0,0,0,623.3
+deepseek-flash--nothink--official,deepseek-flash,DeepSeek 开放平台,False,official,30,30,0,0.0733,0.063,0.0667,0.3333,1.8747,41.6667,5.1667,-18.9586,1.7516,0.2075,0.1037,0.0069,1.4732,0.7366,0.0491,offpeak+peak,0.7458,1.0953,69.37,0,0,0,1597.8

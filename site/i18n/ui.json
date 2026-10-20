@@ -1,0 +1,383 @@
+{
+  "_": "站点界面词表：zh 为真源，en 为界面标签（非正文，不走 render_en 流水线）。正文（协议、发布说明）的英文由 tools/render_en.py 生成。",
+  "site.title": {
+    "zh": "物理AI实验场",
+    "en": "Proving Ground"
+  },
+  "site.tagline": {
+    "zh": "把每一代 AI 放进真实世界跑一遍：仿真分 · 真机分 · 迁移差",
+    "en": "Every AI generation, run in the real world: sim score · real-robot score · transfer gap"
+  },
+  "site.course": {
+    "zh": "Course 01「看图走路」",
+    "en": "Course 01 · Look-and-Go"
+  },
+  "nav.edition": {
+    "zh": "期",
+    "en": "Edition"
+  },
+  "status.planned": {
+    "zh": "候发布",
+    "en": "Upcoming"
+  },
+  "status.quick": {
+    "zh": "快评（兜底路径）",
+    "en": "Quick take (fallback path)"
+  },
+  "status.formal": {
+    "zh": "正式",
+    "en": "Formal"
+  },
+  "kpi.fidelity": {
+    "zh": "孪生保真度",
+    "en": "Twin fidelity"
+  },
+  "kpi.fidelity.help": {
+    "zh": "各模型 |迁移差| 的均值（分）；越小越准。模型 ≥5 时另给排名相关。",
+    "en": "Mean |transfer gap| across models (points); lower is better. Rank correlation shown from 5 models."
+  },
+  "kpi.spearman": {
+    "zh": "排名相关",
+    "en": "Rank corr."
+  },
+  "kpi.hours": {
+    "zh": "发布用时",
+    "en": "Time to publish"
+  },
+  "kpi.hours.help": {
+    "zh": "从被测模型 API 可用到榜单上线的小时数；目标 ≤48h，硬线 72h。",
+    "en": "Hours from model API availability to leaderboard publication; target ≤48h, hard line 72h."
+  },
+  "kpi.human": {
+    "zh": "人手小时",
+    "en": "Human-hours"
+  },
+  "kpi.human.help": {
+    "zh": "本期全部人工操作时长（场地、真机、剪辑、发布）。",
+    "en": "Total hands-on time this edition (arena, robot, editing, publishing)."
+  },
+  "kpi.cost": {
+    "zh": "本期 API 花费",
+    "en": "API spend this edition"
+  },
+  "kpi.cost.help": {
+    "zh": "仿真与真机全部模型调用的美元总额（按官网单价；人民币按协议汇率 ¥7.1/$ 换算并列于榜单）。",
+    "en": "USD total of all model calls, sim and real (list prices; CNY shown alongside at the protocol rate of ¥7.1/$)."
+  },
+  "kpi.n": {
+    "zh": "回合数 仿真／真机",
+    "en": "Episodes sim / real"
+  },
+  "kpi.trigger": {
+    "zh": "触发",
+    "en": "Trigger"
+  },
+  "unit.h": {
+    "zh": "小时",
+    "en": "h"
+  },
+  "unit.pts": {
+    "zh": "分",
+    "en": "pts"
+  },
+  "board.h": {
+    "zh": "榜单",
+    "en": "Leaderboard"
+  },
+  "board.sub": {
+    "zh": "仿真分∈[0,1]＝到达检查点占比 − 封顶的碰撞事件扣分（协议 §5）；真机分同式。迁移差＝真机分 − 仿真分，为头条指标。行名＝模型 ID · 思考档 · 端点（配置即身份，改任一项＝新行）；「已复跑」＝操作方复跑过，「自报」＝投稿方自报。只列模型；读真值的基线与天花板见下。 真机列：待锚（第二期）——目标窗 11 月底～12 月初，11-02 定日；公开征集＝仿真按协议复跑（protocol-v0-prereg）＋真机复跑意向登记，真机协议 v0 第二期前发布。",
+    "en": "Sim score ∈ [0,1] = share of checkpoints reached − capped collision-event penalty (protocol §5); real score uses the same formula. Transfer gap = real − sim, the headline metric. Row = model ID · thinking mode · endpoint (configuration is identity: change any and it is a new row); “re-run” = re-run by the operator, “self-reported” = submitted as is. Models only; ground-truth baselines and ceiling below. Real-robot column: anchor pending (Edition 02) — target window late Nov to early Dec, date set on 11-02; open call = sim re-runs under the protocol (protocol-v0-prereg) + registration of intent for real-robot re-runs; the real-robot protocol v0 is published before Edition 02."
+  },
+  "board.empty": {
+    "zh": "本期尚未发布：仿真列由 episodes/ 下的 CSV 自动填入；真机列待锚（第二期）。",
+    "en": "Not published yet: the sim column fills automatically from episodes/ CSVs; the real-robot column is anchor-pending (Edition 02)."
+  },
+  "col.rank": {
+    "zh": "名次",
+    "en": "Rank"
+  },
+  "rank.tie": {
+    "zh": "并列",
+    "en": "tied"
+  },
+  "col.model": {
+    "zh": "模型",
+    "en": "Model"
+  },
+  "col.sim": {
+    "zh": "仿真分",
+    "en": "Sim score"
+  },
+  "col.real": {
+    "zh": "真机分",
+    "en": "Real score"
+  },
+  "col.gap": {
+    "zh": "迁移差",
+    "en": "Transfer gap"
+  },
+  "col.success": {
+    "zh": "成功率 仿／真",
+    "en": "Success sim / real"
+  },
+  "col.collisions": {
+    "zh": "碰撞/回合 仿／真",
+    "en": "Collisions/ep sim / real"
+  },
+  "col.pathratio": {
+    "zh": "路程比 仿／真",
+    "en": "Path ratio sim / real"
+  },
+  "col.usd": {
+    "zh": "每次成功 $ 仿／真",
+    "en": "$ per success sim / real"
+  },
+  "col.latency": {
+    "zh": "每步延迟 s 仿／真",
+    "en": "Latency/step s sim / real"
+  },
+  "col.n": {
+    "zh": "N 仿／真",
+    "en": "N sim / real"
+  },
+  "col.agent": {
+    "zh": "基线",
+    "en": "Baseline"
+  },
+  "col.kind": {
+    "zh": "性质",
+    "en": "Role"
+  },
+  "col.score": {
+    "zh": "仿真分",
+    "en": "Sim score"
+  },
+  "col.cps": {
+    "zh": "检查点分",
+    "en": "Checkpoint score"
+  },
+  "col.steps": {
+    "zh": "步数",
+    "en": "Steps"
+  },
+  "kind.astar": {
+    "zh": "天花板（已知地图 A*，读真值）",
+    "en": "Ceiling (A* on known map, ground truth)"
+  },
+  "kind.greedy": {
+    "zh": "基线（贪心真值导航，读真值）",
+    "en": "Baseline (greedy on ground truth)"
+  },
+  "kind.random": {
+    "zh": "基线（随机，不看图）",
+    "en": "Baseline (random, blind)"
+  },
+  "kind.oracle": {
+    "zh": "基线（旧名 oracle＝贪心）",
+    "en": "Baseline (legacy name oracle = greedy)"
+  },
+  "baseline.h": {
+    "zh": "基线与天花板（读真值·非视觉；仿真，成本 0，不进榜）",
+    "en": "Baselines & ceiling (ground truth, non-visual; sim, zero cost, not ranked)"
+  },
+  "baseline.sub": {
+    "zh": "同一组种子上的脚本化对照，与模型行分栏：astar／greedy 读孪生真值（位姿、地图），不看相机图；模型成绩应落在 random 与 astar 之间。 三行为预注册基线数据（非新跑，tag protocol-v0-prereg 内基线批）；另一行「附真值提示」（诊断跑批：三家各 N=10、每步附 A* 下一步动作文本，各 10/10、碰撞 0）同列于此，不进模型榜。",
+    "en": "Scripted references on the same seeds, kept apart from model rows: astar/greedy read the twin's ground truth (pose, map) and never see the camera; model scores should fall between random and astar. The three rows are pre-registered baseline data (no new runs; the baseline batch inside tag protocol-v0-prereg); one more row, \"ground-truth hint\" (diagnostic batch: each of the three models, N=10, with the A* next action appended to every step's prompt — 10/10 each, zero collisions), sits in this column and stays out of the model board."
+  },
+  "method.h": {
+    "zh": "方法与冻结物",
+    "en": "Method & frozen artifacts"
+  },
+  "method.protocol": {
+    "zh": "协议版本",
+    "en": "Protocol version"
+  },
+  "method.prompt": {
+    "zh": "提示模板 sha256",
+    "en": "Prompt template sha256"
+  },
+  "method.config": {
+    "zh": "孪生配置 sha256",
+    "en": "Twin config sha256"
+  },
+  "method.reject": {
+    "zh": "不可解种子剔除率",
+    "en": "Unsolvable-seed rejection rate"
+  },
+  "method.seeds": {
+    "zh": "种子起点／筛选数",
+    "en": "Seed start / screened"
+  },
+  "method.score": {
+    "zh": "分的定义",
+    "en": "Score definition"
+  },
+  "method.score.v": {
+    "zh": "仿真分＝max(0, 到达检查点数/5 − min(0.1 × 碰撞起始事件数, 0.5))，N 回合算术平均并附 95% 置信半宽；到达半径 0.40 m；回合上限 80 步。全文见协议 §5，计分只在 harness/scoring.py 实现。",
+    "en": "Sim score = max(0, checkpoints reached/5 − min(0.1 × collision-onset events, 0.5)), averaged over N episodes with a 95% CI half-width; reach radius 0.40 m; 80-step cap. See protocol §5; scoring is implemented once, in harness/scoring.py."
+  },
+  "method.gap": {
+    "zh": "迁移差与保真度",
+    "en": "Transfer gap & fidelity"
+  },
+  "method.gap.v": {
+    "zh": "迁移差＝真机分 − 仿真分（同一模型、同一组种子）；保真度＝各模型 |迁移差| 均值；只在每期真机后升版孪生，每次只修迁移差最大一项。",
+    "en": "Gap = real − sim (same model, same seeds); fidelity = mean |gap|; the twin is revised only after each real-robot edition, fixing the single largest gap."
+  },
+  "method.links": {
+    "zh": "协议全文",
+    "en": "Full protocol"
+  },
+  "method.zh": {
+    "zh": "中文（真源）",
+    "en": "Chinese (source of truth)"
+  },
+  "method.en": {
+    "zh": "English（流水线生成·便利译本，中文为准）",
+    "en": "English (pipeline-generated convenience translation; Chinese governs)"
+  },
+  "data.h": {
+    "zh": "原始数据（随发）",
+    "en": "Raw data (published with every edition)"
+  },
+  "data.sub": {
+    "zh": "完整逐步日志、未剪辑视频索引与 sha256 清单随每期同时发布；下面每个数字都能追到一行 CSV。",
+    "en": "Full step logs, the unedited-video index and a sha256 manifest ship with every edition; every number above traces to a CSV row."
+  },
+  "data.dir": {
+    "zh": "本期目录",
+    "en": "Edition directory"
+  },
+  "data.logs": {
+    "zh": "完整逐步日志（jsonl）",
+    "en": "Full step logs (jsonl)"
+  },
+  "data.video": {
+    "zh": "未剪辑视频索引",
+    "en": "Unedited video index"
+  },
+  "data.manifest": {
+    "zh": "sha256 清单",
+    "en": "sha256 manifest"
+  },
+  "data.runs": {
+    "zh": "本期引用的 run（CSV 副本）",
+    "en": "Runs referenced (CSV copies)"
+  },
+  "data.videos.n": {
+    "zh": "条视频已索引",
+    "en": "videos indexed"
+  },
+  "foot": {
+    "zh": "本页所有数字由 tools/build_site.py 自 episodes/ 下的 CSV 生成，不手填；构建",
+    "en": "Every number on this page is generated by tools/build_site.py from CSVs under episodes/; nothing is typed by hand. Build"
+  },
+  "foot.repo": {
+    "zh": "仓库",
+    "en": "Repository"
+  },
+  "na": {
+    "zh": "—",
+    "en": "—"
+  },
+  "pending": {
+    "zh": "待锚（第二期）",
+    "en": "anchor pending (Ed. 02)"
+  },
+  "over72": {
+    "zh": "超 72h 硬线",
+    "en": "over 72h hard line"
+  },
+  "over48": {
+    "zh": "超 48h 目标",
+    "en": "over 48h target"
+  },
+  "within48": {
+    "zh": "≤48h",
+    "en": "≤48h"
+  },
+  "col.success1": {
+    "zh": "成功率",
+    "en": "Success"
+  },
+  "col.collisions1": {
+    "zh": "碰撞/回合",
+    "en": "Collisions/ep"
+  },
+  "col.pathratio1": {
+    "zh": "路程比（成功回合）",
+    "en": "Path ratio (successes)"
+  },
+  "col.verified": {
+    "zh": "复跑",
+    "en": "Verified"
+  },
+  "verified.rerun": {
+    "zh": "已复跑",
+    "en": "re-run"
+  },
+  "verified.self": {
+    "zh": "自报",
+    "en": "self-reported"
+  },
+  "col.reached": {
+    "zh": "到达占比 仿／真",
+    "en": "Checkpoints reached sim / real"
+  },
+  "col.reached1": {
+    "zh": "到达占比",
+    "en": "Checkpoints reached"
+  },
+  "col.events": {
+    "zh": "碰撞事件/回合 仿／真",
+    "en": "Collision events/ep sim / real"
+  },
+  "col.events1": {
+    "zh": "碰撞事件/回合",
+    "en": "Collision events/ep"
+  },
+  "col.cost": {
+    "zh": "每次成功 ¥／$ 仿／真",
+    "en": "Per success ¥ / $ sim / real"
+  },
+  "col.gt": {
+    "zh": "读真值",
+    "en": "Ground truth"
+  },
+  "gt.yes": {
+    "zh": "是（非视觉）",
+    "en": "yes (non-visual)"
+  },
+  "gt.no": {
+    "zh": "否（随机）",
+    "en": "no (random)"
+  },
+  "ident.thinking": {
+    "zh": "思考",
+    "en": "thinking"
+  },
+  "ident.endpoint": {
+    "zh": "端点",
+    "en": "endpoint"
+  },
+  "ident.tier": {
+    "zh": "计价时段",
+    "en": "price tier"
+  },
+  "endpoint.official": {
+    "zh": "官方",
+    "en": "official"
+  },
+  "endpoint.aggregator": {
+    "zh": "聚合",
+    "en": "aggregator"
+  },
+  "cost.zero.help": {
+    "zh": "成功数为 0，每次成功成本无定义",
+    "en": "0 successes: per-success cost is undefined"
+  },
+  "cost.zero.fn": {
+    "zh": "¹ 成功数为 0 时「每次成功成本」无定义，显示 —；该行的总花费见期 KPI「本期 API 花费」与 run 目录 summary.csv 的 usd_total／cny_total。",
+    "en": "¹ Per-success cost is undefined when a row has 0 successes and is shown as —; the row's total spend is in the edition KPI and in usd_total / cny_total of the run's summary.csv."
+  }
+}

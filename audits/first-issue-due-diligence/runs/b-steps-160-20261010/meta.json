@@ -1,0 +1,74 @@
+{
+ "started": "2026-10-10T05:22:51",
+ "purpose": "内部工单 (b) 步数敏感性：80→160 步，无提示，只记观察、不进榜、不改判据",
+ "hint": "none",
+ "hint_template": null,
+ "n": 10,
+ "seed0": 1000,
+ "max_steps": 160,
+ "config": "twin/configs/course01.yaml",
+ "config_sha256": "7fcf28e75212b7c62a569916574035f9d97988df4e1c88ac5b2641f20d4fcfd0",
+ "prompt_sha256": "b9006b83327d4fc3c57026601542ff811697cf335b2b5e56a452a7ecb5d08b40",
+ "models_file": "harness/models.yaml",
+ "agents": [
+  "qwen3-vl-plus--nothink--official",
+  "glm-5v-turbo--nothink--official",
+  "deepseek-flash--nothink--official"
+ ],
+ "seeds": [
+  1000,
+  1001,
+  1002,
+  1003,
+  1004,
+  1006,
+  1007,
+  1008,
+  1009,
+  1010
+ ],
+ "randomization": {
+  "enabled": true,
+  "light": true,
+  "textures": true,
+  "friction": true,
+  "slip": [
+   0.9,
+   1.0
+  ],
+  "motion_noise_pct": 3
+ },
+ "budget_usd": 5.0,
+ "fx_cny_per_usd": 7.1,
+ "script": "audits/first-issue-due-diligence/a_action_parse.py",
+ "agents_identity": {
+  "qwen3-vl-plus--nothink--official": {
+   "model": "qwen3-vl-plus",
+   "thinking": false,
+   "endpoint": "official",
+   "vendor": "阿里云百炼（通义千问）",
+   "row_name_zh": "qwen3-vl-plus · 思考关 · 官方",
+   "row_name_en": "qwen3-vl-plus · thinking off · official endpoint"
+  },
+  "glm-5v-turbo--nothink--official": {
+   "model": "glm-5v-turbo",
+   "thinking": false,
+   "endpoint": "official",
+   "vendor": "智谱 BigModel",
+   "row_name_zh": "glm-5v-turbo · 思考关 · 官方",
+   "row_name_en": "glm-5v-turbo · thinking off · official endpoint"
+  },
+  "deepseek-flash--nothink--official": {
+   "model": "deepseek-flash",
+   "thinking": false,
+   "endpoint": "official",
+   "vendor": "DeepSeek 开放平台",
+   "row_name_zh": "deepseek-flash · 思考关 · 官方",
+   "row_name_en": "deepseek-flash · thinking off · official endpoint"
+  }
+ },
+ "finished": "2026-10-10T05:59:15",
+ "wall_s": 2182.9,
+ "usd_total": 0.3568,
+ "budget_stop": null
+}

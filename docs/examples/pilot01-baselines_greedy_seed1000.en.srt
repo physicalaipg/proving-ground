@@ -1,0 +1,163 @@
+1
+00:00:00,000 --> 00:00:03,000
+2026-09-25-pilot01-baselines · greedy · seed 1000 · protocol v0
+
+2
+00:00:03,000 --> 00:00:05,500
+Step 1 · target #1 · turn left
+
+3
+00:00:05,500 --> 00:00:08,000
+Step 2 · target #1 · forward
+
+4
+00:00:08,000 --> 00:00:10,500
+Step 3 · target #1 · forward
+
+5
+00:00:10,500 --> 00:00:13,000
+Step 4 · target #1 · forward
+
+6
+00:00:13,000 --> 00:00:15,500
+Step 5 · target #2 · forward · collision
+
+7
+00:00:15,500 --> 00:00:18,000
+Step 6 · target #2 · turn left · collision
+
+8
+00:00:18,000 --> 00:00:20,500
+Step 7 · target #2 · forward · collision
+
+9
+00:00:20,500 --> 00:00:23,000
+Step 8 · target #2 · forward · collision
+
+10
+00:00:23,000 --> 00:00:25,500
+Step 9 · target #2 · forward · collision
+
+11
+00:00:25,500 --> 00:00:28,000
+Step 10 · target #2 · forward · collision
+
+12
+00:00:28,000 --> 00:00:30,500
+Step 11 · target #2 · forward · collision
+
+13
+00:00:30,500 --> 00:00:33,000
+Step 12 · target #2 · turn left · collision
+
+14
+00:00:33,000 --> 00:00:35,500
+Step 13 · target #2 · forward · collision
+
+15
+00:00:35,500 --> 00:00:38,000
+Step 14 · target #2 · forward · collision
+
+16
+00:00:38,000 --> 00:00:40,500
+Step 15 · target #2 · turn left · collision
+
+17
+00:00:40,500 --> 00:00:43,000
+Step 16 · target #2 · forward · collision
+
+18
+00:00:43,000 --> 00:00:45,500
+Step 17 · target #2 · forward · collision
+
+19
+00:00:45,500 --> 00:00:48,000
+Step 18 · target #2 · forward · collision
+
+20
+00:00:48,000 --> 00:00:50,500
+Step 19 · target #2 · turn left · collision
+
+21
+00:00:50,500 --> 00:00:53,000
+Step 20 · target #2 · forward
+
+22
+00:00:53,000 --> 00:00:55,500
+Step 21 · target #2 · forward
+
+23
+00:00:55,500 --> 00:00:58,000
+Step 22 · target #2 · forward
+
+24
+00:00:58,000 --> 00:01:00,500
+Step 23 · target #3 · turn left
+
+25
+00:01:00,500 --> 00:01:03,000
+Step 24 · target #3 · turn left
+
+26
+00:01:03,000 --> 00:01:05,500
+Step 25 · target #3 · turn left
+
+27
+00:01:05,500 --> 00:01:08,000
+Step 26 · target #3 · forward
+
+28
+00:01:08,000 --> 00:01:10,500
+Step 27 · target #4 · turn left
+
+29
+00:01:10,500 --> 00:01:13,000
+Step 28 · target #4 · turn left
+
+30
+00:01:13,000 --> 00:01:15,500
+Step 29 · target #4 · turn left
+
+31
+00:01:15,500 --> 00:01:18,000
+Step 30 · target #4 · turn left
+
+32
+00:01:18,000 --> 00:01:20,500
+Step 31 · target #4 · turn left
+
+33
+00:01:20,500 --> 00:01:23,000
+Step 32 · target #4 · turn left
+
+34
+00:01:23,000 --> 00:01:25,500
+Step 33 · target #4 · forward
+
+35
+00:01:25,500 --> 00:01:28,000
+Step 34 · target #4 · forward
+
+36
+00:01:28,000 --> 00:01:30,500
+Step 35 · target #4 · forward
+
+37
+00:01:30,500 --> 00:01:33,000
+Step 36 · target #4 · forward
+
+38
+00:01:33,000 --> 00:01:35,500
+Step 37 · target #4 · forward
+
+39
+00:01:35,500 --> 00:01:38,000
+Step 38 · target #4 · turn right
+
+40
+00:01:38,000 --> 00:01:40,500
+Step 39 · target #4 · forward
+
+41
+00:01:40,500 --> 00:01:44,500
+Result: reached 5/5 · 15 collisions · 39 steps · $0.000

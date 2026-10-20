@@ -1,0 +1,53 @@
+# Course 01「看图走路」孪生配置 v0（DEC-20260925-04／05）。套件到货后**改值不改码**（P3）。
+# 底盘尺寸取 protocol/kit-candidates.md 推荐项微雪 UGV02：252×230×94 mm；相机安装高度自定，暂取 0.15 m（到货实测后改）。
+arena:
+  size_m: 2.0            # 正方形边长，中心在原点，x,y ∈ [-1, 1]
+  wall_height_m: 0.25
+  wall_thickness_m: 0.02
+checkpoints:
+  count: 5
+  reach_radius_m: 0.40   # 机器人中心进入此半径＝到达。必须 > 步长＋车身半长＋柱半径（0.20＋0.126＋0.03≈0.36），否则直行接近会一步撞柱；真机俯拍判定同值
+  min_gap_m: 0.50        # 检查点两两最小间距
+  wall_margin_m: 0.35    # 距墙最小距离
+  post_radius_m: 0.03
+  post_height_m: 0.30
+  sign_size_m: 0.16      # 数字牌边长（立在柱顶）
+obstacles:
+  count_min: 3
+  count_max: 5
+  size_min_m: 0.10       # 边长/直径
+  size_max_m: 0.25
+  height_m: 0.20
+  clearance_m: 0.40      # 距检查点与起点的最小距离
+robot:
+  length_m: 0.252
+  width_m: 0.230
+  height_m: 0.094
+  mass_kg: 1.5
+  contact_friction: 0.3  # 车身与墙/柱/障碍的滑动摩擦（MuJoCo 取两 geom 较大者；默认 1.0 会贴柱卡死）
+  start: {x: -0.75, y: -0.75, yaw_deg: 45, jitter_m: 0.10, jitter_deg: 25}
+camera:
+  height_m: 0.15         # 镜头中心离地高度（真机实测后改）
+  forward_offset_m: 0.10 # 镜头在底盘中心前方的距离
+  hfov_deg: 70           # 水平视场角（真机相机规格后改）
+  width: 640
+  height: 480
+motion:                  # 与 harness.interface.MotionSpec 同名字段；真机固件限速＝linear_mps／angular_dps
+  forward_m: 0.20
+  turn_deg: 30.0
+  linear_mps: 0.20
+  angular_dps: 60.0
+  settle_s: 0.30
+physics:
+  timestep: 0.002
+  control_hz: 100
+  friction: 0.8
+randomization:           # P6 域随机化（带种子；enabled=false 时取标称值；布局采样始终按回合种子变化）
+  enabled: true
+  light: true            # 光源方位、漫反射/环境光强度
+  textures: true         # 地面棋盘色、墙色、障碍色
+  friction: true         # 地面摩擦系数 ±30%（v0 底盘为平面三自由度模型、不与地面接触，此项对结果无影响；保留给 v1 轮地接触模型）
+  slip: [0.90, 1.00]     # 打滑系数：实际位移＝指令位移×slip（v0 以此代替轮地摩擦动力学，见 docs/engine-selection.md §四）
+  motion_noise_pct: 3    # 每步位移/转角的高斯噪声（百分比，1σ）
+episode:
+  max_steps: 80          # 无障碍理想路径≈26 步直行＋≈15 步转向；模型在环每回合最多 80 次调用

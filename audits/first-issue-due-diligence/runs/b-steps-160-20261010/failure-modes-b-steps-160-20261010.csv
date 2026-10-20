@@ -1,0 +1,31 @@
+run,agent,seed,cls,why,steps,invalid_steps,forward_valid_steps,traveled_m,disp_log_m,disp_source,disp_cross_check,collisions,sim_score
+b-steps-160-20261010,deepseek-flash--nothink--official,1000,F3,collisions=45 steps=50,50,0,48,0.7558,0.7558,results.traveled_m,一致,45,0.1
+b-steps-160-20261010,deepseek-flash--nothink--official,1001,F3,collisions=34 steps=59,59,0,35,2.8484,2.8484,results.traveled_m,一致,34,0.0
+b-steps-160-20261010,deepseek-flash--nothink--official,1002,F3,collisions=8 steps=16,16,0,11,0.9513,0.9513,results.traveled_m,一致,8,0.1
+b-steps-160-20261010,deepseek-flash--nothink--official,1003,F3,collisions=92 steps=160,160,0,88,6.3469,6.1525,results.traveled_m,一致,92,0.3
+b-steps-160-20261010,deepseek-flash--nothink--official,1004,F3,collisions=98 steps=160,160,0,74,4.0592,4.0592,results.traveled_m,一致,98,0.0
+b-steps-160-20261010,deepseek-flash--nothink--official,1006,F3,collisions=139 steps=160,160,0,138,2.6465,2.4621,results.traveled_m,一致,139,0.0
+b-steps-160-20261010,deepseek-flash--nothink--official,1007,完成,success=1,136,0,90,7.1919,7.0094,results.traveled_m,一致,91,0.5
+b-steps-160-20261010,deepseek-flash--nothink--official,1008,F3,collisions=116 steps=160,160,0,101,7.5667,7.5667,results.traveled_m,一致,116,0.0
+b-steps-160-20261010,deepseek-flash--nothink--official,1009,F3,collisions=110 steps=160,160,0,104,2.9684,2.9684,results.traveled_m,一致,110,0.0
+b-steps-160-20261010,deepseek-flash--nothink--official,1010,F3,collisions=98 steps=128,128,0,102,3.8408,3.8408,results.traveled_m,一致,98,0.0
+b-steps-160-20261010,glm-5v-turbo--nothink--official,1000,F3,collisions=1 steps=42,42,0,4,0.6820,0.6820,results.traveled_m,一致,1,0.1
+b-steps-160-20261010,glm-5v-turbo--nothink--official,1001,F2,results.traveled_m 0.196 < 0.4,14,0,1,0.1964,0.1964,results.traveled_m,一致,0,0.0
+b-steps-160-20261010,glm-5v-turbo--nothink--official,1002,F3,collisions=8 steps=26,26,0,6,0.7887,0.7887,results.traveled_m,一致,8,0.0
+b-steps-160-20261010,glm-5v-turbo--nothink--official,1003,F2,results.traveled_m 0.391 < 0.4,3,0,2,0.3907,0.1964,results.traveled_m,一致,0,0.0
+b-steps-160-20261010,glm-5v-turbo--nothink--official,1004,F2,results.traveled_m 0.363 < 0.4,4,0,2,0.3630,0.3630,results.traveled_m,一致,0,0.0
+b-steps-160-20261010,glm-5v-turbo--nothink--official,1006,F3,collisions=1 steps=4,4,0,3,0.4904,0.3060,results.traveled_m,不一致,1,0.0
+b-steps-160-20261010,glm-5v-turbo--nothink--official,1007,F3,collisions=0 steps=6,6,0,4,0.7498,0.5673,results.traveled_m,一致,0,0.0
+b-steps-160-20261010,glm-5v-turbo--nothink--official,1008,F3,collisions=10 steps=152,152,0,8,1.4057,1.4057,results.traveled_m,一致,10,0.0
+b-steps-160-20261010,glm-5v-turbo--nothink--official,1009,F3,collisions=0 steps=7,7,0,5,0.9203,0.9203,results.traveled_m,一致,0,0.0
+b-steps-160-20261010,glm-5v-turbo--nothink--official,1010,F2,results.traveled_m 0.000 < 0.4,2,0,0,0.0000,0.0000,results.traveled_m,一致,0,0.0
+b-steps-160-20261010,qwen3-vl-plus--nothink--official,1000,F3,collisions=142 steps=160,160,0,16,1.4860,1.3015,results.traveled_m,一致,142,0.0
+b-steps-160-20261010,qwen3-vl-plus--nothink--official,1001,F3,collisions=16 steps=49,49,0,14,2.2518,2.2518,results.traveled_m,一致,16,0.0
+b-steps-160-20261010,qwen3-vl-plus--nothink--official,1002,F3,collisions=7 steps=53,53,0,15,2.1937,2.1937,results.traveled_m,一致,7,0.6
+b-steps-160-20261010,qwen3-vl-plus--nothink--official,1003,F3,collisions=19 steps=63,63,0,28,3.9626,3.7682,results.traveled_m,一致,19,0.3
+b-steps-160-20261010,qwen3-vl-plus--nothink--official,1004,F2,results.traveled_m 0.369 < 0.4,42,0,2,0.3689,0.3689,results.traveled_m,一致,0,0.0
+b-steps-160-20261010,qwen3-vl-plus--nothink--official,1006,F3,collisions=4 steps=9,9,0,7,0.9776,0.7932,results.traveled_m,一致,4,0.0
+b-steps-160-20261010,qwen3-vl-plus--nothink--official,1007,F3,collisions=5 steps=23,23,0,9,1.2654,1.0829,results.traveled_m,一致,5,0.0
+b-steps-160-20261010,qwen3-vl-plus--nothink--official,1008,F2,results.traveled_m 0.262 < 0.4,160,0,4,0.2619,0.2619,results.traveled_m,一致,6,0.0
+b-steps-160-20261010,qwen3-vl-plus--nothink--official,1009,F3,collisions=154 steps=160,160,0,158,1.1505,1.1505,results.traveled_m,一致,154,0.0
+b-steps-160-20261010,qwen3-vl-plus--nothink--official,1010,F3,collisions=2 steps=29,29,0,10,1.6518,1.6518,results.traveled_m,一致,2,0.3

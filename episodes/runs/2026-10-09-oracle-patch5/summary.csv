@@ -1,0 +1,2 @@
+agent,model_id,vendor,thinking,endpoint,n,n_planned,partial,sim_score_mean,sim_score_ci95,success_rate,reached_frac_mean,checkpoint_score_mean,collisions_mean,collision_events_mean,total_score_mean,path_ratio_mean_success,usd_total,usd_per_success,usd_per_episode,cny_total,cny_per_success,cny_per_episode,price_tier,api_latency_mean_s,api_latency_p95_s,steps_mean,invalid_outputs_total,api_errors_total,cost_unknown,wall_s
+astar,scripted/astar,scripted,n/a,scripted,30,30,0,1.0,0.0,1.0,1.0,5.0,0.0,0.0,5.0,1.2725,0.0,0.0,0.0,0.0,0.0,0.0,,0.0001,0.0012,36.87,0,0,0,4.7

@@ -1,0 +1,38 @@
+# GitHub Pages 部署（内部工单）：站点数据必须与 episodes/ 一致（--check），否则不部署。
+name: pages
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+concurrency:
+  group: pages
+  cancel-in-progress: true
+jobs:
+  check:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - name: 站点数据与 episodes/ 一致性（不手填数字）
+        run: python3 tools/build_site.py --check
+      - name: 构建自测
+        run: python3 tools/selftest_site.py
+      - name: 首期发布包 sha256 清单校验
+        run: for f in episodes/editions/*/SHA256SUMS; do python3 tools/manifest.py verify "$f"; done
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with: { path: site }
+  deploy:
+    needs: check
+    runs-on: ubuntu-24.04
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

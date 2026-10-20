@@ -1,0 +1,686 @@
+agent,seed,step,raw_text_80,raw_len,parsed_action,decision_valid,executed_action,consistent
+deepseek-flash--nothink--official,1000,0,"{""action"": ""forward"", ""note"": ""Checkpoint 1 ahead-left; checkpoint 4 sign visibl",132,forward,True,forward,一致
+deepseek-flash--nothink--official,1000,1,"{""action"": ""left"", ""note"": ""See checkpoint 5 ahead; purple obstacle right. Need ",119,left,True,left,一致
+deepseek-flash--nothink--official,1000,2,"{""action"": ""left"", ""note"": ""See checkpoint 5 ahead; purple obstacle right. Need ",119,left,True,left,一致
+deepseek-flash--nothink--official,1000,3,"{""action"": ""left"", ""note"": ""Checkpoint 1 sign red border ahead-right; purple obs",115,left,True,left,一致
+deepseek-flash--nothink--official,1000,4,"{""action"": ""left"", ""note"": ""Red sign checkpoint 1 ahead-right, purple cylinder l",117,left,True,left,一致
+deepseek-flash--nothink--official,1000,5,"{""action"": ""left"", ""note"": ""Wall ahead, red checkpoint 1 sign right; continue tu",104,left,True,left,一致
+deepseek-flash--nothink--official,1000,6,"{""action"": ""left"", ""note"": ""Wall fills view; red checkpoint 1 was right, keep tu",104,left,True,left,一致
+deepseek-flash--nothink--official,1000,7,"{""action"": ""left"", ""note"": ""Wall fills view; red checkpoint 1 is to my right, ke",98,left,True,left,一致
+deepseek-flash--nothink--official,1000,8,"{""action"": ""left"", ""note"": ""Wall fills view; red checkpoint 1 is to my right, ke",109,left,True,left,一致
+deepseek-flash--nothink--official,1000,9,"{""action"": ""left"", ""note"": ""Wall fills view; red checkpoint 1 to my right, keep ",106,left,True,left,一致
+deepseek-flash--nothink--official,1000,10,"{""action"": ""left"", ""note"": ""Wall still fills view; red checkpoint 1 to my right,",112,left,True,left,一致
+deepseek-flash--nothink--official,1000,11,"{""action"": ""left"", ""note"": ""Wall fills view; red checkpoint 1 to my right, keep ",106,left,True,left,一致
+deepseek-flash--nothink--official,1000,12,"{""action"": ""left"", ""note"": ""Big purple wall/obstacle in front left; red checkpoi",139,left,True,left,一致
+deepseek-flash--nothink--official,1000,13,"{""action"": ""left"", ""note"": ""Purple wall fills most of view; yellow edge above. C",127,left,True,left,一致
+deepseek-flash--nothink--official,1000,14,"{""action"": ""left"", ""note"": ""Purple wall and box dominate view; checkpoint 5 visi",139,left,True,left,一致
+deepseek-flash--nothink--official,1000,15,"{""action"": ""left"", ""note"": ""Checkpoint 1 red sign now visible left-center; rotat",109,left,True,left,一致
+deepseek-flash--nothink--official,1000,16,"{""action"": ""forward"", ""note"": ""Checkpoint 1 red sign ahead; purple cylinder bloc",113,forward,True,forward,一致
+deepseek-flash--nothink--official,1000,17,"{""action"": ""forward"", ""note"": ""Moving toward checkpoint 1 red sign; purple cylin",106,forward,True,forward,一致
+deepseek-flash--nothink--official,1000,18,"{""action"": ""forward"", ""note"": ""Checkpoint 2 green sign ahead center; checkpoint ",116,forward,True,forward,一致
+deepseek-flash--nothink--official,1000,19,"{""action"": ""forward"", ""note"": ""Checkpoint 2 green sign ahead center; checkpoint ",113,forward,True,forward,一致
+deepseek-flash--nothink--official,1000,20,"{""action"": ""left"", ""note"": ""Checkpoint 3 blue sign on left, but target is checkp",118,left,True,left,一致
+deepseek-flash--nothink--official,1000,21,"{""action"": ""left"", ""note"": ""Purple wall blocks left; checkpoint 3 blue visible r",111,left,True,left,一致
+deepseek-flash--nothink--official,1000,22,"{""action"": ""right"", ""note"": ""Purple wall fills view; turning right to find green",100,right,True,right,一致
+deepseek-flash--nothink--official,1000,23,"{""action"": ""right"", ""note"": ""Purple wall blocking left; rotating right to search",110,right,True,right,一致
+deepseek-flash--nothink--official,1000,24,"{""action"": ""right"", ""note"": ""Checkpoint 3 blue ahead; green 2 not visible yet, k",111,right,True,right,一致
+deepseek-flash--nothink--official,1000,25,"{""action"": ""forward"", ""note"": ""Green 2 ahead slightly right; driving forward to ",121,forward,True,forward,一致
+deepseek-flash--nothink--official,1000,26,"{""action"": ""forward"", ""note"": ""Green 2 ahead slightly right, cyan cylinder on ri",114,forward,True,forward,一致
+deepseek-flash--nothink--official,1000,27,"{""action"": ""forward"", ""note"": ""Green-2 post ahead slightly right, approaching; c",116,forward,True,forward,一致
+deepseek-flash--nothink--official,1000,28,"{""action"": ""forward"", ""note"": ""Purple wall ahead, floor visible, no checkpoints ",123,forward,True,forward,一致
+deepseek-flash--nothink--official,1000,29,"{""action"": ""forward"", ""note"": ""Purple wall ahead close, floor tiles below; no ch",121,forward,True,forward,一致
+deepseek-flash--nothink--official,1000,30,"{""action"": ""right"", ""note"": ""Purple wall fills view very close; turn right to fi",103,right,True,right,一致
+deepseek-flash--nothink--official,1000,31,"{""action"": ""right"", ""note"": ""Purple wall fills view very close; turning right to",106,right,True,right,一致
+deepseek-flash--nothink--official,1000,32,"{""action"": ""forward"", ""note"": ""Cylinder on right, purple wall ahead; searching f",102,forward,True,forward,一致
+deepseek-flash--nothink--official,1000,33,"{""action"": ""forward"", ""note"": ""Purple wall ahead, teal cylinder right; looking f",103,forward,True,forward,一致
+deepseek-flash--nothink--official,1000,34,"{""action"": ""right"", ""note"": ""Purple wall very close ahead; turning right to find",101,right,True,right,一致
+deepseek-flash--nothink--official,1000,35,"{""action"": ""right"", ""note"": ""Purple wall close ahead, teal cylinder right; turni",123,right,True,right,一致
+deepseek-flash--nothink--official,1000,36,"{""action"": ""forward"", ""note"": ""Teal cylinder dead center blocking view; need to ",113,forward,True,forward,一致
+deepseek-flash--nothink--official,1000,37,"{""action"": ""left"", ""note"": ""Purple wall ahead, no checkpoint visible; turning le",106,left,True,left,一致
+deepseek-flash--nothink--official,1000,38,"{""action"": ""forward"", ""note"": ""Purple wall ahead, teal cylinder right; moving fo",125,forward,True,forward,一致
+deepseek-flash--nothink--official,1000,39,"{""action"": ""forward"", ""note"": ""Teal cylinder right, purple wall ahead; inching f",131,forward,True,forward,一致
+deepseek-flash--nothink--official,1000,40,"{""action"": ""forward"", ""note"": ""Teal cylinder ahead blocking path; purple wall be",137,forward,True,forward,一致
+deepseek-flash--nothink--official,1000,41,"{""action"": ""right"", ""note"": ""Teal cylinder blocks path; rotating right to go aro",122,right,True,right,一致
+deepseek-flash--nothink--official,1000,42,"{""action"": ""forward"", ""note"": ""Passed teal cylinder; see checkpoint 5 purple, ne",114,forward,True,forward,一致
+deepseek-flash--nothink--official,1000,43,"{""action"": ""forward"", ""note"": ""Past teal cylinder; checkpoint 5 seen, seeking bl",104,forward,True,forward,一致
+deepseek-flash--nothink--official,1000,44,"{""action"": ""forward"", ""note"": ""Purple 5 sign right, blue pillar left. Moving for",113,forward,True,forward,一致
+deepseek-flash--nothink--official,1000,45,"{""action"": ""forward"", ""note"": ""Purple 5 sign above right, teal pillar left; stil",116,forward,True,forward,一致
+deepseek-flash--nothink--official,1000,46,"{""action"": ""forward"", ""note"": ""Purple 5 sign above right, teal pillar left; seek",110,forward,True,forward,一致
+deepseek-flash--nothink--official,1000,47,"{""action"": ""forward"", ""note"": ""Pink wall ahead, teal pillar right; no blue sign ",129,forward,True,forward,一致
+deepseek-flash--nothink--official,1000,48,"{""action"": ""forward"", ""note"": ""Pink wall ahead, teal pillar right; no blue sign ",129,forward,True,forward,一致
+deepseek-flash--nothink--official,1000,49,"{""action"": ""right"", ""note"": ""Pink wall ahead; turn right to search for blue chec",91,right,True,right,一致
+deepseek-flash--nothink--official,1000,50,"{""action"": ""forward"", ""note"": ""Pink wall ahead, purple 5 sign right; searching f",117,forward,True,forward,一致
+deepseek-flash--nothink--official,1000,51,"{""action"": ""forward"", ""note"": ""Purple 5 sign right; pink wall ahead. Searching f",121,forward,True,forward,一致
+deepseek-flash--nothink--official,1000,52,"{""action"": ""left"", ""note"": ""Blue post directly ahead; rotate to approach its num",110,left,True,left,一致
+deepseek-flash--nothink--official,1000,53,"{""action"": ""forward"", ""note"": ""Blue post centered ahead; move forward to reach c",99,forward,True,forward,一致
+deepseek-flash--nothink--official,1000,54,"{""action"": ""forward"", ""note"": ""Blue post centered ahead; moving forward to reach",101,forward,True,forward,一致
+deepseek-flash--nothink--official,1000,55,"{""action"": ""forward"", ""note"": ""Blue post centered ahead; continue forward to rea",103,forward,True,forward,一致
+deepseek-flash--nothink--official,1000,56,"{""action"": ""forward"", ""note"": ""Blue post centered ahead on left; continue forwar",111,forward,True,forward,一致
+deepseek-flash--nothink--official,1000,57,"{""action"": ""forward"", ""note"": ""Blue post gone from view; wall ahead, drifting le",115,forward,True,forward,一致
+deepseek-flash--nothink--official,1000,58,"{""action"": ""left"", ""note"": ""Wall ahead and blue post gone; turn left to search f",98,left,True,left,一致
+deepseek-flash--nothink--official,1000,59,"{""action"": ""forward"", ""note"": ""Teal wall on right; pink wall ahead. No blue sign",115,forward,True,forward,一致
+deepseek-flash--nothink--official,1000,60,"{""action"": ""left"", ""note"": ""Teal wall right, pink wall ahead. No blue sign; turn",111,left,True,left,一致
+deepseek-flash--nothink--official,1000,61,"{""action"": ""forward"", ""note"": ""Teal wall right, pink wall ahead; no blue sign, k",115,forward,True,forward,一致
+deepseek-flash--nothink--official,1000,62,"{""action"": ""left"", ""note"": ""Teal wall right, pink wall ahead, no blue sign; turn",123,left,True,left,一致
+deepseek-flash--nothink--official,1000,63,"{""action"": ""left"", ""note"": ""Teal wall right, pink wall ahead, corner visible; tu",118,left,True,left,一致
+deepseek-flash--nothink--official,1000,64,"{""action"": ""left"", ""note"": ""Pink wall fills view; no blue sign. Turn left to sea",103,left,True,left,一致
+deepseek-flash--nothink--official,1000,65,"{""action"": ""left"", ""note"": ""Pink wall fills view, no blue sign; turning left to ",100,left,True,left,一致
+deepseek-flash--nothink--official,1000,66,"{""action"": ""right"", ""note"": ""Pink wall ahead, no blue sign. Turn right to search",100,right,True,right,一致
+deepseek-flash--nothink--official,1000,67,"{""action"": ""right"", ""note"": ""Pink wall still fills view, no blue sign. Turn righ",119,right,True,right,一致
+deepseek-flash--nothink--official,1000,68,"{""action"": ""right"", ""note"": ""Pink wall fills view, no blue sign. Turning right t",108,right,True,right,一致
+deepseek-flash--nothink--official,1000,69,"{""action"": ""right"", ""note"": ""Pink wall fills view, no blue sign. Turning right t",108,right,True,right,一致
+deepseek-flash--nothink--official,1000,70,"{""action"": ""forward"", ""note"": ""Pink wall ahead, teal object right. Moving forwar",115,forward,True,forward,一致
+deepseek-flash--nothink--official,1000,71,"{""action"": ""forward"", ""note"": ""Pink wall ahead, teal obstacle right. Moving forw",116,forward,True,forward,一致
+deepseek-flash--nothink--official,1000,72,"{""action"": ""right"", ""note"": ""Teal obstacle close on right, pink wall ahead; turn",124,right,True,right,一致
+deepseek-flash--nothink--official,1000,73,"{""action"": ""right"", ""note"": ""Teal obstacle blocking forward; turning right to ci",117,right,True,right,一致
+deepseek-flash--nothink--official,1000,74,"{""action"": ""forward"", ""note"": ""Saw checkpoint 5 first, not 3; blue 3 still unfou",111,forward,True,forward,一致
+deepseek-flash--nothink--official,1000,75,"{""action"": ""forward"", ""note"": ""Purple 5 visible ahead; blue 3 still unfound. Mov",108,forward,True,forward,一致
+deepseek-flash--nothink--official,1000,76,"{""action"": ""left"", ""note"": ""Purple 5 on right; teal wall left. Turn left to sear",107,left,True,left,一致
+deepseek-flash--nothink--official,1000,77,"{""action"": ""left"", ""note"": ""Teal wall close ahead; rotating left to search for b",99,left,True,left,一致
+deepseek-flash--nothink--official,1000,78,"{""action"": ""forward"", ""note"": ""Teal obstacle right, pink wall ahead; moving forw",112,forward,True,forward,一致
+deepseek-flash--nothink--official,1000,79,"{""action"": ""left"", ""note"": ""Blind wall ahead; teal wall right. Turning left to s",108,left,True,left,一致
+deepseek-flash--nothink--official,1001,0,"{""action"": ""left"", ""note"": ""See checkpoints 4,5,3,2; need 1 red border. Turning ",97,left,True,left,一致
+deepseek-flash--nothink--official,1001,1,"{""action"": ""left"", ""note"": ""See checkpoints 4,5,3,2; no checkpoint 1. Continue t",119,left,True,left,一致
+deepseek-flash--nothink--official,1001,2,"{""action"": ""left"", ""note"": ""Checkpoint 4 yellow border ahead; still searching fo",101,left,True,left,一致
+deepseek-flash--nothink--official,1001,3,"{""action"": ""left"", ""note"": ""Wall ahead, no checkpoint 1 visible. Continue turnin",108,left,True,left,一致
+deepseek-flash--nothink--official,1001,4,"{""action"": ""left"", ""note"": ""Blank wall view; still searching for red checkpoint ",104,left,True,left,一致
+deepseek-flash--nothink--official,1001,5,"{""action"": ""left"", ""note"": ""Blank wall ahead, no checkpoint 1. Rotating left to ",104,left,True,left,一致
+deepseek-flash--nothink--official,1001,6,"{""action"": ""left"", ""note"": ""Still facing blank wall; keep rotating left to find ",99,left,True,left,一致
+deepseek-flash--nothink--official,1001,7,"{""action"": ""left"", ""note"": ""Still blank wall; rotate left to find red checkpoint",85,left,True,left,一致
+deepseek-flash--nothink--official,1001,8,"{""action"": ""left"", ""note"": ""Still facing blank wall; keep rotating left to find ",99,left,True,left,一致
+deepseek-flash--nothink--official,1001,9,"{""action"": ""left"", ""note"": ""Blank wall ahead; keep rotating left to find red che",92,left,True,left,一致
+deepseek-flash--nothink--official,1001,10,"{""action"": ""left"", ""note"": ""Checkpoint 1 sign visible ahead-left; continue rotat",102,left,True,left,一致
+deepseek-flash--nothink--official,1001,11,"{""action"": ""left"", ""note"": ""Checkpoint 1 red sign now centered ahead; rotate lef",118,left,True,left,一致
+deepseek-flash--nothink--official,1001,12,"{""action"": ""forward"", ""note"": ""Target checkpoint 1 red, but I see 3 ahead; need ",108,forward,True,forward,一致
+deepseek-flash--nothink--official,1001,13,"{""action"": ""left"", ""note"": ""See checkpoints 3,5,2; target 1 missing. Rotating le",108,left,True,left,一致
+deepseek-flash--nothink--official,1001,14,"{""action"": ""left"", ""note"": ""Seeing 4 and 5; turn left to keep hunting for red si",87,left,True,left,一致
+deepseek-flash--nothink--official,1001,15,"{""action"": ""left"", ""note"": ""See 4 and 5; still no red 1. Rotate left to search.""",81,left,True,left,一致
+deepseek-flash--nothink--official,1001,16,"{""action"": ""left"", ""note"": ""Wall right, open left; still searching for red check",103,left,True,left,一致
+deepseek-flash--nothink--official,1001,17,"{""action"": ""left"", ""note"": ""Facing wall/blank area; rotating left to search for ",99,left,True,left,一致
+deepseek-flash--nothink--official,1001,18,"{""action"": ""forward"", ""note"": ""Facing blank wall, corner left. Moving forward to",101,forward,True,forward,一致
+deepseek-flash--nothink--official,1001,19,"{""action"": ""left"", ""note"": ""Blank wall fills view; turning left to search for re",97,left,True,left,一致
+deepseek-flash--nothink--official,1001,20,"{""action"": ""left"", ""note"": ""Facing blank wall corner; turning left to search for",99,left,True,left,一致
+deepseek-flash--nothink--official,1001,21,"{""action"": ""left"", ""note"": ""Wall still fills view; rotating left to find checkpo",97,left,True,left,一致
+deepseek-flash--nothink--official,1001,22,"{""action"": ""left"", ""note"": ""Still blank wall; rotating left more to find red che",97,left,True,left,一致
+deepseek-flash--nothink--official,1001,23,"{""action"": ""left"", ""note"": ""Blank grey wall fills view; rotating left to find re",102,left,True,left,一致
+deepseek-flash--nothink--official,1001,24,"{""action"": ""left"", ""note"": ""Checkpoint 1 red post visible ahead; rotating left t",100,left,True,left,一致
+deepseek-flash--nothink--official,1001,25,"{""action"": ""forward"", ""note"": ""Checkpoint 1 red post ahead and left; driving for",117,forward,True,forward,一致
+deepseek-flash--nothink--official,1001,26,"{""action"": ""forward"", ""note"": ""Checkpoint 1 red post ahead-left, green box to le",114,forward,True,forward,一致
+deepseek-flash--nothink--official,1001,27,"{""action"": ""forward"", ""note"": ""Checkpoint 1 red post ahead slightly left; green ",121,forward,True,forward,一致
+deepseek-flash--nothink--official,1001,28,"{""action"": ""forward"", ""note"": ""Checkpoint 1 red post ahead slightly left; green ",115,forward,True,forward,一致
+deepseek-flash--nothink--official,1001,29,"{""action"": ""forward"", ""note"": ""Red checkpoint 1 post directly ahead; green box l",120,forward,True,forward,一致
+deepseek-flash--nothink--official,1001,30,"{""action"": ""forward"", ""note"": ""Red post 1 reached; green box left, dark pillar r",122,forward,True,forward,一致
+deepseek-flash--nothink--official,1001,31,"{""action"": ""forward"", ""note"": ""Green box left, dark pillar right; moving forward",114,forward,True,forward,一致
+deepseek-flash--nothink--official,1001,32,"{""action"": ""forward"", ""note"": ""Green box left, dark pillar right; still no green",139,forward,True,forward,一致
+deepseek-flash--nothink--official,1001,33,"{""action"": ""forward"", ""note"": ""Dark pillar dead ahead; green box left. Need to s",127,forward,True,forward,一致
+deepseek-flash--nothink--official,1001,34,"{""action"": ""right"", ""note"": ""Dark pillar dead ahead; steering right to avoid it,",116,right,True,right,一致
+deepseek-flash--nothink--official,1001,35,"{""action"": ""right"", ""note"": ""Dark pillar dead ahead; turning right to avoid it, ",115,right,True,right,一致
+deepseek-flash--nothink--official,1001,36,"{""action"": ""forward"", ""note"": ""Gray walls and checkerboard floor ahead; pillar s",127,forward,True,forward,一致
+deepseek-flash--nothink--official,1001,37,"{""action"": ""forward"", ""note"": ""Gray walls and checkerboard floor ahead; no pilla",141,forward,True,forward,一致
+deepseek-flash--nothink--official,1001,38,"{""action"": ""forward"", ""note"": ""Gray walls, checkerboard floor, no pillar visible",120,forward,True,forward,一致
+deepseek-flash--nothink--official,1001,39,"{""action"": ""left"", ""note"": ""Facing gray wall corner; no pillar visible. Turning ",122,left,True,left,一致
+deepseek-flash--nothink--official,1001,40,"{""action"": ""forward"", ""note"": ""Dark gray wall fills view; green edge left. Still",112,forward,True,forward,一致
+deepseek-flash--nothink--official,1001,41,"{""action"": ""left"", ""note"": ""Green edge on left; turning left to face checkpoint ",105,left,True,left,一致
+deepseek-flash--nothink--official,1001,42,"{""action"": ""left"", ""note"": ""Green border edge on left; turning to face checkpoin",101,left,True,left,一致
+deepseek-flash--nothink--official,1001,43,"{""action"": ""forward"", ""note"": ""Checkpoint 2 green sign ahead left; green box obs",120,forward,True,forward,一致
+deepseek-flash--nothink--official,1001,44,"{""action"": ""forward"", ""note"": ""Green box obstacle ahead; checkpoint 2 sign left.",108,forward,True,forward,一致
+deepseek-flash--nothink--official,1001,45,"{""action"": ""right"", ""note"": ""Green box obstacle ahead, turning right to avoid it",116,right,True,right,一致
+deepseek-flash--nothink--official,1001,46,"{""action"": ""left"", ""note"": ""Green box close ahead; turning left to reach checkpo",99,left,True,left,一致
+deepseek-flash--nothink--official,1001,47,"{""action"": ""forward"", ""note"": ""Green box ahead, checkpoint 2 green sign left; mo",107,forward,True,forward,一致
+deepseek-flash--nothink--official,1001,48,"{""action"": ""forward"", ""note"": ""Green box on left, gray wall ahead; continue forw",117,forward,True,forward,一致
+deepseek-flash--nothink--official,1001,49,"{""action"": ""forward"", ""note"": ""Green box on left, wall ahead; continuing forward",114,forward,True,forward,一致
+deepseek-flash--nothink--official,1001,50,"{""action"": ""left"", ""note"": ""Gray wall ahead, green box left; turning left to fin",108,left,True,left,一致
+deepseek-flash--nothink--official,1001,51,"{""action"": ""forward"", ""note"": ""Gray wall ahead, green box still left; continue f",121,forward,True,forward,一致
+deepseek-flash--nothink--official,1001,52,"{""action"": ""forward"", ""note"": ""Gray wall ahead, green box left; moving forward t",113,forward,True,forward,一致
+deepseek-flash--nothink--official,1001,53,"{""action"": ""forward"", ""note"": ""Gray wall ahead, green box left; moving forward t",113,forward,True,forward,一致
+deepseek-flash--nothink--official,1001,54,"{""action"": ""left"", ""note"": ""Wall directly ahead; turning left to find checkpoint",113,left,True,left,一致
+deepseek-flash--nothink--official,1001,55,"{""action"": ""forward"", ""note"": ""Gray wall ahead, green box left; seeking checkpoi",115,forward,True,forward,一致
+deepseek-flash--nothink--official,1001,56,"{""action"": ""right"", ""note"": ""Wall ahead close; green box left. Turning right to ",111,right,True,right,一致
+deepseek-flash--nothink--official,1001,57,"{""action"": ""forward"", ""note"": ""Wall close ahead; green box left. Moving forward ",129,forward,True,forward,一致
+deepseek-flash--nothink--official,1001,58,"{""action"": ""right"", ""note"": ""Wall/black void ahead; green box left. Turning righ",116,right,True,right,一致
+deepseek-flash--nothink--official,1001,59,"{""action"": ""right"", ""note"": ""Wall ahead still; green box left. Keep turning righ",116,right,True,right,一致
+deepseek-flash--nothink--official,1001,60,"{""action"": ""right"", ""note"": ""Wall ahead, black void above; green box left. Rotat",122,right,True,right,一致
+deepseek-flash--nothink--official,1001,61,"{""action"": ""right"", ""note"": ""Wall ahead, black void above; green box left. Conti",133,right,True,right,一致
+deepseek-flash--nothink--official,1001,62,"{""action"": ""right"", ""note"": ""Wall ahead, green box left; keep rotating right to ",111,right,True,right,一致
+deepseek-flash--nothink--official,1001,63,"{""action"": ""right"", ""note"": ""Red sign edge top-right, gray pole; rotating right ",114,right,True,right,一致
+deepseek-flash--nothink--official,1001,64,"{""action"": ""right"", ""note"": ""Now see blue 3 sign right and gray pole close; cont",118,right,True,right,一致
+deepseek-flash--nothink--official,1001,65,"{""action"": ""right"", ""note"": ""See blue 3 and yellow 4 signs; rotating right to fi",104,right,True,right,一致
+deepseek-flash--nothink--official,1001,66,"{""action"": ""right"", ""note"": ""Seeking green 2 sign; see blue 3 and yellow 4 left,",100,right,True,right,一致
+deepseek-flash--nothink--official,1001,67,"{""action"": ""right"", ""note"": ""Green wall fills view; blue 3 and yellow 4 left. Ro",109,right,True,right,一致
+deepseek-flash--nothink--official,1001,68,"{""action"": ""right"", ""note"": ""Green wall fills view; turning right to search for ",101,right,True,right,一致
+deepseek-flash--nothink--official,1001,69,"{""action"": ""forward"", ""note"": ""Heading toward green 2, wall ahead, moving forwar",102,forward,True,forward,一致
+deepseek-flash--nothink--official,1001,70,"{""action"": ""forward"", ""note"": ""Green wall ahead, moving forward toward checkpoin",101,forward,True,forward,一致
+deepseek-flash--nothink--official,1001,71,"{""action"": ""forward"", ""note"": ""Green wall ahead; continue forward toward checkpo",103,forward,True,forward,一致
+deepseek-flash--nothink--official,1001,72,"{""action"": ""forward"", ""note"": ""Green wall looms ahead; still heading to checkpoi",115,forward,True,forward,一致
+deepseek-flash--nothink--official,1001,73,"{""action"": ""forward"", ""note"": ""Grey wall on right, green wall ahead; checkpoint ",114,forward,True,forward,一致
+deepseek-flash--nothink--official,1001,74,"{""action"": ""left"", ""note"": ""Green wall ahead blocking path; turning left to find",102,left,True,left,一致
+deepseek-flash--nothink--official,1001,75,"{""action"": ""left"", ""note"": ""Green wall still blocking forward path; rotating lef",118,left,True,left,一致
+deepseek-flash--nothink--official,1001,76,"{""action"": ""left"", ""note"": ""Green wall fills view; rotating left to find path to",99,left,True,left,一致
+deepseek-flash--nothink--official,1001,77,"{""action"": ""left"", ""note"": ""Green wall still blocks view; rotating left to find ",103,left,True,left,一致
+deepseek-flash--nothink--official,1001,78,"{""action"": ""right"", ""note"": ""Saw green wall, now turning right; checkpoint 3 ahe",114,right,True,right,一致
+deepseek-flash--nothink--official,1001,79,"{""action"": ""forward"", ""note"": ""Checkpoint 4 and 3 visible ahead; green checkpoin",121,forward,True,forward,一致
+deepseek-flash--nothink--official,1002,0,"{""action"": ""forward"", ""note"": ""Seen checkpoint 2 ahead, checkpoint 5 behind it. ",130,forward,True,forward,一致
+deepseek-flash--nothink--official,1002,1,"{""action"": ""left"", ""note"": ""See checkpoint 2 (green) and 5 (purple) ahead; check",128,left,True,left,一致
+deepseek-flash--nothink--official,1002,2,"{""action"": ""left"", ""note"": ""Checkpoint 1 red sign visible far left; rotate left ",106,left,True,left,一致
+deepseek-flash--nothink--official,1002,3,"{""action"": ""forward"", ""note"": ""Checkpoint 1 (red border) is ahead; purple cylind",128,forward,True,forward,一致
+deepseek-flash--nothink--official,1002,4,"{""action"": ""forward"", ""note"": ""Red-bordered sign on post 1 ahead; purple cylinde",123,forward,True,forward,一致
+deepseek-flash--nothink--official,1002,5,"{""action"": ""forward"", ""note"": ""Dark post ahead right, purple cylinder left. Like",128,forward,True,forward,一致
+deepseek-flash--nothink--official,1002,6,"{""action"": ""forward"", ""note"": ""Yellow-bordered sign 4 ahead, not target 2. Dark ",122,forward,True,forward,一致
+deepseek-flash--nothink--official,1002,7,"{""action"": ""left"", ""note"": ""Saw checkpoint 4 and dark post ahead; target 2 is el",116,left,True,left,一致
+deepseek-flash--nothink--official,1002,8,"{""action"": ""left"", ""note"": ""Only checkpoint 4 visible; rotating left to search f",104,left,True,left,一致
+deepseek-flash--nothink--official,1002,9,"{""action"": ""left"", ""note"": ""Purple cylinder blocks path; rotating left to search",106,left,True,left,一致
+deepseek-flash--nothink--official,1002,10,"{""action"": ""left"", ""note"": ""Purple cylinder close on right; wall ahead. Rotating",115,left,True,left,一致
+deepseek-flash--nothink--official,1002,11,"{""action"": ""forward"", ""note"": ""Plain wall ahead; moving forward to clear it, sti",118,forward,True,forward,一致
+deepseek-flash--nothink--official,1002,12,"{""action"": ""forward"", ""note"": ""Wall ahead; moving forward to clear it, still sea",112,forward,True,forward,一致
+deepseek-flash--nothink--official,1002,13,"{""action"": ""left"", ""note"": ""Black frame, camera blocked; rotate left to find gre",98,left,True,left,一致
+deepseek-flash--nothink--official,1002,14,"{""action"": ""left"", ""note"": ""View still blocked; rotating left to find green chec",91,left,True,left,一致
+deepseek-flash--nothink--official,1002,15,"{""action"": ""left"", ""note"": ""Still facing blank gray wall; rotating left to find ",101,left,True,left,一致
+deepseek-flash--nothink--official,1002,16,"{""action"": ""left"", ""note"": ""Facing blank wall, no checkpoints; rotate left to fi",104,left,True,left,一致
+deepseek-flash--nothink--official,1002,17,"{""action"": ""left"", ""note"": ""Still facing blank gray wall; turning left more to f",105,left,True,left,一致
+deepseek-flash--nothink--official,1002,18,"{""action"": ""left"", ""note"": ""Still blank gray wall; keep rotating left to find gr",99,left,True,left,一致
+deepseek-flash--nothink--official,1002,19,"{""action"": ""left"", ""note"": ""Facing gray wall; rotate left to search for green ch",92,left,True,left,一致
+deepseek-flash--nothink--official,1002,20,"{""action"": ""left"", ""note"": ""Checkpoint 2 green sign now visible ahead left; rota",101,left,True,left,一致
+deepseek-flash--nothink--official,1002,21,"{""action"": ""left"", ""note"": ""Green sign 2 visible left; continue rotating left to",100,left,True,left,一致
+deepseek-flash--nothink--official,1002,22,"{""action"": ""left"", ""note"": ""Checkpoint 2 green sign at left; rotating left to fa",87,left,True,left,一致
+deepseek-flash--nothink--official,1002,23,"{""action"": ""left"", ""note"": ""Purple obstacle close ahead; rotating left to find g",104,left,True,left,一致
+deepseek-flash--nothink--official,1002,24,"{""action"": ""left"", ""note"": ""Purple cylinder blocking right side; rotating left t",107,left,True,left,一致
+deepseek-flash--nothink--official,1002,25,"{""action"": ""left"", ""note"": ""Still seeing plain wall; rotating left to find check",101,left,True,left,一致
+deepseek-flash--nothink--official,1002,26,"{""action"": ""forward"", ""note"": ""Plain grey surface ahead; still searching for gre",123,forward,True,forward,一致
+deepseek-flash--nothink--official,1002,27,"{""action"": ""forward"", ""note"": ""Only floor and wall visible; keep searching for g",113,forward,True,forward,一致
+deepseek-flash--nothink--official,1002,28,"{""action"": ""forward"", ""note"": ""Still no green sign visible; moving forward slowl",104,forward,True,forward,一致
+deepseek-flash--nothink--official,1002,29,"{""action"": ""left"", ""note"": ""Wall directly ahead; turning left to scan for green ",100,left,True,left,一致
+deepseek-flash--nothink--official,1002,30,"{""action"": ""forward"", ""note"": ""Only floor and wall visible; no green sign yet, m",106,forward,True,forward,一致
+deepseek-flash--nothink--official,1002,31,"{""action"": ""left"", ""note"": ""Wall on left, dark wall ahead; turning left to find ",106,left,True,left,一致
+deepseek-flash--nothink--official,1002,32,"{""action"": ""left"", ""note"": ""Wall ahead; no green sign visible. Turning left to s",103,left,True,left,一致
+deepseek-flash--nothink--official,1002,33,"{""action"": ""forward"", ""note"": ""Facing wall, turned left already; moving forward ",131,forward,True,forward,一致
+deepseek-flash--nothink--official,1002,34,"{""action"": ""left"", ""note"": ""Facing dark wall, need to rotate left more to find g",105,left,True,left,一致
+deepseek-flash--nothink--official,1002,35,"{""action"": ""left"", ""note"": ""Still facing wall; rotating left more to find green ",100,left,True,left,一致
+deepseek-flash--nothink--official,1002,36,"{""action"": ""left"", ""note"": ""Still facing wall, rotating left to find green check",95,left,True,left,一致
+deepseek-flash--nothink--official,1002,37,"{""action"": ""left"", ""note"": ""Checkpoint 3 blue sign on left; still rotating left ",109,left,True,left,一致
+deepseek-flash--nothink--official,1002,38,"{""action"": ""left"", ""note"": ""Checkpoint 3 blue visible left; need checkpoint 1 re",120,left,True,left,一致
+deepseek-flash--nothink--official,1002,39,"{""action"": ""left"", ""note"": ""Checkpoint 2 green ahead; need checkpoint 1 red firs",120,left,True,left,一致
+deepseek-flash--nothink--official,1002,40,"{""action"": ""left"", ""note"": ""Green 2 ahead, but red 1 still unvisited; scan left ",101,left,True,left,一致
+deepseek-flash--nothink--official,1002,41,"{""action"": ""forward"", ""note"": ""Checkpoint 2 green ahead, but need checkpoint 1 r",123,forward,True,forward,一致
+deepseek-flash--nothink--official,1002,42,"{""action"": ""left"", ""note"": ""See checkpoint 4 and purple cylinder, but need red 1",120,left,True,left,一致
+deepseek-flash--nothink--official,1002,43,"{""action"": ""right"", ""note"": ""Purple cylinder blocking view; red 1 still unvisite",105,right,True,right,一致
+deepseek-flash--nothink--official,1002,44,"{""action"": ""right"", ""note"": ""Purple cylinder blocks left view; rotating right to",99,right,True,right,一致
+deepseek-flash--nothink--official,1002,45,"{""action"": ""right"", ""note"": ""Note says need red 1 first, but task now says next ",132,right,True,right,一致
+deepseek-flash--nothink--official,1002,46,"{""action"": ""right"", ""note"": ""Dark post ahead; green 2 sign visible left. Rotatin",126,right,True,right,一致
+deepseek-flash--nothink--official,1002,47,"{""action"": ""forward"", ""note"": ""Checkpoint 2 (green) visible ahead-left; moving f",99,forward,True,forward,一致
+deepseek-flash--nothink--official,1002,48,"{""action"": ""forward"", ""note"": ""Green 2 sign ahead-left, moving forward to approa",114,forward,True,forward,一致
+deepseek-flash--nothink--official,1002,49,"{""action"": ""forward"", ""note"": ""Green 2 sign ahead-left; red cylinder ahead. Movi",123,forward,True,forward,一致
+deepseek-flash--nothink--official,1002,50,"{""action"": ""left"", ""note"": ""Checkpoint 3 (blue) ahead but target is 2 (green); t",112,left,True,left,一致
+deepseek-flash--nothink--official,1002,51,"{""action"": ""left"", ""note"": ""See purple 5 and green 2 signs; turning left to appr",123,left,True,left,一致
+deepseek-flash--nothink--official,1002,52,"{""action"": ""forward"", ""note"": ""Green 2 sign ahead, purple 5 behind; moving forwa",107,forward,True,forward,一致
+deepseek-flash--nothink--official,1002,53,"{""action"": ""left"", ""note"": ""Pillar blocking view; need find blue 3, previous gre",117,left,True,left,一致
+deepseek-flash--nothink--official,1002,54,"{""action"": ""left"", ""note"": ""Blank wall ahead, no signs visible; turning left to ",109,left,True,left,一致
+deepseek-flash--nothink--official,1002,55,"{""action"": ""forward"", ""note"": ""Large yellow-border 4 sign directly ahead; blue 3",136,forward,True,forward,一致
+deepseek-flash--nothink--official,1002,56,"{""action"": ""left"", ""note"": ""Yellow 4 post close ahead, must avoid; turning left ",96,left,True,left,一致
+deepseek-flash--nothink--official,1002,57,"{""action"": ""forward"", ""note"": ""Passing yellow 4 post on left; scanning for blue ",100,forward,True,forward,一致
+deepseek-flash--nothink--official,1002,58,"{""action"": ""forward"", ""note"": ""Corner ahead, no blue 3 visible; moving forward t",107,forward,True,forward,一致
+deepseek-flash--nothink--official,1002,59,"{""action"": ""forward"", ""note"": ""Corner walls ahead, no blue 3 visible; advancing ",105,forward,True,forward,一致
+deepseek-flash--nothink--official,1002,60,"{""action"": ""left"", ""note"": ""Wall corner ahead; turn left to search for blue 3.""}",80,left,True,left,一致
+deepseek-flash--nothink--official,1002,61,"{""action"": ""left"", ""note"": ""Facing wall corner, no blue 3; turning left to searc",107,left,True,left,一致
+deepseek-flash--nothink--official,1002,62,"{""action"": ""right"", ""note"": ""Purple cylinder blocking left view; no blue 3. Turn",107,right,True,right,一致
+deepseek-flash--nothink--official,1002,63,"{""action"": ""forward"", ""note"": ""Facing empty wall corner, no blue 3. Advance forw",103,forward,True,forward,一致
+deepseek-flash--nothink--official,1002,64,"{""action"": ""forward"", ""note"": ""Facing wall corner ahead, no blue 3 visible; adva",105,forward,True,forward,一致
+deepseek-flash--nothink--official,1002,65,"{""action"": ""right"", ""note"": ""Facing wall corner closely; no blue 3. Turn right t",106,right,True,right,一致
+deepseek-flash--nothink--official,1002,66,"{""action"": ""right"", ""note"": ""Facing wall corner, no blue 3. Turn right to search",89,right,True,right,一致
+deepseek-flash--nothink--official,1002,67,"{""action"": ""right"", ""note"": ""Facing wall corner, no blue 3. Turn right to search",89,right,True,right,一致
+deepseek-flash--nothink--official,1002,68,"{""action"": ""right"", ""note"": ""Still facing wall corner, no blue 3 visible. Rotate",105,right,True,right,一致
+deepseek-flash--nothink--official,1002,69,"{""action"": ""right"", ""note"": ""Facing blank wall corner, no blue 3 visible; keep r",112,right,True,right,一致
+deepseek-flash--nothink--official,1002,70,"{""action"": ""right"", ""note"": ""See checkpoint 5 purple, not blue 3; rotate right t",96,right,True,right,一致
+deepseek-flash--nothink--official,1002,71,"{""action"": ""forward"", ""note"": ""Blocker post ahead left; blue 3 visible right, dr",96,forward,True,forward,一致
+deepseek-flash--nothink--official,1002,72,"{""action"": ""right"", ""note"": ""Blocker post ahead left; blue 3 visible on right, r",114,right,True,right,一致
+deepseek-flash--nothink--official,1002,73,"{""action"": ""forward"", ""note"": ""Blue 3 on right, post blocker left; drive forward",92,forward,True,forward,一致
+deepseek-flash--nothink--official,1002,74,"{""action"": ""forward"", ""note"": ""Moving toward blue 3 on right; post blocker remai",108,forward,True,forward,一致
+deepseek-flash--nothink--official,1002,75,"{""action"": ""forward"", ""note"": ""Blue 3 ahead right, moving closer; post blocker l",106,forward,True,forward,一致
+deepseek-flash--nothink--official,1002,76,"{""action"": ""forward"", ""note"": ""Blue 3 ahead right, getting closer; keep forward.",82,forward,True,forward,一致
+deepseek-flash--nothink--official,1002,77,"{""action"": ""forward"", ""note"": ""Purple 5 left; blue 3 ahead right, keep closing i",83,forward,True,forward,一致
+deepseek-flash--nothink--official,1002,78,"{""action"": ""forward"", ""note"": ""Purple 5 left, ignore; blue 3 ahead right, keep d",109,forward,True,forward,一致
+deepseek-flash--nothink--official,1002,79,"{""action"": ""forward"", ""note"": ""Blue 3 ahead right, keep closing in; purple 5 lef",92,forward,True,forward,一致
+deepseek-flash--nothink--official,1003,0,"{""action"": ""forward"", ""note"": ""Seeing checkpoints 4,2,1,5. Next target is checkp",112,forward,True,forward,一致
+deepseek-flash--nothink--official,1003,1,"{""action"": ""forward"", ""note"": ""Checkpoint 1 red border ahead, drive forward to r",90,forward,True,forward,一致
+deepseek-flash--nothink--official,1003,2,"{""action"": ""forward"", ""note"": ""Checkpoint 1 (red) directly ahead; drive forward ",118,forward,True,forward,一致
+deepseek-flash--nothink--official,1003,3,"{""action"": ""forward"", ""note"": ""Checkpoint 1 (red) directly ahead; drive forward ",118,forward,True,forward,一致
+deepseek-flash--nothink--official,1003,4,"{""action"": ""forward"", ""note"": ""Checkpoint 2 green post left; green box obstacle ",138,forward,True,forward,一致
+deepseek-flash--nothink--official,1003,5,"{""action"": ""forward"", ""note"": ""Green box obstacle ahead; checkpoint 2 green post",131,forward,True,forward,一致
+deepseek-flash--nothink--official,1003,6,"{""action"": ""forward"", ""note"": ""Green box obstacle ahead right; border color indi",147,forward,True,forward,一致
+deepseek-flash--nothink--official,1003,7,"{""action"": ""forward"", ""note"": ""Green box obstacle immediately right; wall ahead.",132,forward,True,forward,一致
+deepseek-flash--nothink--official,1003,8,"{""action"": ""left"", ""note"": ""Green wall ahead, need turn left away from wall to f",109,left,True,left,一致
+deepseek-flash--nothink--official,1003,9,"{""action"": ""left"", ""note"": ""Green wall fills view; turning left to escape wall a",119,left,True,left,一致
+deepseek-flash--nothink--official,1003,10,"{""action"": ""left"", ""note"": ""Still facing green wall; rotate left to face open ar",113,left,True,left,一致
+deepseek-flash--nothink--official,1003,11,"{""action"": ""left"", ""note"": ""Facing green wall; rotate left to open arena, search",106,left,True,left,一致
+deepseek-flash--nothink--official,1003,12,"{""action"": ""left"", ""note"": ""Facing green wall; turn left toward open arena, sear",112,left,True,left,一致
+deepseek-flash--nothink--official,1003,13,"{""action"": ""left"", ""note"": ""Rotate left away from green wall; scan for blue chec",96,left,True,left,一致
+deepseek-flash--nothink--official,1003,14,"{""action"": ""left"", ""note"": ""Green wall ahead; rotating left to scan for blue che",97,left,True,left,一致
+deepseek-flash--nothink--official,1003,15,"{""action"": ""forward"", ""note"": ""See blue 3 left, red 1 right; drive toward checkp",94,forward,True,forward,一致
+deepseek-flash--nothink--official,1003,16,"{""action"": ""forward"", ""note"": ""Blue 3 post left, red 1 right; drive toward check",102,forward,True,forward,一致
+deepseek-flash--nothink--official,1003,17,"{""action"": ""forward"", ""note"": ""Blue 3 checkpoint dead ahead, approaching within ",114,forward,True,forward,一致
+deepseek-flash--nothink--official,1003,18,"{""action"": ""forward"", ""note"": ""Blue 3 post directly ahead; closing to 0.4m, obst",101,forward,True,forward,一致
+deepseek-flash--nothink--official,1003,19,"{""action"": ""forward"", ""note"": ""Blue 3 post close on left; move forward carefully",102,forward,True,forward,一致
+deepseek-flash--nothink--official,1003,20,"{""action"": ""forward"", ""note"": ""Blue 3 post very close on left; creep forward to ",116,forward,True,forward,一致
+deepseek-flash--nothink--official,1003,21,"{""action"": ""forward"", ""note"": ""Blue 3 post immediately left; creep forward sligh",129,forward,True,forward,一致
+deepseek-flash--nothink--official,1003,22,"{""action"": ""forward"", ""note"": ""Blue 3 post immediate left; creep forward slightl",119,forward,True,forward,一致
+deepseek-flash--nothink--official,1003,23,"{""action"": ""forward"", ""note"": ""Blue 3 on left; inching forward to 0.4m, avoiding",109,forward,True,forward,一致
+deepseek-flash--nothink--official,1003,24,"{""action"": ""forward"", ""note"": ""Blue 3 on left, inching closer; dark post and yel",109,forward,True,forward,一致
+deepseek-flash--nothink--official,1003,25,"{""action"": ""forward"", ""note"": ""Passing dark post; blue 3 still left, yellow 4 ri",111,forward,True,forward,一致
+deepseek-flash--nothink--official,1003,26,"{""action"": ""left"", ""note"": ""Yellow 4 sign on right; target blue 3 is to left. Tu",111,left,True,left,一致
+deepseek-flash--nothink--official,1003,27,"{""action"": ""left"", ""note"": ""Turning left toward blue checkpoint 3; yellow 4 sign",100,left,True,left,一致
+deepseek-flash--nothink--official,1003,28,"{""action"": ""forward"", ""note"": ""Blue checkpoint 3 directly ahead after left turn;",114,forward,True,forward,一致
+deepseek-flash--nothink--official,1003,29,"{""action"": ""forward"", ""note"": ""Blue checkpoint 3 seems straight ahead; moving fo",100,forward,True,forward,一致
+deepseek-flash--nothink--official,1003,30,"{""action"": ""forward"", ""note"": ""Blue checkpoint 3 ahead; moving forward to close ",85,forward,True,forward,一致
+deepseek-flash--nothink--official,1003,31,"{""action"": ""forward"", ""note"": ""Checkpoint 4 yellow sign to my right, but target ",109,forward,True,forward,一致
+deepseek-flash--nothink--official,1003,32,"{""action"": ""forward"", ""note"": ""Checkpoint 4 yellow just ahead right, but I'm tar",105,forward,True,forward,一致
+deepseek-flash--nothink--official,1003,33,"{""action"": ""forward"", ""note"": ""Checkpoint 4 yellow sign ahead; green wall and pi",131,forward,True,forward,一致
+deepseek-flash--nothink--official,1003,34,"{""action"": ""forward"", ""note"": ""Checkpoint 4 yellow sign directly ahead; pink cyl",133,forward,True,forward,一致
+deepseek-flash--nothink--official,1003,35,"{""action"": ""stop"", ""note"": ""Yellow-bordered checkpoint 4 reached ahead; all chec",116,stop,True,stop,一致
+deepseek-flash--nothink--official,1004,0,"{""action"": ""left"", ""note"": ""See checkpoints 2,3,5; need checkpoint 1 red, likely",92,left,True,left,一致
+deepseek-flash--nothink--official,1004,1,"{""action"": ""left"", ""note"": ""Seeing 2 and 5; checkpoint 1 likely to the left. Rot",103,left,True,left,一致
+deepseek-flash--nothink--official,1004,2,"{""action"": ""left"", ""note"": ""No checkpoints visible; large green box ahead right.",124,left,True,left,一致
+deepseek-flash--nothink--official,1004,3,"{""action"": ""forward"", ""note"": ""Dark wall/box ahead; rotate more to find checkpoi",106,forward,True,forward,一致
+deepseek-flash--nothink--official,1004,4,"{""action"": ""left"", ""note"": ""Dark wall/box fills view; rotating left to find chec",94,left,True,left,一致
+deepseek-flash--nothink--official,1004,5,"{""action"": ""left"", ""note"": ""Still see dark wall/box, no checkpoint 1; rotating l",109,left,True,left,一致
+deepseek-flash--nothink--official,1004,6,"{""action"": ""left"", ""note"": ""View still blocked by dark surface; keep rotating le",115,left,True,left,一致
+deepseek-flash--nothink--official,1004,7,"{""action"": ""left"", ""note"": ""View still blocked by dark wall/box; rotating left t",111,left,True,left,一致
+deepseek-flash--nothink--official,1004,8,"{""action"": ""left"", ""note"": ""Still facing dark wall; rotating left to search for ",104,left,True,left,一致
+deepseek-flash--nothink--official,1004,9,"{""action"": ""left"", ""note"": ""Still facing dark wall corner; rotating left more to",116,left,True,left,一致
+deepseek-flash--nothink--official,1004,10,"{""action"": ""left"", ""note"": ""Still facing dark wall; rotate left to find checkpoi",96,left,True,left,一致
+deepseek-flash--nothink--official,1004,11,"{""action"": ""left"", ""note"": ""Green cylinder and yellow-bordered 4 sign right; kee",123,left,True,left,一致
+deepseek-flash--nothink--official,1004,12,"{""action"": ""left"", ""note"": ""Saw checkpoint 4 sign, but need checkpoint 1 first; ",104,left,True,left,一致
+deepseek-flash--nothink--official,1004,13,"{""action"": ""left"", ""note"": ""Rotating left to find red checkpoint 1; see purple 5",107,left,True,left,一致
+deepseek-flash--nothink--official,1004,14,"{""action"": ""right"", ""note"": ""See 5, 3, 4 signs; red 1 partially behind pole at r",109,right,True,right,一致
+deepseek-flash--nothink--official,1004,15,"{""action"": ""right"", ""note"": ""Red 1 behind central pole at right; rotate right to",100,right,True,right,一致
+deepseek-flash--nothink--official,1004,16,"{""action"": ""forward"", ""note"": ""Facing checkpoint 4; need checkpoint 1, red sign ",101,forward,True,forward,一致
+deepseek-flash--nothink--official,1004,17,"{""action"": ""left"", ""note"": ""Seeing checkpoint 4 ahead; need red 1, likely behind",101,left,True,left,一致
+deepseek-flash--nothink--official,1004,18,"{""action"": ""left"", ""note"": ""Red 1 partially behind central pole on left; rotate ",106,left,True,left,一致
+deepseek-flash--nothink--official,1004,19,"{""action"": ""left"", ""note"": ""Turning left to face red checkpoint 1 behind central",88,left,True,left,一致
+deepseek-flash--nothink--official,1004,20,"{""action"": ""left"", ""note"": ""Red 1 behind central pole; rotating left to face it ",91,left,True,left,一致
+deepseek-flash--nothink--official,1004,21,"{""action"": ""forward"", ""note"": ""Green 2 sign right; need checkpoint 1 red left. M",112,forward,True,forward,一致
+deepseek-flash--nothink--official,1004,22,"{""action"": ""forward"", ""note"": ""Dark wall blocking front; moving forward slightly",131,forward,True,forward,一致
+deepseek-flash--nothink--official,1004,23,"{""action"": ""left"", ""note"": ""Dark wall ahead; rotating left to find red checkpoin",91,left,True,left,一致
+deepseek-flash--nothink--official,1004,24,"{""action"": ""forward"", ""note"": ""Corner clear ahead; dark wall right, floor visibl",115,forward,True,forward,一致
+deepseek-flash--nothink--official,1004,25,"{""action"": ""forward"", ""note"": ""Wall left, brown cylinder right; dark corner ahea",116,forward,True,forward,一致
+deepseek-flash--nothink--official,1004,26,"{""action"": ""left"", ""note"": ""Dark wall left, brown cylinder right; turning left t",106,left,True,left,一致
+deepseek-flash--nothink--official,1004,27,"{""action"": ""forward"", ""note"": ""Dark wall ahead close, brown cylinder right; turn",108,forward,True,forward,一致
+deepseek-flash--nothink--official,1004,28,"{""action"": ""left"", ""note"": ""Dark wall ahead very close; turning left to avoid, s",112,left,True,left,一致
+deepseek-flash--nothink--official,1004,29,"{""action"": ""left"", ""note"": ""Very dark wall fills view; turning left to avoid col",115,left,True,left,一致
+deepseek-flash--nothink--official,1004,30,"{""action"": ""left"", ""note"": ""Dark wall fills view; turning left to avoid collisio",116,left,True,left,一致
+deepseek-flash--nothink--official,1004,31,"{""action"": ""left"", ""note"": ""Still facing dark wall; turning left more to find re",97,left,True,left,一致
+deepseek-flash--nothink--official,1004,32,"{""action"": ""left"", ""note"": ""Dark wall and pink wall corner; rotating left to fin",101,left,True,left,一致
+deepseek-flash--nothink--official,1004,33,"{""action"": ""forward"", ""note"": ""Facing wall, no checkpoint visible; edge forward ",111,forward,True,forward,一致
+deepseek-flash--nothink--official,1004,34,"{""action"": ""right"", ""note"": ""Facing blank pink wall, no checkpoints; rotate righ",112,right,True,right,一致
+deepseek-flash--nothink--official,1004,35,"{""action"": ""right"", ""note"": ""Facing blank pink wall, no red 1 visible; rotating ",96,right,True,right,一致
+deepseek-flash--nothink--official,1004,36,"{""action"": ""right"", ""note"": ""Blank pink wall ahead, no red 1; rotate right to sc",102,right,True,right,一致
+deepseek-flash--nothink--official,1004,37,"{""action"": ""right"", ""note"": ""Still facing blank pink wall, no red 1; keep rotati",112,right,True,right,一致
+deepseek-flash--nothink--official,1004,38,"{""action"": ""right"", ""note"": ""Still blank pink wall, no red 1; keep rotating righ",105,right,True,right,一致
+deepseek-flash--nothink--official,1004,39,"{""action"": ""right"", ""note"": ""Blank pink wall ahead, no red 1; rotating right to ",100,right,True,right,一致
+deepseek-flash--nothink--official,1004,40,"{""action"": ""right"", ""note"": ""Facing blank pink wall, no red 1; rotate right to s",104,right,True,right,一致
+deepseek-flash--nothink--official,1004,41,"{""action"": ""right"", ""note"": ""Blank pink wall and dark obstacle ahead; no red 1 y",106,right,True,right,一致
+deepseek-flash--nothink--official,1004,42,"{""action"": ""right"", ""note"": ""Blank pink wall ahead; no red 1; rotate right to se",103,right,True,right,一致
+deepseek-flash--nothink--official,1004,43,"{""action"": ""right"", ""note"": ""Red 1 visible ahead-right near tall post; rotate ri",108,right,True,right,一致
+deepseek-flash--nothink--official,1004,44,"{""action"": ""forward"", ""note"": ""Red 1 ahead right near tall dark post; drive forw",95,forward,True,forward,一致
+deepseek-flash--nothink--official,1004,45,"{""action"": ""forward"", ""note"": ""Red 1 sign ahead right behind tall post; drive fo",109,forward,True,forward,一致
+deepseek-flash--nothink--official,1004,46,"{""action"": ""forward"", ""note"": ""Red 1 sign still ahead-right behind tall dark pos",125,forward,True,forward,一致
+deepseek-flash--nothink--official,1004,47,"{""action"": ""forward"", ""note"": ""Red 1 sign ahead-right behind tall post; nearly t",120,forward,True,forward,一致
+deepseek-flash--nothink--official,1004,48,"{""action"": ""forward"", ""note"": ""Red 1 sign ahead-right behind tall post; nearly t",120,forward,True,forward,一致
+deepseek-flash--nothink--official,1004,49,"{""action"": ""forward"", ""note"": ""Red 1 sign ahead-right behind dark post; close, k",109,forward,True,forward,一致
+deepseek-flash--nothink--official,1004,50,"{""action"": ""forward"", ""note"": ""Red 1 sign ahead-right, close; drive forward towa",109,forward,True,forward,一致
+deepseek-flash--nothink--official,1004,51,"{""action"": ""forward"", ""note"": ""Red 1 sign ahead-right; move forward toward post ",101,forward,True,forward,一致
+deepseek-flash--nothink--official,1004,52,"{""action"": ""forward"", ""note"": ""Red 1 sign ahead-right, close; drive forward towa",109,forward,True,forward,一致
+deepseek-flash--nothink--official,1004,53,"{""action"": ""forward"", ""note"": ""Red 1 sign ahead-right, close; drive forward towa",109,forward,True,forward,一致
+deepseek-flash--nothink--official,1004,54,"{""action"": ""forward"", ""note"": ""Purple 5 sign right, black post ahead blocks path",103,forward,True,forward,一致
+deepseek-flash--nothink--official,1004,55,"{""action"": ""left"", ""note"": ""Black post/pillar blocks path; rotate left to search",98,left,True,left,一致
+deepseek-flash--nothink--official,1004,56,"{""action"": ""forward"", ""note"": ""Green 2 sign far right; black post ahead. Still s",106,forward,True,forward,一致
+deepseek-flash--nothink--official,1004,57,"{""action"": ""left"", ""note"": ""Green 2 sign ahead, not target. Rotating left to sea",101,left,True,left,一致
+deepseek-flash--nothink--official,1004,58,"{""action"": ""left"", ""note"": ""Green 2 sign right, not target. Rotate left to find ",93,left,True,left,一致
+deepseek-flash--nothink--official,1004,59,"{""action"": ""left"", ""note"": ""Large box ahead, green 2 sign right. Turn left to fi",91,left,True,left,一致
+deepseek-flash--nothink--official,1004,60,"{""action"": ""forward"", ""note"": ""Wall ahead, no red 1 visible. Move closer to scan",102,forward,True,forward,一致
+deepseek-flash--nothink--official,1004,61,"{""action"": ""right"", ""note"": ""Wall ahead; rotate right to scan for red 1 sign, av",94,right,True,right,一致
+deepseek-flash--nothink--official,1004,62,"{""action"": ""right"", ""note"": ""Wall ahead, box right; rotate right to scan for red",96,right,True,right,一致
+deepseek-flash--nothink--official,1004,63,"{""action"": ""right"", ""note"": ""Green box blocks view; rotate right to find red che",102,right,True,right,一致
+deepseek-flash--nothink--official,1004,64,"{""action"": ""right"", ""note"": ""Green 2 post ahead; rotating right to scan for red ",106,right,True,right,一致
+deepseek-flash--nothink--official,1004,65,"{""action"": ""right"", ""note"": ""Seeing green 2 post, but need red 1 first; rotating",109,right,True,right,一致
+deepseek-flash--nothink--official,1004,66,"{""action"": ""forward"", ""note"": ""Red 1 sign directly ahead, left of purple box; dr",106,forward,True,forward,一致
+deepseek-flash--nothink--official,1004,67,"{""action"": ""forward"", ""note"": ""Red 1 sign directly ahead, left of purple box; co",109,forward,True,forward,一致
+deepseek-flash--nothink--official,1004,68,"{""action"": ""forward"", ""note"": ""Red 1 sign ahead right; purple box nearby. Drivin",114,forward,True,forward,一致
+deepseek-flash--nothink--official,1004,69,"{""action"": ""forward"", ""note"": ""Red 1 sign slightly right ahead; purple box to it",123,forward,True,forward,一致
+deepseek-flash--nothink--official,1004,70,"{""action"": ""forward"", ""note"": ""Passing close to purple post 5, obstacle to right",125,forward,True,forward,一致
+deepseek-flash--nothink--official,1004,71,"{""action"": ""forward"", ""note"": ""Checkpoint 2 green sign ahead left, 5 purple behi",115,forward,True,forward,一致
+deepseek-flash--nothink--official,1004,72,"{""action"": ""left"", ""note"": ""Lost track of checkpoint 1; see green 2 ahead-left, ",126,left,True,left,一致
+deepseek-flash--nothink--official,1004,73,"{""action"": ""left"", ""note"": ""Searching for red checkpoint 1; green 2 ahead-left, ",113,left,True,left,一致
+deepseek-flash--nothink--official,1004,74,"{""action"": ""forward"", ""note"": ""Green 2 sign ahead-left, purple 5 right, cylinder",110,forward,True,forward,一致
+deepseek-flash--nothink--official,1004,75,"{""action"": ""left"", ""note"": ""Seeking red 1; green 2 ahead-left, purple 5 right; t",100,left,True,left,一致
+deepseek-flash--nothink--official,1004,76,"{""action"": ""left"", ""note"": ""Seeking red 1; green 2 ahead-left, purple 5 right; t",100,left,True,left,一致
+deepseek-flash--nothink--official,1004,77,"{""action"": ""left"", ""note"": ""Seeking red 1; green 2 ahead-left, purple 5 right; t",100,left,True,left,一致
+deepseek-flash--nothink--official,1004,78,"{""action"": ""left"", ""note"": ""Seeing only walls; red 1 not visible, keep turning l",101,left,True,left,一致
+deepseek-flash--nothink--official,1004,79,"{""action"": ""left"", ""note"": ""Only walls in view; keep rotating left to search for",100,left,True,left,一致
+glm-5v-turbo--nothink--official,1001,0,"{""action"": ""left"", ""note"": ""I see checkpoints 2, 3, 4, 5. Need to find checkpoin",123,left,True,left,一致
+glm-5v-turbo--nothink--official,1001,1,"{""action"": ""left"", ""note"": ""See checkpoints 4 (yellow) and 5 (purple) with obsta",144,left,True,left,一致
+glm-5v-turbo--nothink--official,1001,2,"{""action"": ""left"", ""note"": ""See wall on left, box on right. Checkpoint 4 (yellow",149,left,True,left,一致
+glm-5v-turbo--nothink--official,1001,3,"{""action"": ""left"", ""note"": ""Wall on left, checkered floor on right. Need to find",133,left,True,left,一致
+glm-5v-turbo--nothink--official,1001,4,"{""action"": ""left"", ""note"": ""Wall ahead. Need to find checkpoint 1 (red border). ",105,left,True,left,一致
+glm-5v-turbo--nothink--official,1001,5,"{""action"": ""left"", ""note"": ""Corner of two walls visible. Need to find checkpoint",122,left,True,left,一致
+glm-5v-turbo--nothink--official,1001,6,"{""action"": ""left"", ""note"": ""Corner of two walls visible. Need to find checkpoint",122,left,True,left,一致
+glm-5v-turbo--nothink--official,1001,7,"{""action"": ""left"", ""note"": ""Wall visible. Still searching for checkpoint 1 (red ",115,left,True,left,一致
+glm-5v-turbo--nothink--official,1001,8,"{""action"": ""left"", ""note"": ""Wall visible on left. Still searching for checkpoint",128,left,True,left,一致
+glm-5v-turbo--nothink--official,1001,9,"{""action"": ""left"", ""note"": ""Wall on right, checkered floor on left. Still search",141,left,True,left,一致
+glm-5v-turbo--nothink--official,1001,10,"{""action"": ""forward"", ""note"": ""Checkpoint 1 (red border) visible on left. Moving",106,forward,True,forward,一致
+glm-5v-turbo--nothink--official,1001,11,"{""action"": ""forward"", ""note"": ""Checkpoint 1 (red border) visible on left. Moving",116,forward,True,forward,一致
+glm-5v-turbo--nothink--official,1001,12,"{""action"": ""left"", ""note"": ""Lost sight of checkpoint 1 (red border). Wall on rig",120,left,True,left,一致
+glm-5v-turbo--nothink--official,1001,13,"{""action"": ""forward"", ""note"": ""Checkpoint 1 (red border) directly ahead. Moving ",114,forward,True,forward,一致
+glm-5v-turbo--nothink--official,1001,14,"{""action"": ""stop"", ""note"": ""At checkpoint 1 (red border) within 0.4m. Checkpoint",125,stop,True,stop,一致
+glm-5v-turbo--nothink--official,1004,0,"{""action"": ""right"", ""note"": ""I see checkpoints 2, 3, 5. Need to find checkpoint ",118,right,True,right,一致
+glm-5v-turbo--nothink--official,1004,1,"{""action"": ""forward"", ""note"": ""I see checkpoint 1 (red border) ahead. Moving for",99,forward,True,forward,一致
+glm-5v-turbo--nothink--official,1004,2,"{""action"": ""forward"", ""note"": ""Checkpoint 1 (red border) is visible ahead. Movin",104,forward,True,forward,一致
+glm-5v-turbo--nothink--official,1004,3,"{""action"": ""forward"", ""note"": ""Checkpoint 1 (red border) is directly ahead. Movi",105,forward,True,forward,一致
+glm-5v-turbo--nothink--official,1004,4,"{""action"": ""stop"", ""note"": ""Reached checkpoint 1 (red border). It is directly in",108,stop,True,stop,一致
+glm-5v-turbo--nothink--official,1006,0,"{""action"": ""forward"", ""note"": ""I see checkpoint 3 (blue) close, checkpoint 1 (re",131,forward,True,forward,一致
+glm-5v-turbo--nothink--official,1006,1,"{""action"": ""forward"", ""note"": ""Checkpoint 1 (red) visible ahead. Moving forward ",97,forward,True,forward,一致
+glm-5v-turbo--nothink--official,1006,2,"{""action"": ""forward"", ""note"": ""Checkpoint 1 (red) directly ahead, getting closer",145,forward,True,forward,一致
+glm-5v-turbo--nothink--official,1006,3,"{""action"": ""stop"", ""note"": ""Reached checkpoint 1 (red). It is directly ahead and",111,stop,True,stop,一致
+glm-5v-turbo--nothink--official,1007,0,"{""action"": ""forward"", ""note"": ""I see checkpoint 1 (red) ahead, with a brown cyli",124,forward,True,forward,一致
+glm-5v-turbo--nothink--official,1007,1,"{""action"": ""right"", ""note"": ""Checkpoint 1 (red) visible on right, brown cylinder",133,right,True,right,一致
+glm-5v-turbo--nothink--official,1007,2,"{""action"": ""forward"", ""note"": ""Checkpoint 1 (red) visible on left, brown cylinde",132,forward,True,forward,一致
+glm-5v-turbo--nothink--official,1007,3,"{""action"": ""forward"", ""note"": ""Checkpoint 1 (red) visible ahead on left. Moving ",105,forward,True,forward,一致
+glm-5v-turbo--nothink--official,1007,4,"{""action"": ""left"", ""note"": ""Checkpoint 1 (red) on left, checkpoint 2 (green) on ",127,left,True,left,一致
+glm-5v-turbo--nothink--official,1007,5,"{""action"": ""forward"", ""note"": ""Checkpoint 1 (red) visible ahead. Brown cylinder ",131,forward,True,forward,一致
+glm-5v-turbo--nothink--official,1007,6,"{""action"": ""forward"", ""note"": ""Checkpoint 1 (red) ahead on left. Brown cylinder ",131,forward,True,forward,一致
+glm-5v-turbo--nothink--official,1007,7,"{""action"": ""left"", ""note"": ""Checkpoint 1 (red) on left, checkpoint 2 (green) on ",127,left,True,left,一致
+glm-5v-turbo--nothink--official,1007,8,"{""action"": ""forward"", ""note"": ""Checkpoint 1 (red) visible ahead. Brown cylinder ",131,forward,True,forward,一致
+glm-5v-turbo--nothink--official,1007,9,"{""action"": ""forward"", ""note"": ""Checkpoint 1 (red) visible ahead on left. Moving ",115,forward,True,forward,一致
+glm-5v-turbo--nothink--official,1007,10,"{""action"": ""stop"", ""note"": ""At checkpoint 1 (red). Ready to proceed to checkpoin",99,stop,True,stop,一致
+glm-5v-turbo--nothink--official,1009,0,"{""action"": ""left"", ""note"": ""I see checkpoint 5 (purple) in front, 4 (yellow) to ",128,left,True,left,一致
+glm-5v-turbo--nothink--official,1009,1,"{""action"": ""left"", ""note"": ""I see checkpoint 5 (purple) close, 3 (blue) left, 1 ",113,left,True,left,一致
+glm-5v-turbo--nothink--official,1009,2,"{""action"": ""forward"", ""note"": ""I see checkpoint 3 (blue) and 1 (red) ahead. Driv",123,forward,True,forward,一致
+glm-5v-turbo--nothink--official,1009,3,"{""action"": ""forward"", ""note"": ""Checkpoint 1 (red) is on the right, 3 (blue) on l",112,forward,True,forward,一致
+glm-5v-turbo--nothink--official,1009,4,"{""action"": ""right"", ""note"": ""I see checkpoint 3 (blue) and 1 (red) on the right.",117,right,True,right,一致
+glm-5v-turbo--nothink--official,1009,5,"{""action"": ""forward"", ""note"": ""Checkpoint 1 (red) is very close on the right. Mo",120,forward,True,forward,一致
+glm-5v-turbo--nothink--official,1009,6,"{""action"": ""stop"", ""note"": ""At checkpoint 1 (red). Next: find checkpoint 2 (gree",92,stop,True,stop,一致
+qwen3-vl-plus--nothink--official,1000,0,"{""action"": ""forward"", ""note"": ""Checkpoint 1 (red) is directly ahead, ~1.2 m away",114,forward,True,forward,一致
+qwen3-vl-plus--nothink--official,1000,1,"{""action"": ""forward"", ""note"": ""Checkpoint 1 (red) still ahead, now ~1.0 m away; ",112,forward,True,forward,一致
+qwen3-vl-plus--nothink--official,1000,2,"{""action"": ""forward"", ""note"": ""Checkpoint 1 (red) now ~0.8 m ahead; still clear ",106,forward,True,forward,一致
+qwen3-vl-plus--nothink--official,1000,3,"{""action"": ""forward"", ""note"": ""Checkpoint 1 (red) now ~0.6 m ahead; path still c",106,forward,True,forward,一致
+qwen3-vl-plus--nothink--official,1000,4,"{""action"": ""forward"", ""note"": ""Checkpoint 1 (red) now ~0.4 m ahead; still clear ",106,forward,True,forward,一致
+qwen3-vl-plus--nothink--official,1000,5,"{""action"": ""forward"", ""note"": ""Checkpoint 1 (red) now ~0.2 m ahead; clear path, ",100,forward,True,forward,一致
+qwen3-vl-plus--nothink--official,1000,6,"{""action"": ""forward"", ""note"": ""Reached checkpoint 1 (red); now turn toward check",98,forward,True,forward,一致
+qwen3-vl-plus--nothink--official,1000,7,"{""action"": ""left"", ""note"": ""Checkpoint 4 (yellow) visible left; need to find che",121,left,True,left,一致
+qwen3-vl-plus--nothink--official,1000,8,"{""action"": ""left"", ""note"": ""Turning left to search for checkpoint 2 (green); che",144,left,True,left,一致
+qwen3-vl-plus--nothink--official,1000,9,"{""action"": ""left"", ""note"": ""Still no checkpoint 1 (red); turning left to locate ",132,left,True,left,一致
+qwen3-vl-plus--nothink--official,1000,10,"{""action"": ""left"", ""note"": ""Still no checkpoint 1 (red); turning left again. Che",150,left,True,left,一致
+qwen3-vl-plus--nothink--official,1000,11,"{""action"": ""left"", ""note"": ""Still no checkpoint 1 (red); continuing left turn. C",136,left,True,left,一致
+qwen3-vl-plus--nothink--official,1000,12,"{""action"": ""left"", ""note"": ""Still no checkpoint 1 (red); turning left. Checkpoin",125,left,True,left,一致
+qwen3-vl-plus--nothink--official,1000,13,"{""action"": ""left"", ""note"": ""Still no checkpoint 1 (red); turning left. Purple cy",132,left,True,left,一致
+qwen3-vl-plus--nothink--official,1000,14,"{""action"": ""left"", ""note"": ""Still no checkpoint 1 (red); continuing left turn. W",115,left,True,left,一致
+qwen3-vl-plus--nothink--official,1000,15,"{""action"": ""left"", ""note"": ""Still no checkpoint 1 (red); turning left. Wall ahea",111,left,True,left,一致
+qwen3-vl-plus--nothink--official,1000,16,"{""action"": ""left"", ""note"": ""Still no checkpoint 1 (red); turning left. Corner vi",108,left,True,left,一致
+qwen3-vl-plus--nothink--official,1000,17,"{""action"": ""left"", ""note"": ""Still no checkpoint 1 (red); continuing left turn. C",116,left,True,left,一致
+qwen3-vl-plus--nothink--official,1000,18,"{""action"": ""left"", ""note"": ""Still no checkpoint 1 (red); continuing left turn. P",124,left,True,left,一致
+qwen3-vl-plus--nothink--official,1000,19,"{""action"": ""left"", ""note"": ""Purple wall on left, beige wall ahead; still no chec",116,left,True,left,一致
+qwen3-vl-plus--nothink--official,1000,20,"{""action"": ""left"", ""note"": ""Still no checkpoint 1 (red); turning left further—pu",151,left,True,left,一致
+qwen3-vl-plus--nothink--official,1000,21,"{""action"": ""left"", ""note"": ""Still no checkpoint 1 (red); turning left—purple wal",143,left,True,left,一致
+qwen3-vl-plus--nothink--official,1000,22,"{""action"": ""left"", ""note"": ""Still no checkpoint 1 (red); turning left—purple wal",169,left,True,left,一致
+qwen3-vl-plus--nothink--official,1000,23,"{""action"": ""left"", ""note"": ""Still no checkpoint 1 (red); turning left—purple wal",163,left,True,left,一致
+qwen3-vl-plus--nothink--official,1000,24,"{""action"": ""left"", ""note"": ""Still no checkpoint 1 (red); turning left—purple wal",157,left,True,left,一致
+qwen3-vl-plus--nothink--official,1000,25,"{""action"": ""left"", ""note"": ""Checkpoint 2 (green) ahead, checkpoint 3 (blue) righ",135,left,True,left,一致
+qwen3-vl-plus--nothink--official,1000,26,"{""action"": ""left"", ""note"": ""Still no checkpoint 1 (red); turning left—purple wal",151,left,True,left,一致
+qwen3-vl-plus--nothink--official,1000,27,"{""action"": ""left"", ""note"": ""Still no checkpoint 1 (red); turning left—purple wal",147,left,True,left,一致
+qwen3-vl-plus--nothink--official,1000,28,"{""action"": ""left"", ""note"": ""Still no checkpoint 1 (red); turning left—purple wal",148,left,True,left,一致
+qwen3-vl-plus--nothink--official,1000,29,"{""action"": ""left"", ""note"": ""Still no checkpoint 1 (red); turning left—purple wal",151,left,True,left,一致
+qwen3-vl-plus--nothink--official,1000,30,"{""action"": ""left"", ""note"": ""Still no checkpoint 1 (red); turning left—purple wal",145,left,True,left,一致
+qwen3-vl-plus--nothink--official,1000,31,"{""action"": ""left"", ""note"": ""Still no checkpoint 1 (red); turning left—purple wal",135,left,True,left,一致
+qwen3-vl-plus--nothink--official,1000,32,"{""action"": ""left"", ""note"": ""Still no checkpoint 1 (red); turning left—purple wal",129,left,True,left,一致
+qwen3-vl-plus--nothink--official,1000,33,"{""action"": ""left"", ""note"": ""Still no checkpoint 1 (red); turning left—purple wal",129,left,True,left,一致
+qwen3-vl-plus--nothink--official,1000,34,"{""action"": ""left"", ""note"": ""Still no checkpoint 1 (red); turning left—purple wal",129,left,True,left,一致
+qwen3-vl-plus--nothink--official,1000,35,"{""action"": ""left"", ""note"": ""Still no checkpoint 1 (red); turning left—now see ch",132,left,True,left,一致
+qwen3-vl-plus--nothink--official,1000,36,"{""action"": ""left"", ""note"": ""Still no checkpoint 1 (red); turning left—now see ch",132,left,True,left,一致
+qwen3-vl-plus--nothink--official,1000,37,"{""action"": ""left"", ""note"": ""Still no checkpoint 1 (red); turning left—now see ch",151,left,True,left,一致
+qwen3-vl-plus--nothink--official,1000,38,"{""action"": ""left"", ""note"": ""Still no checkpoint 1 (red); turning left—now see ch",131,left,True,left,一致
+qwen3-vl-plus--nothink--official,1000,39,"{""action"": ""left"", ""note"": ""Turned left; now see checkpoint 1 (red) ahead-left, ",121,left,True,left,一致
+qwen3-vl-plus--nothink--official,1000,40,"{""action"": ""left"", ""note"": ""Checkpoint 1 (red) visible ahead-left; wall on right",117,left,True,left,一致
+qwen3-vl-plus--nothink--official,1000,41,"{""action"": ""left"", ""note"": ""Rotating left to face checkpoint 1 (red) directly; w",124,left,True,left,一致
+qwen3-vl-plus--nothink--official,1000,42,"{""action"": ""forward"", ""note"": ""Driving toward checkpoint 1 (red); it's centered ",125,forward,True,forward,一致
+qwen3-vl-plus--nothink--official,1000,43,"{""action"": ""forward"", ""note"": ""Reached checkpoint 1 (red); now turn toward check",98,forward,True,forward,一致
+qwen3-vl-plus--nothink--official,1000,44,"{""action"": ""left"", ""note"": ""Turning left to locate checkpoint 2 (green); wall on",107,left,True,left,一致
+qwen3-vl-plus--nothink--official,1000,45,"{""action"": ""left"", ""note"": ""Corner view; no checkpoint visible yet. Continuing l",126,left,True,left,一致
+qwen3-vl-plus--nothink--official,1000,46,"{""action"": ""left"", ""note"": ""Still no checkpoint visible; continuing left turn to",115,left,True,left,一致
+qwen3-vl-plus--nothink--official,1000,47,"{""action"": ""left"", ""note"": ""Still facing wall; no checkpoint visible. Continuing",126,left,True,left,一致
+qwen3-vl-plus--nothink--official,1000,48,"{""action"": ""left"", ""note"": ""Still facing wall; rotating left to locate checkpoin",99,left,True,left,一致
+qwen3-vl-plus--nothink--official,1000,49,"{""action"": ""left"", ""note"": ""Still no checkpoint 1; continuing left turn to scan ",104,left,True,left,一致
+qwen3-vl-plus--nothink--official,1000,50,"{""action"": ""left"", ""note"": ""Still no checkpoint 1; rotating left further to find",101,left,True,left,一致
+qwen3-vl-plus--nothink--official,1000,51,"{""action"": ""forward"", ""note"": ""Checkpoint 1 (red) is directly ahead, ~0.6 m away",111,forward,True,forward,一致
+qwen3-vl-plus--nothink--official,1000,52,"{""action"": ""forward"", ""note"": ""Checkpoint 1 (red) is now ~0.4 m ahead; almost th",86,forward,True,forward,一致
+qwen3-vl-plus--nothink--official,1000,53,"{""action"": ""forward"", ""note"": ""Reached checkpoint 1 (red); now turn toward check",106,forward,True,forward,一致
+qwen3-vl-plus--nothink--official,1000,54,"{""action"": ""left"", ""note"": ""Turning left to face checkpoint 2 (green border), vi",101,left,True,left,一致
+qwen3-vl-plus--nothink--official,1000,55,"{""action"": ""left"", ""note"": ""Still turning left; green-bordered checkpoint 2 is v",112,left,True,left,一致
+qwen3-vl-plus--nothink--official,1000,56,"{""action"": ""forward"", ""note"": ""Driving toward green-bordered checkpoint 2, now c",106,forward,True,forward,一致
+qwen3-vl-plus--nothink--official,1000,57,"{""action"": ""forward"", ""note"": ""Checkpoint 2 (green) centered ahead, moving close",102,forward,True,forward,一致
+qwen3-vl-plus--nothink--official,1000,58,"{""action"": ""forward"", ""note"": ""At checkpoint 2 (green), within ~0.4 m; now need ",111,forward,True,forward,一致
+qwen3-vl-plus--nothink--official,1000,59,"{""action"": ""left"", ""note"": ""Turned left to face checkpoint 3 (blue); blue cylind",119,left,True,left,一致
+qwen3-vl-plus--nothink--official,1000,60,"{""action"": ""right"", ""note"": ""Checkpoint 2 (green) is on the right; need to reori",132,right,True,right,一致
+qwen3-vl-plus--nothink--official,1000,61,"{""action"": ""forward"", ""note"": ""Checkpoint 2 (green) directly ahead, ~0.4 m away;",99,forward,True,forward,一致
+qwen3-vl-plus--nothink--official,1000,62,"{""action"": ""forward"", ""note"": ""At checkpoint 2 (green border), 0.2 m away; next ",112,forward,True,forward,一致
+qwen3-vl-plus--nothink--official,1000,63,"{""action"": ""right"", ""note"": ""Turning right to locate checkpoint 3 (blue); curren",132,right,True,right,一致
+qwen3-vl-plus--nothink--official,1000,64,"{""action"": ""right"", ""note"": ""Still no checkpoint 3; turning right further to sca",107,right,True,right,一致
+qwen3-vl-plus--nothink--official,1000,65,"{""action"": ""right"", ""note"": ""Still no checkpoint 3; continuing right turn to sea",109,right,True,right,一致
+qwen3-vl-plus--nothink--official,1000,66,"{""action"": ""right"", ""note"": ""Still no checkpoint 3; continuing right turn to sea",109,right,True,right,一致
+qwen3-vl-plus--nothink--official,1000,67,"{""action"": ""right"", ""note"": ""Seeing checkpoint 4 (yellow) and 5 (purple); still ",138,right,True,right,一致
+qwen3-vl-plus--nothink--official,1000,68,"{""action"": ""right"", ""note"": ""Still seeing checkpoint 4 (yellow); need green-bord",125,right,True,right,一致
+qwen3-vl-plus--nothink--official,1000,69,"{""action"": ""right"", ""note"": ""Still no checkpoint 2 (green); rotating right furth",98,right,True,right,一致
+qwen3-vl-plus--nothink--official,1000,70,"{""action"": ""right"", ""note"": ""Still no checkpoint 2 (green); rotating right conti",133,right,True,right,一致
+qwen3-vl-plus--nothink--official,1000,71,"{""action"": ""right"", ""note"": ""Still no checkpoint 2 (green); rotating right—purpl",125,right,True,right,一致
+qwen3-vl-plus--nothink--official,1000,72,"{""action"": ""right"", ""note"": ""Continuing right turn; purple cylinder still on rig",121,right,True,right,一致
+qwen3-vl-plus--nothink--official,1000,73,"{""action"": ""right"", ""note"": ""Still no checkpoint 2 (green); purple cylinder on r",106,right,True,right,一致
+qwen3-vl-plus--nothink--official,1000,74,"{""action"": ""right"", ""note"": ""Still no checkpoint 2 (green); turning right—purple",121,right,True,right,一致
+qwen3-vl-plus--nothink--official,1000,75,"{""action"": ""right"", ""note"": ""Still no checkpoint 2; wall ahead, purple cylinder ",114,right,True,right,一致
+qwen3-vl-plus--nothink--official,1000,76,"{""action"": ""right"", ""note"": ""Green-bordered checkpoint 2 now visible ahead; blac",119,right,True,right,一致
+qwen3-vl-plus--nothink--official,1000,77,"{""action"": ""forward"", ""note"": ""Black pole blocks direct path to green checkpoint",122,forward,True,forward,一致
+qwen3-vl-plus--nothink--official,1000,78,"{""action"": ""right"", ""note"": ""Cyan cylinder (obstacle) ahead; need to turn right ",119,right,True,right,一致
+qwen3-vl-plus--nothink--official,1000,79,"{""action"": ""right"", ""note"": ""Turned right; cyan cylinder still left, wall ahead—",123,right,True,right,一致
+qwen3-vl-plus--nothink--official,1001,0,"{""action"": ""left"", ""note"": ""See checkpoints 2 (green), 3 (blue), 4 (yellow), 5 (",148,left,True,left,一致
+qwen3-vl-plus--nothink--official,1001,1,"{""action"": ""left"", ""note"": ""Turned left; still no checkpoint 1 (red). Checkpoint",112,left,True,left,一致
+qwen3-vl-plus--nothink--official,1001,2,"{""action"": ""left"", ""note"": ""Still no checkpoint 1 (red). Turning left again; wal",128,left,True,left,一致
+qwen3-vl-plus--nothink--official,1001,3,"{""action"": ""left"", ""note"": ""Still no checkpoint 1 (red); wall on left, floor pat",127,left,True,left,一致
+qwen3-vl-plus--nothink--official,1001,4,"{""action"": ""left"", ""note"": ""Still no checkpoint 1 (red); wall on left, floor pat",118,left,True,left,一致
+qwen3-vl-plus--nothink--official,1001,5,"{""action"": ""left"", ""note"": ""Corner view: two walls meeting, no checkpoint yet. S",127,left,True,left,一致
+qwen3-vl-plus--nothink--official,1001,6,"{""action"": ""left"", ""note"": ""Corner view persists; still no checkpoint 1 (red). C",132,left,True,left,一致
+qwen3-vl-plus--nothink--official,1001,7,"{""action"": ""left"", ""note"": ""Still no checkpoint 1; turning left to continue scan",109,left,True,left,一致
+qwen3-vl-plus--nothink--official,1001,8,"{""action"": ""left"", ""note"": ""Still scanning; no red-bordered checkpoint 1 visible",105,left,True,left,一致
+qwen3-vl-plus--nothink--official,1001,9,"{""action"": ""left"", ""note"": ""Still no checkpoint 1; continuing left turn to scan ",104,left,True,left,一致
+qwen3-vl-plus--nothink--official,1001,10,"{""action"": ""forward"", ""note"": ""Checkpoint 1 (red border) is directly ahead, ~0.6",118,forward,True,forward,一致
+qwen3-vl-plus--nothink--official,1001,11,"{""action"": ""forward"", ""note"": ""Checkpoint 1 (red) is now ~0.4 m ahead; almost th",86,forward,True,forward,一致
+qwen3-vl-plus--nothink--official,1001,12,"{""action"": ""forward"", ""note"": ""Checkpoint 1 (red border) reached; now turn left ",117,forward,True,forward,一致
+qwen3-vl-plus--nothink--official,1001,13,"{""action"": ""left"", ""note"": ""Facing corner; no checkpoint visible. Scanning for c",109,left,True,left,一致
+qwen3-vl-plus--nothink--official,1001,14,"{""action"": ""forward"", ""note"": ""Checkpoint 1 (red) directly ahead, ~0.2 m away; r",97,forward,True,forward,一致
+qwen3-vl-plus--nothink--official,1001,15,"{""action"": ""stop"", ""note"": ""Checkpoint 1 (red) reached; task says visit 1–5 in o",163,stop,True,stop,一致
+qwen3-vl-plus--nothink--official,1002,0,"{""action"": ""left"", ""note"": ""Checkpoint 2 (green) visible left; checkpoint 5 (pur",155,left,True,left,一致
+qwen3-vl-plus--nothink--official,1002,1,"{""action"": ""left"", ""note"": ""Checkpoint 1 (red) now directly ahead; ready to appr",87,left,True,left,一致
+qwen3-vl-plus--nothink--official,1002,2,"{""action"": ""forward"", ""note"": ""Checkpoint 1 (red) directly ahead; moving toward ",98,forward,True,forward,一致
+qwen3-vl-plus--nothink--official,1002,3,"{""action"": ""forward"", ""note"": ""Checkpoint 1 (red) now ~0.4 m ahead; almost there",83,forward,True,forward,一致
+qwen3-vl-plus--nothink--official,1002,4,"{""action"": ""forward"", ""note"": ""Reached checkpoint 1 (red); now turn toward check",98,forward,True,forward,一致
+qwen3-vl-plus--nothink--official,1002,5,"{""action"": ""right"", ""note"": ""Checkpoint 4 (yellow) visible right; need checkpoin",121,right,True,right,一致
+qwen3-vl-plus--nothink--official,1002,6,"{""action"": ""right"", ""note"": ""Checkpoint 4 (yellow) on right, checkpoint 5 (purpl",157,right,True,right,一致
+qwen3-vl-plus--nothink--official,1002,7,"{""action"": ""right"", ""note"": ""Checkpoint 2 (green) now clearly visible ahead; rot",106,right,True,right,一致
+qwen3-vl-plus--nothink--official,1002,8,"{""action"": ""forward"", ""note"": ""Checkpoint 2 (green border) directly ahead; movin",94,forward,True,forward,一致
+qwen3-vl-plus--nothink--official,1002,9,"{""action"": ""forward"", ""note"": ""Moving toward checkpoint 2 (green border), ~0.4 m",92,forward,True,forward,一致
+qwen3-vl-plus--nothink--official,1002,10,"{""action"": ""forward"", ""note"": ""Checkpoint 2 (green) reached; now turn toward che",108,forward,True,forward,一致
+qwen3-vl-plus--nothink--official,1002,11,"{""action"": ""right"", ""note"": ""Turning right to face checkpoint 3 (blue), visible ",100,right,True,right,一致
+qwen3-vl-plus--nothink--official,1002,12,"{""action"": ""forward"", ""note"": ""Moving toward checkpoint 3 (blue), visible ahead-",115,forward,True,forward,一致
+qwen3-vl-plus--nothink--official,1002,13,"{""action"": ""right"", ""note"": ""Rotating right to align with checkpoint 3 (blue), w",109,right,True,right,一致
+qwen3-vl-plus--nothink--official,1002,14,"{""action"": ""right"", ""note"": ""Facing a blue wall; checkpoint 3 (blue) was just pa",124,right,True,right,一致
+qwen3-vl-plus--nothink--official,1002,15,"{""action"": ""left"", ""note"": ""Facing dark wall; turning left to search for checkpo",103,left,True,left,一致
+qwen3-vl-plus--nothink--official,1002,16,"{""action"": ""left"", ""note"": ""Still facing dark wall; continuing left turn to sear",117,left,True,left,一致
+qwen3-vl-plus--nothink--official,1002,17,"{""action"": ""left"", ""note"": ""Still dark wall; continuing left turn to locate chec",106,left,True,left,一致
+qwen3-vl-plus--nothink--official,1002,18,"{""action"": ""left"", ""note"": ""Still dark wall; rotating left further to find check",105,left,True,left,一致
+qwen3-vl-plus--nothink--official,1002,19,"{""action"": ""left"", ""note"": ""Now see checkpoint 5 (purple) and a red cylinder; st",110,left,True,left,一致
+qwen3-vl-plus--nothink--official,1002,20,"{""action"": ""left"", ""note"": ""Checkpoint 5 (purple) visible; still no checkpoint 2",125,left,True,left,一致
+qwen3-vl-plus--nothink--official,1002,21,"{""action"": ""left"", ""note"": ""Checkpoint 4 (yellow) visible left; still no checkpo",120,left,True,left,一致
+qwen3-vl-plus--nothink--official,1002,22,"{""action"": ""left"", ""note"": ""Checkpoint 4 (yellow) still visible; need to find ch",122,left,True,left,一致
+qwen3-vl-plus--nothink--official,1002,23,"{""action"": ""left"", ""note"": ""Still seeing checkpoint 4 (yellow); no checkpoint 2 ",113,left,True,left,一致
+qwen3-vl-plus--nothink--official,1002,24,"{""action"": ""left"", ""note"": ""Still no checkpoint 2 (green); checkpoint 4 (yellow)",123,left,True,left,一致
+qwen3-vl-plus--nothink--official,1002,25,"{""action"": ""left"", ""note"": ""Still no checkpoint 2 (green); walls and empty floor",108,left,True,left,一致
+qwen3-vl-plus--nothink--official,1002,26,"{""action"": ""left"", ""note"": ""Still no checkpoint 2 (green); only walls and checke",116,left,True,left,一致
+qwen3-vl-plus--nothink--official,1002,27,"{""action"": ""left"", ""note"": ""Still no checkpoint 2 (green); rotating left continu",116,left,True,left,一致
+qwen3-vl-plus--nothink--official,1002,28,"{""action"": ""left"", ""note"": ""Still no checkpoint 2 (green); rotating left—walls a",106,left,True,left,一致
+qwen3-vl-plus--nothink--official,1002,29,"{""action"": ""left"", ""note"": ""Still no checkpoint 2 (green); continuing left rotat",120,left,True,left,一致
+qwen3-vl-plus--nothink--official,1002,30,"{""action"": ""left"", ""note"": ""Still no checkpoint 2 (green); rotating left—walls, ",135,left,True,left,一致
+qwen3-vl-plus--nothink--official,1002,31,"{""action"": ""left"", ""note"": ""Still no checkpoint 2 (green); rotating left—red cyl",132,left,True,left,一致
+qwen3-vl-plus--nothink--official,1002,32,"{""action"": ""left"", ""note"": ""Still no checkpoint 2 (green); rotating left—purple ",145,left,True,left,一致
+qwen3-vl-plus--nothink--official,1002,33,"{""action"": ""left"", ""note"": ""Rotating left: purple checkpoint 5 still visible, no",137,left,True,left,一致
+qwen3-vl-plus--nothink--official,1002,34,"{""action"": ""left"", ""note"": ""Still no checkpoint 2 (green); rotating left—checkpo",144,left,True,left,一致
+qwen3-vl-plus--nothink--official,1002,35,"{""action"": ""left"", ""note"": ""Checkpoint 4 (yellow) now centered; still no checkpo",138,left,True,left,一致
+qwen3-vl-plus--nothink--official,1002,36,"{""action"": ""left"", ""note"": ""Rotating left: checkpoint 4 (yellow) still visible, ",152,left,True,left,一致
+qwen3-vl-plus--nothink--official,1002,37,"{""action"": ""left"", ""note"": ""Still no checkpoint 2 (green); black pillar right, p",133,left,True,left,一致
+qwen3-vl-plus--nothink--official,1002,38,"{""action"": ""left"", ""note"": ""Still no checkpoint 2 (green); turning left to searc",140,left,True,left,一致
+qwen3-vl-plus--nothink--official,1002,39,"{""action"": ""left"", ""note"": ""Still no checkpoint 2; turning left—walls and checke",111,left,True,left,一致
+qwen3-vl-plus--nothink--official,1002,40,"{""action"": ""left"", ""note"": ""Still no checkpoint 2 (green); turning left—walls, c",117,left,True,left,一致
+qwen3-vl-plus--nothink--official,1002,41,"{""action"": ""left"", ""note"": ""Still no checkpoint 2; turning left—brown pillar on ",127,left,True,left,一致
+qwen3-vl-plus--nothink--official,1002,42,"{""action"": ""left"", ""note"": ""Still no checkpoint 2; turning left—blue wall on lef",118,left,True,left,一致
+qwen3-vl-plus--nothink--official,1002,43,"{""action"": ""left"", ""note"": ""Blue wall on left, gray wall ahead; still no green-b",122,left,True,left,一致
+qwen3-vl-plus--nothink--official,1002,44,"{""action"": ""left"", ""note"": ""Turned left again; brown cylinder still on right, no",106,left,True,left,一致
+qwen3-vl-plus--nothink--official,1002,45,"{""action"": ""left"", ""note"": ""Still no checkpoint 2; turning left—purple checkpoin",127,left,True,left,一致
+qwen3-vl-plus--nothink--official,1002,46,"{""action"": ""right"", ""note"": ""Checkpoint 5 (purple) on left; need to find green-b",128,right,True,right,一致
+qwen3-vl-plus--nothink--official,1002,47,"{""action"": ""right"", ""note"": ""Turned right; checkpoint 5 still visible left, brow",128,right,True,right,一致
+qwen3-vl-plus--nothink--official,1002,48,"{""action"": ""left"", ""note"": ""Brown cylinder centered; turning left to search for ",110,left,True,left,一致
+qwen3-vl-plus--nothink--official,1002,49,"{""action"": ""left"", ""note"": ""Turned left; checkpoint 5 now behind, brown cylinder",141,left,True,left,一致
+qwen3-vl-plus--nothink--official,1002,50,"{""action"": ""left"", ""note"": ""Checkpoint 5 behind, brown cylinder right; still no ",118,left,True,left,一致
+qwen3-vl-plus--nothink--official,1002,51,"{""action"": ""left"", ""note"": ""Still no checkpoint 2; turning left further to scan ",106,left,True,left,一致
+qwen3-vl-plus--nothink--official,1002,52,"{""action"": ""left"", ""note"": ""Still no green-bordered checkpoint 2; turning left t",102,left,True,left,一致
+qwen3-vl-plus--nothink--official,1002,53,"{""action"": ""left"", ""note"": ""Turned left again; still no green-bordered checkpoin",139,left,True,left,一致
+qwen3-vl-plus--nothink--official,1002,54,"{""action"": ""left"", ""note"": ""Still no checkpoint 2; rotating left to search for g",137,left,True,left,一致
+qwen3-vl-plus--nothink--official,1002,55,"{""action"": ""left"", ""note"": ""Still no checkpoint 2; continuing left scan. Walls a",114,left,True,left,一致
+qwen3-vl-plus--nothink--official,1002,56,"{""action"": ""left"", ""note"": ""Still no checkpoint 2; rotating left further. Only w",115,left,True,left,一致
+qwen3-vl-plus--nothink--official,1002,57,"{""action"": ""left"", ""note"": ""Still no checkpoint 2; rotating left again. Brown ob",111,left,True,left,一致
+qwen3-vl-plus--nothink--official,1002,58,"{""action"": ""left"", ""note"": ""Continuing left scan; brown obstacle on right, still",107,left,True,left,一致
+qwen3-vl-plus--nothink--official,1002,59,"{""action"": ""left"", ""note"": ""Still no checkpoint 2; rotating left—blue wall visib",124,left,True,left,一致
+qwen3-vl-plus--nothink--official,1002,60,"{""action"": ""left"", ""note"": ""Rotating left; blue wall and black pillar still visi",107,left,True,left,一致
+qwen3-vl-plus--nothink--official,1002,61,"{""action"": ""left"", ""note"": ""Still no checkpoint 2; rotating left—brown cylinder ",128,left,True,left,一致
+qwen3-vl-plus--nothink--official,1002,62,"{""action"": ""left"", ""note"": ""Still no checkpoint 2; rotating left—brown cylinder ",140,left,True,left,一致
+qwen3-vl-plus--nothink--official,1002,63,"{""action"": ""left"", ""note"": ""Rotating left; checkpoint 5 (purple) still visible, ",117,left,True,left,一致
+qwen3-vl-plus--nothink--official,1002,64,"{""action"": ""left"", ""note"": ""Checkpoint 4 (yellow) visible left; still no checkpo",120,left,True,left,一致
+qwen3-vl-plus--nothink--official,1002,65,"{""action"": ""left"", ""note"": ""Checkpoint 4 (yellow) still left; need green-bordere",116,left,True,left,一致
+qwen3-vl-plus--nothink--official,1002,66,"{""action"": ""left"", ""note"": ""Still no green-bordered checkpoint 2; yellow checkpo",124,left,True,left,一致
+qwen3-vl-plus--nothink--official,1002,67,"{""action"": ""left"", ""note"": ""Still no green checkpoint 2; yellow checkpoint 4 rem",116,left,True,left,一致
+qwen3-vl-plus--nothink--official,1002,68,"{""action"": ""left"", ""note"": ""Still no checkpoint visible; rotating left to locate",111,left,True,left,一致
+qwen3-vl-plus--nothink--official,1002,69,"{""action"": ""left"", ""note"": ""Still no checkpoint visible; continuing left rotatio",122,left,True,left,一致
+qwen3-vl-plus--nothink--official,1002,70,"{""action"": ""left"", ""note"": ""Still no green checkpoint 2; rotating left further—w",125,left,True,left,一致
+qwen3-vl-plus--nothink--official,1002,71,"{""action"": ""left"", ""note"": ""Still no checkpoint 2; rotating left—wall on left, b",127,left,True,left,一致
+qwen3-vl-plus--nothink--official,1002,72,"{""action"": ""left"", ""note"": ""Still no green checkpoint 2; rotating left—wall on l",132,left,True,left,一致
+qwen3-vl-plus--nothink--official,1002,73,"{""action"": ""left"", ""note"": ""Rotating left; still no green checkpoint 2, but blue",124,left,True,left,一致
+qwen3-vl-plus--nothink--official,1002,74,"{""action"": ""left"", ""note"": ""Continuing left turn; brown cylinder on left, blue p",162,left,True,left,一致
+qwen3-vl-plus--nothink--official,1002,75,"{""action"": ""left"", ""note"": ""Still no checkpoint 2 (green); blue post (3) visible",156,left,True,left,一致
+qwen3-vl-plus--nothink--official,1002,76,"{""action"": ""left"", ""note"": ""Still no green checkpoint 2; purple checkpoint 5 vis",166,left,True,left,一致
+qwen3-vl-plus--nothink--official,1002,77,"{""action"": ""left"", ""note"": ""Still no green checkpoint 2; purple (5) and blue (3)",147,left,True,left,一致
+qwen3-vl-plus--nothink--official,1002,78,"{""action"": ""left"", ""note"": ""Still no green checkpoint 2; yellow checkpoint 4 dir",147,left,True,left,一致
+qwen3-vl-plus--nothink--official,1002,79,"{""action"": ""left"", ""note"": ""Yellow checkpoint 4 ahead, purple cylinder left; sti",139,left,True,left,一致
+qwen3-vl-plus--nothink--official,1003,0,"{""action"": ""forward"", ""note"": ""Checkpoint 1 (red) ahead, ~1.2 m away; checkpoint",105,forward,True,forward,一致
+qwen3-vl-plus--nothink--official,1003,1,"{""action"": ""forward"", ""note"": ""Checkpoint 1 (red) ahead, ~1.0 m away; still clea",89,forward,True,forward,一致
+qwen3-vl-plus--nothink--official,1003,2,"{""action"": ""forward"", ""note"": ""Checkpoint 1 (red) now ~0.8 m ahead; clear path, ",100,forward,True,forward,一致
+qwen3-vl-plus--nothink--official,1003,3,"{""action"": ""forward"", ""note"": ""Checkpoint 1 (red) now ~0.6 m ahead; still clear ",106,forward,True,forward,一致
+qwen3-vl-plus--nothink--official,1003,4,"{""action"": ""forward"", ""note"": ""Checkpoint 2 (green border) visible on left post;",102,forward,True,forward,一致
+qwen3-vl-plus--nothink--official,1003,5,"{""action"": ""left"", ""note"": ""Green checkpoint 2 visible on left; rotate to face i",93,left,True,left,一致
+qwen3-vl-plus--nothink--official,1003,6,"{""action"": ""left"", ""note"": ""Rotating left to face checkpoint 2 (green border) di",112,left,True,left,一致
+qwen3-vl-plus--nothink--official,1003,7,"{""action"": ""left"", ""note"": ""Still rotating left to face checkpoint 2 (green bord",103,left,True,left,一致
+qwen3-vl-plus--nothink--official,1003,8,"{""action"": ""left"", ""note"": ""Still rotating left; green-bordered checkpoint 2 sho",109,left,True,left,一致
+qwen3-vl-plus--nothink--official,1003,9,"{""action"": ""left"", ""note"": ""Continuing left rotation; green-bordered checkpoint ",108,left,True,left,一致
+qwen3-vl-plus--nothink--official,1003,10,"{""action"": ""left"", ""note"": ""Still rotating left; green-bordered checkpoint 2 not",109,left,True,left,一致
+qwen3-vl-plus--nothink--official,1003,11,"{""action"": ""left"", ""note"": ""Green wall ahead; checkpoint 2 (green border) still ",117,left,True,left,一致
+qwen3-vl-plus--nothink--official,1003,12,"{""action"": ""left"", ""note"": ""Still rotating left; green wall ahead, checkpoint 2 ",113,left,True,left,一致
+qwen3-vl-plus--nothink--official,1003,13,"{""action"": ""left"", ""note"": ""Still rotating left; green wall ahead, checkpoint 2 ",113,left,True,left,一致
+qwen3-vl-plus--nothink--official,1003,14,"{""action"": ""left"", ""note"": ""Still rotating left; green wall ahead, checkpoint 2 ",113,left,True,left,一致
+qwen3-vl-plus--nothink--official,1003,15,"{""action"": ""left"", ""note"": ""Still rotating left; green wall ahead, checkpoint 2 ",113,left,True,left,一致
+qwen3-vl-plus--nothink--official,1003,16,"{""action"": ""left"", ""note"": ""Still rotating left; green wall ahead, checkpoint 2 ",113,left,True,left,一致
+qwen3-vl-plus--nothink--official,1003,17,"{""action"": ""left"", ""note"": ""Still rotating left; green wall ahead, checkpoint 2 ",113,left,True,left,一致
+qwen3-vl-plus--nothink--official,1003,18,"{""action"": ""left"", ""note"": ""Still rotating left; green wall ahead, checkpoint 2 ",113,left,True,left,一致
+qwen3-vl-plus--nothink--official,1003,19,"{""action"": ""forward"", ""note"": ""Checkpoint 2 (green border) directly ahead, ~0.6 ",112,forward,True,forward,一致
+qwen3-vl-plus--nothink--official,1003,20,"{""action"": ""left"", ""note"": ""Rotating left; pink cylinder on left, gray pole ahea",138,left,True,left,一致
+qwen3-vl-plus--nothink--official,1003,21,"{""action"": ""left"", ""note"": ""Still rotating left; pink cylinder on left, green wa",132,left,True,left,一致
+qwen3-vl-plus--nothink--official,1003,22,"{""action"": ""left"", ""note"": ""Still rotating left; green wall ahead, pink cylinder",132,left,True,left,一致
+qwen3-vl-plus--nothink--official,1003,23,"{""action"": ""left"", ""note"": ""Continuing left rotation; green wall ahead, pink cyl",146,left,True,left,一致
+qwen3-vl-plus--nothink--official,1003,24,"{""action"": ""left"", ""note"": ""Still rotating left; green wall ahead, pink cylinder",134,left,True,left,一致
+qwen3-vl-plus--nothink--official,1003,25,"{""action"": ""left"", ""note"": ""Still rotating left; green wall ahead, pink cylinder",136,left,True,left,一致
+qwen3-vl-plus--nothink--official,1003,26,"{""action"": ""left"", ""note"": ""Still rotating left; green wall ahead, pink cylinder",134,left,True,left,一致
+qwen3-vl-plus--nothink--official,1003,27,"{""action"": ""forward"", ""note"": ""Checkpoint 3 (blue border) now visible ahead; app",103,forward,True,forward,一致
+qwen3-vl-plus--nothink--official,1003,28,"{""action"": ""forward"", ""note"": ""Checkpoint 3 (blue border) directly ahead; moving",106,forward,True,forward,一致
+qwen3-vl-plus--nothink--official,1003,29,"{""action"": ""forward"", ""note"": ""Checkpoint 3 (blue border) directly ahead, now ~0",100,forward,True,forward,一致
+qwen3-vl-plus--nothink--official,1003,30,"{""action"": ""stop"", ""note"": ""Checkpoint 3 reached (~0.4 m). Next target is checkp",105,stop,True,stop,一致
+qwen3-vl-plus--nothink--official,1004,0,"{""action"": ""left"", ""note"": ""See checkpoints 2 (green), 3 (blue), 5 (purple); che",138,left,True,left,一致
+qwen3-vl-plus--nothink--official,1004,1,"{""action"": ""left"", ""note"": ""Turned left; still no checkpoint 1 (red). Checkpoint",129,left,True,left,一致
+qwen3-vl-plus--nothink--official,1004,2,"{""action"": ""left"", ""note"": ""Still no checkpoint 1 (red). Turned left again; corr",133,left,True,left,一致
+qwen3-vl-plus--nothink--official,1004,3,"{""action"": ""left"", ""note"": ""Still no checkpoint 1 (red). Wall on left, checkered",127,left,True,left,一致
+qwen3-vl-plus--nothink--official,1004,4,"{""action"": ""left"", ""note"": ""Still no checkpoint 1 (red). Wall on left, dark view",112,left,True,left,一致
+qwen3-vl-plus--nothink--official,1004,5,"{""action"": ""left"", ""note"": ""Still no checkpoint 1 (red). Dark view persists; con",128,left,True,left,一致
+qwen3-vl-plus--nothink--official,1004,6,"{""action"": ""left"", ""note"": ""Still no checkpoint 1; dark corner view, wall on lef",138,left,True,left,一致
+qwen3-vl-plus--nothink--official,1004,7,"{""action"": ""left"", ""note"": ""Still in dark corner, wall on left. Rotating left to",114,left,True,left,一致
+qwen3-vl-plus--nothink--official,1004,8,"{""action"": ""left"", ""note"": ""Still dark; wall on left. Continuing left rotation t",117,left,True,left,一致
+qwen3-vl-plus--nothink--official,1004,9,"{""action"": ""left"", ""note"": ""Still facing wall; continuing left rotation to find ",108,left,True,left,一致
+qwen3-vl-plus--nothink--official,1004,10,"{""action"": ""left"", ""note"": ""Still rotating left; dark corner, wall on left. Seek",112,left,True,left,一致
+qwen3-vl-plus--nothink--official,1004,11,"{""action"": ""left"", ""note"": ""Still rotating left; no checkpoint 1 yet. Black-and-",150,left,True,left,一致
+qwen3-vl-plus--nothink--official,1004,12,"{""action"": ""left"", ""note"": ""Continuing left rotation; checkpoint 1 (red border) ",109,left,True,left,一致
+qwen3-vl-plus--nothink--official,1004,13,"{""action"": ""left"", ""note"": ""Checkpoint 1 (red border) is now clearly visible on ",119,left,True,left,一致
+qwen3-vl-plus--nothink--official,1004,14,"{""action"": ""left"", ""note"": ""Checkpoint 1 (red border) is on the left pillar; sti",120,left,True,left,一致
+qwen3-vl-plus--nothink--official,1004,15,"{""action"": ""left"", ""note"": ""Rotating left to face checkpoint 1 (red border) dire",106,left,True,left,一致
+qwen3-vl-plus--nothink--official,1004,16,"{""action"": ""left"", ""note"": ""Still rotating left; checkpoint 1 (red border) shoul",124,left,True,left,一致
+qwen3-vl-plus--nothink--official,1004,17,"{""action"": ""left"", ""note"": ""Still rotating left; checkpoint 1 (red border) not y",126,left,True,left,一致
+qwen3-vl-plus--nothink--official,1004,18,"{""action"": ""left"", ""note"": ""Still rotating left; checkpoint 1 (red border) not y",126,left,True,left,一致
+qwen3-vl-plus--nothink--official,1004,19,"{""action"": ""left"", ""note"": ""Still rotating left; checkpoint 1 (red border) not y",126,left,True,left,一致
+qwen3-vl-plus--nothink--official,1004,20,"{""action"": ""left"", ""note"": ""Still rotating left; checkpoint 1 (red border) not y",126,left,True,left,一致
+qwen3-vl-plus--nothink--official,1004,21,"{""action"": ""left"", ""note"": ""Still rotating left; checkpoint 1 (red border) not y",126,left,True,left,一致
+qwen3-vl-plus--nothink--official,1004,22,"{""action"": ""left"", ""note"": ""Still rotating left; checkpoint 1 (red border) not y",126,left,True,left,一致
+qwen3-vl-plus--nothink--official,1004,23,"{""action"": ""left"", ""note"": ""Still rotating left; checkpoint 1 (red border) not y",126,left,True,left,一致
+qwen3-vl-plus--nothink--official,1004,24,"{""action"": ""left"", ""note"": ""Still rotating left; checkpoint 1 (red border) not y",126,left,True,left,一致
+qwen3-vl-plus--nothink--official,1004,25,"{""action"": ""left"", ""note"": ""Checkpoint 1 (red border) now visible on left; appro",97,left,True,left,一致
+qwen3-vl-plus--nothink--official,1004,26,"{""action"": ""left"", ""note"": ""Checkpoint 1 (red border) is now visible on left; ro",119,left,True,left,一致
+qwen3-vl-plus--nothink--official,1004,27,"{""action"": ""left"", ""note"": ""Still rotating left; checkpoint 1 (red border) shoul",106,left,True,left,一致
+qwen3-vl-plus--nothink--official,1004,28,"{""action"": ""left"", ""note"": ""Checkpoint 1 (red border) still on left; need slight",115,left,True,left,一致
+qwen3-vl-plus--nothink--official,1004,29,"{""action"": ""left"", ""note"": ""Checkpoint 1 (red border) still on left; continue sl",114,left,True,left,一致
+qwen3-vl-plus--nothink--official,1004,30,"{""action"": ""left"", ""note"": ""Still rotating left; checkpoint 1 (red border) not y",117,left,True,left,一致
+qwen3-vl-plus--nothink--official,1004,31,"{""action"": ""left"", ""note"": ""Still rotating left; checkpoint 1 (red border) not y",118,left,True,left,一致
+qwen3-vl-plus--nothink--official,1004,32,"{""action"": ""left"", ""note"": ""Still rotating left; checkpoint 1 (red border) not y",119,left,True,left,一致
+qwen3-vl-plus--nothink--official,1004,33,"{""action"": ""left"", ""note"": ""Corner view; still no checkpoint 1. Continuing left ",123,left,True,left,一致
+qwen3-vl-plus--nothink--official,1004,34,"{""action"": ""left"", ""note"": ""Still in corner; no checkpoint 1 yet. Continuing lef",118,left,True,left,一致
+qwen3-vl-plus--nothink--official,1004,35,"{""action"": ""left"", ""note"": ""Still no checkpoint 1; continuing left turn to locat",102,left,True,left,一致
+qwen3-vl-plus--nothink--official,1004,36,"{""action"": ""left"", ""note"": ""Still in corner; rotating left to find red-bordered ",95,left,True,left,一致
+qwen3-vl-plus--nothink--official,1004,37,"{""action"": ""left"", ""note"": ""Still no checkpoint 1; rotating left to locate red-b",95,left,True,left,一致
+qwen3-vl-plus--nothink--official,1004,38,"{""action"": ""left"", ""note"": ""Still rotating left; red-bordered checkpoint 1 not y",131,left,True,left,一致
+qwen3-vl-plus--nothink--official,1004,39,"{""action"": ""left"", ""note"": ""Now see checkpoint 1 (red border) ahead and slightly",109,left,True,left,一致
+qwen3-vl-plus--nothink--official,1004,40,"{""action"": ""forward"", ""note"": ""Checkpoint 1 (red border) ahead and slightly righ",102,forward,True,forward,一致
+qwen3-vl-plus--nothink--official,1004,41,"{""action"": ""forward"", ""note"": ""Checkpoint 1 (red border) now directly ahead, ~0.",99,forward,True,forward,一致
+qwen3-vl-plus--nothink--official,1004,42,"{""action"": ""left"", ""note"": ""Turned left; checkpoint 2 (green) now visible ahead-",116,left,True,left,一致
+qwen3-vl-plus--nothink--official,1004,43,"{""action"": ""left"", ""note"": ""Checkpoint 2 (green) now directly ahead; approaching",86,left,True,left,一致
+qwen3-vl-plus--nothink--official,1004,44,"{""action"": ""forward"", ""note"": ""Obstacle (dark box) blocks direct path to checkpo",122,forward,True,forward,一致
+qwen3-vl-plus--nothink--official,1004,45,"{""action"": ""right"", ""note"": ""Turned right; brown cylinder obstacle on right, wal",138,right,True,right,一致
+qwen3-vl-plus--nothink--official,1004,46,"{""action"": ""left"", ""note"": ""Turned left; now facing open space. Checkpoint 1 (re",125,left,True,left,一致
+qwen3-vl-plus--nothink--official,1004,47,"{""action"": ""forward"", ""note"": ""Moved into open space; still no sight of checkpoi",125,forward,True,forward,一致
+qwen3-vl-plus--nothink--official,1004,48,"{""action"": ""right"", ""note"": ""Turned right; now see brown cylinder on left, wall ",117,right,True,right,一致
+qwen3-vl-plus--nothink--official,1004,49,"{""action"": ""left"", ""note"": ""Turned left; now see checkpoint 2 (green border) on ",149,left,True,left,一致
+qwen3-vl-plus--nothink--official,1004,50,"{""action"": ""left"", ""note"": ""Still no checkpoint 1; wall on left, open space ahea",133,left,True,left,一致
+qwen3-vl-plus--nothink--official,1004,51,"{""action"": ""right"", ""note"": ""Turned right; now facing a corner with brown and da",120,right,True,right,一致
+qwen3-vl-plus--nothink--official,1004,52,"{""action"": ""left"", ""note"": ""Turned left; now see a narrow gap with black-and-whi",138,left,True,left,一致
+qwen3-vl-plus--nothink--official,1004,53,"{""action"": ""forward"", ""note"": ""Moving into narrow gap; black-and-white floor sug",148,forward,True,forward,一致
+qwen3-vl-plus--nothink--official,1004,54,"{""action"": ""forward"", ""note"": ""Continuing through narrow gap on black-and-white ",132,forward,True,forward,一致
+qwen3-vl-plus--nothink--official,1004,55,"{""action"": ""left"", ""note"": ""Turned left; now see dark wall on right, narrow pass",139,left,True,left,一致
+qwen3-vl-plus--nothink--official,1004,56,"{""action"": ""forward"", ""note"": ""Narrow passage ahead; black-and-white floor conti",131,forward,True,forward,一致
+qwen3-vl-plus--nothink--official,1004,57,"{""action"": ""left"", ""note"": ""Turned left; now see corner of dark wall and maroon ",124,left,True,left,一致
+qwen3-vl-plus--nothink--official,1004,58,"{""action"": ""left"", ""note"": ""Turned left again; now see maroon wall on left, dark",141,left,True,left,一致
+qwen3-vl-plus--nothink--official,1004,59,"{""action"": ""left"", ""note"": ""Maroon wall on left, dark wall ahead; still no red-b",111,left,True,left,一致
+qwen3-vl-plus--nothink--official,1004,60,"{""action"": ""left"", ""note"": ""Still only maroon and dark walls; no red-bordered ch",125,left,True,left,一致
+qwen3-vl-plus--nothink--official,1004,61,"{""action"": ""left"", ""note"": ""Turned left; now see corner where maroon wall meets ",115,left,True,left,一致
+qwen3-vl-plus--nothink--official,1004,62,"{""action"": ""left"", ""note"": ""Turned left again; still only walls, no red-bordered",120,left,True,left,一致
+qwen3-vl-plus--nothink--official,1004,63,"{""action"": ""left"", ""note"": ""Still only walls; no checkpoint 1. Continuing leftwa",114,left,True,left,一致
+qwen3-vl-plus--nothink--official,1004,64,"{""action"": ""left"", ""note"": ""Still only walls and green cylinder; no red-bordered",124,left,True,left,一致
+qwen3-vl-plus--nothink--official,1004,65,"{""action"": ""left"", ""note"": ""Still no checkpoint 1 (red border); turning left aga",145,left,True,left,一致
+qwen3-vl-plus--nothink--official,1004,66,"{""action"": ""left"", ""note"": ""Checkpoint 1 (red) now visible on left; turning to f",89,left,True,left,一致
+qwen3-vl-plus--nothink--official,1004,67,"{""action"": ""forward"", ""note"": ""Checkpoint 1 (red) ahead and centered; driving to",90,forward,True,forward,一致
+qwen3-vl-plus--nothink--official,1004,68,"{""action"": ""forward"", ""note"": ""Checkpoint 1 (red) directly ahead; approaching wi",93,forward,True,forward,一致
+qwen3-vl-plus--nothink--official,1004,69,"{""action"": ""forward"", ""note"": ""Checkpoint 1 (red) very close; nearly at 0.4 m di",89,forward,True,forward,一致
+qwen3-vl-plus--nothink--official,1004,70,"{""action"": ""forward"", ""note"": ""Checkpoint 1 (red) now reached; next is checkpoin",94,forward,True,forward,一致
+qwen3-vl-plus--nothink--official,1004,71,"{""action"": ""right"", ""note"": ""Turned right; purple box ahead, no checkpoint visib",131,right,True,right,一致
+qwen3-vl-plus--nothink--official,1004,72,"{""action"": ""right"", ""note"": ""Still blocked by pillar; turning right to search fo",110,right,True,right,一致
+qwen3-vl-plus--nothink--official,1004,73,"{""action"": ""right"", ""note"": ""Still no green-border checkpoint 2; turning right a",102,right,True,right,一致
+qwen3-vl-plus--nothink--official,1004,74,"{""action"": ""right"", ""note"": ""Still no checkpoint 2; rotating right to continue s",112,right,True,right,一致
+qwen3-vl-plus--nothink--official,1004,75,"{""action"": ""right"", ""note"": ""Still no green-border checkpoint 2; continuing righ",138,right,True,right,一致
+qwen3-vl-plus--nothink--official,1004,76,"{""action"": ""right"", ""note"": ""Still no checkpoint 2; rotating right to keep scann",108,right,True,right,一致
+qwen3-vl-plus--nothink--official,1004,77,"{""action"": ""right"", ""note"": ""Still no checkpoint 2; continuing right scan. Walls",127,right,True,right,一致
+qwen3-vl-plus--nothink--official,1004,78,"{""action"": ""right"", ""note"": ""Still no checkpoint 2; rotating right to continue s",112,right,True,right,一致
+qwen3-vl-plus--nothink--official,1004,79,"{""action"": ""right"", ""note"": ""Still no checkpoint 2; rotating right to scan for g",138,right,True,right,一致

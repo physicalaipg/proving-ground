@@ -1,0 +1,63 @@
+# proving-ground 凭证审计 allowlist（内部工单 §3）：路径<TAB>行内容哈希(sha256前16位)<TAB>命中词；行一变即失效须重审。
+# 生成：audit_push.py --propose；过目：audit_push.py --review。只收人工复核过的词表词命中，密钥形态永不入表。
+# 首批 2026-09-27 CC 逐行复核。各条上方注释行＝文件:行｜类别；行号仅供对照，匹配以哈希为准。
+# 一、追认的 19 处（与 内部工单、内部工单 派卡两次 rc 1 放行的同一组；同文同词的行哈希相同，条目照 19 处逐条列）
+# docs/pilot-run-01.md:11｜环境变量名（开通清单文字）
+docs/pilot-run-01.md	1e76fef56893ff13	api_key
+# docs/pilot-run-01.md:12｜环境变量名（开通清单文字）
+docs/pilot-run-01.md	351078d7709454c8	api_key
+# docs/pilot-run-01.md:13｜环境变量名（开通清单文字）
+docs/pilot-run-01.md	144cf16ba1519f49	deepseek_api_key
+# docs/pilot-run-01.md:15｜环境变量名（开通清单文字；10-20 清场批该行路径改写，哈希随之更新、旧条目失效删除）
+docs/pilot-run-01.md	b2bddb212ca0b55b	api_key
+# docs/pilot-run-01.md:15｜环境变量名（开通清单文字）
+docs/pilot-run-01.md	b2bddb212ca0b55b	deepseek_api_key
+# harness/agents/llm.py:115｜SDK 关键字参数名
+harness/agents/llm.py	7da8a2a590c62161	api_key
+# harness/agents/llm.py:141｜SDK 关键字参数名
+harness/agents/llm.py	2662c26f793d7b34	api_key
+# harness/models.yaml:24｜环境变量名（key_env 字段）
+harness/models.yaml	68549c38b05e7b17	api_key
+# harness/models.yaml:45｜环境变量名（key_env 字段）
+harness/models.yaml	eaae8bff71ee5131	api_key
+# harness/models.yaml:65｜环境变量名（key_env 字段）
+harness/models.yaml	c91dc4b4ba1be50a	deepseek_api_key
+# harness/models.yaml:93｜环境变量名（key_env 字段）
+harness/models.yaml	f6a0f465a86d015d	api_key
+# harness/models.yaml:109｜环境变量名（key_env 字段）
+harness/models.yaml	eaae8bff71ee5131	api_key
+# harness/models.yaml:126｜环境变量名（key_env 字段）
+harness/models.yaml	68549c38b05e7b17	api_key
+# harness/models.yaml:143｜环境变量名（key_env 字段）
+harness/models.yaml	bd6430ebad0c678b	api_key
+# harness/models.yaml:158｜环境变量名（key_env 字段）
+harness/models.yaml	43643c9a6ab8a475	api_key
+# harness/models.yaml:176｜环境变量名（key_env 字段）
+harness/models.yaml	af2482b0c44bb51f	gemini_api_key
+# tools/render_en.py:8｜环境变量名
+tools/render_en.py	1b06f597ec072b05	api_key
+# tools/render_en.py:311｜环境变量名
+tools/render_en.py	57148bf94a8022b5	api_key
+# tools/render_en.py:312｜环境变量名
+tools/render_en.py	f20061a2e112a5c3	api_key
+# 二、审计脚本自身 10 处（词表正则与自测样例；内部治理仓 allowlist 同款条目，路径改为本仓）
+# tools/audit_push.py:6
+tools/audit_push.py	ef5fc12a08ec4452	secret
+# tools/audit_push.py:29
+tools/audit_push.py	1417fed212bb4ea2	api_key
+# tools/audit_push.py:29
+tools/audit_push.py	1417fed212bb4ea2	deepseek_api_key
+# tools/audit_push.py:29
+tools/audit_push.py	1417fed212bb4ea2	gemini_api_key
+# tools/audit_push.py:29
+tools/audit_push.py	1417fed212bb4ea2	openai_api_key
+# tools/audit_push.py:30
+tools/audit_push.py	be8b440358ba8993	authorization
+# tools/audit_push.py:30
+tools/audit_push.py	be8b440358ba8993	password
+# tools/audit_push.py:30
+tools/audit_push.py	be8b440358ba8993	secret
+# tools/audit_push.py:30
+tools/audit_push.py	be8b440358ba8993	x-goog
+# tools/audit_push.py:109
+tools/audit_push.py	3c9adcfae2c64895	password

@@ -1,0 +1,109 @@
+# L1 ＝ 真机固定布局（内部工单 A1，2026-10-05 定；裁定 2026-10-05-05／06）。
+# `twin:` 块由 `.venv/bin/python -m real.course.layout --seed 1017` 生成、逐值不改（tests/real/test_course.py 钉死）；
+# 选种依据：冻结种子集 30 个（1000–1031 去 1005／1019）A* 步数中位 34，取 34 步且五段皆非零、五点最小三角面积与距墙余量最好的 1017（候选 1007 障碍距墙 9 cm、1003 五点近共线）。
+# 坐标系：场地中心为原点，x 向右（东）、y 向上（北），单位 m；yaw 自 +x 逆时针为正，0°＝朝 +x。起点坐标＝车体中心。
+# 真机实测值（A3 登记照单应）写入 `measured:`，偏差 ≤ tolerance_m 即登记为真机常量（实测值即常量）；超阈报主理人移位重拍，不改孪生。
+twin:
+  seed: 1017
+  config: twin/configs/course01.yaml
+  arena_size_m: 2.0
+  start:
+    x: -0.754
+    y: -0.723
+    yaw_deg: 29.5
+  checkpoints:
+  - n: 1
+    x: -0.27
+    y: 0.343
+    sign_yaw_deg: -114.4
+    color: red
+  - n: 2
+    x: 0.618
+    y: -0.638
+    sign_yaw_deg: 132.2
+    color: green
+  - n: 3
+    x: 0.478
+    y: 0.169
+    sign_yaw_deg: -80.1
+    color: blue
+  - n: 4
+    x: -0.045
+    y: -0.553
+    sign_yaw_deg: 54.1
+    color: yellow
+  - n: 5
+    x: -0.593
+    y: -0.145
+    sign_yaw_deg: -36.7
+    color: purple
+  obstacles:
+  - n: 1
+    kind: box
+    x: -0.67
+    y: 0.276
+    size_m: 0.242
+    height_m: 0.2
+    yaw_deg: 78.3
+  - n: 2
+    kind: box
+    x: 0.78
+    y: 0.457
+    size_m: 0.173
+    height_m: 0.2
+    yaw_deg: 157.5
+  - n: 3
+    kind: cylinder
+    x: 0.086
+    y: 0.762
+    size_m: 0.209
+    height_m: 0.2
+    yaw_deg: 14.1
+  - n: 4
+    kind: cylinder
+    x: -0.07
+    y: -0.103
+    size_m: 0.121
+    height_m: 0.2
+    yaw_deg: 84.5
+  - n: 5
+    kind: box
+    x: -0.423
+    y: 0.737
+    size_m: 0.25
+    height_m: 0.2
+    yaw_deg: 29.4
+  constants:
+    reach_radius_m: 0.4
+    min_gap_m: 0.5
+    wall_margin_m: 0.35
+    post_radius_m: 0.03
+    post_height_m: 0.3
+    sign_size_m: 0.16
+    obstacle_clearance_m: 0.4
+    obstacle_height_m: 0.2
+    forward_m: 0.2
+    turn_deg: 30.0
+    max_steps: 80
+physical:                      # 建议实物（A2）；颜色哑光饱和，按 0.15 m 相机、70°、640×480 在对角（2.8 m）可辨：0.16 m 牌≈30 px、边框≈3 px
+  checkpoint_post: {diameter_m: 0.06, height_m: 0.30, color: 中性灰（孪生 rgba 0.35 0.35 0.38）}
+  checkpoint_sign: {size_m: 0.16, border_width_m: 0.016, digit_height_m: 0.10, face: 白底黑数字、双面同图, mount: 牌中心离地 0.38 m（柱顶 0.30 ＋ 牌半边 0.08）, facing: 牌面法线按 sign_yaw_deg（面向上一检查点，1 号面向起点）}
+  sign_colors: {1: 红 red, 2: 绿 green, 3: 蓝 blue, 4: 黄 yellow, 5: 紫 purple}   # 与 protocol/prompt_v0.md 逐字一致
+  obstacle: {height_m: 0.20, color: 中性（纸箱本色／灰，孪生标称 rgba 0.55 0.45 0.35）, box: 边长＝size_m 的方箱、按 yaw_deg 转, cylinder: 直径＝size_m}
+  floor: 单色哑光（孪生为双色棋盘，v0 不匹配、记入保真度文档）
+  walls: 四边胶带线即边界（孪生有 0.25 m 高墙；真机无墙、碰墙＝车体任一角出界，由离线计分判）
+  robot: {platform: YB-EET01 V2.0（非参考平台）, wheelbase_m: 0.119, track_m: 0.1486, turn_width_m: 0.2676, camera_height_m: 0.141（10-14 升级后实测；real/config/camera.yaml 为准）,
+          footprint_length_m: 0.235, footprint_width_m: 0.173}   # 俯拍计分用车体外廓（含轮与突出件）；10-14 主理人卷尺实量：长 23.5 cm（含前缘相机与尾部件），宽＝左右轮外缘到外缘 17.3 cm（大于第二层板宽 14.8；与轮距 0.1486＋轮宽 0.0304＝0.179 的算值差 0.6 cm，取实量）
+  collision_margin_m: 0.02   # 俯拍计分：障碍脚印膨胀量（与孪生规划余量同值）
+markers:                       # 回位标记：每件脚下十字（两条 10 cm 胶带，交点＝该件中心），起点为车体中心十字＋朝向短线
+  aruco: {dictionary: DICT_4X4_50, size_m: 0.08, car_id: 0, corner_ids: {1: A(-1,-1), 2: B(+1,-1), 3: C(+1,+1), 4: D(-1,+1)}}   # real/score_overhead/markers.py 出 PDF；角码码心＝胶带角点，车顶码码心＝车体中心、箭头＝车头
+  cross_arm_m: 0.10
+  start: 十字＋自交点沿 yaw_deg 方向 0.15 m 的短线（车头方向＝相机所装的一头）
+cameras:                       # 机位建议（A2）；最终以现场为准，登记照与跑测视频同机位
+  overhead: {where: 场地中心正上方, height_m: ">= 2.3（2×2 m 加 0.2 m 边距要进画；16:9 竖高 ≥ 2.4 m 边界入画约需 2.3 m）", note: 允许斜俯拍，离线计分以边界四角做单应}
+  pocket3: {where: 起点对角（+1,+1）角外 0.3 m, height_m: 0.9, facing: 对角线望向起点, note: 展示素材，不进测量链（内部工单 12B）}
+registration:                  # A3 场地登记（real/course/register.py）
+  tolerance_m: 0.05
+  photo: null                  # 登记照路径（仓外，内部治理仓 fieldwork 目录），登记后填
+  points: null                 # 像素点文件（register.py points 产出）
+measured: real/course/L1-measured.yaml   # register.py solve --write 产出（不存在＝未登记）；load_course() 有则取实测、无则取 twin 值
