@@ -1,4 +1,4 @@
-<!-- GENERATED FILE — rendered from episodes/editions/2026-10-21-pilot01/notes.md (sha256 1b40b8ec22d6733e…) by tools/render_en.py on 2026-10-22. Do not edit the text here except under a review mark; edit the Chinese source and rerun. -->
+<!-- GENERATED FILE — rendered from episodes/editions/2026-10-21-pilot01/notes.md (sha256 efa192b972a68888…) by tools/render_en.py on 2026-10-22. Do not edit the text here except under a review mark; edit the Chinese source and rerun. -->
 
 > **Chinese version governs; English is a convenience translation.** 中文为准；英文为便利译本。Where the two differ, `episodes/editions/2026-10-21-pilot01/notes.md` applies.
 >
@@ -74,6 +74,6 @@
 
 - Bilibili (Chinese cut): https://www.bilibili.com/video/BV1eWnz6QEJQ/
 
-- WeChat Official Account (Chinese article): the scheduled broadcast is set for later and had not gone out as of this record; the permanent link will be added once published (preview links are not recorded).
+- WeChat Official Account (Chinese article): https://mp.weixin.qq.com/s/MRivhju5couXJ4hcDnk9Mw (published 2026-10-23 02:11Z, 10:11 Beijing, about 12.7 h after the other three platforms).
 
 - Erratum (X Post 2 length): under X's weighted count (CJK characters count as 2) the second reply came to 290, over the 280 cap; the hand-posted version is the original minus "(4134 steps)" = 279 (that figure is already given in English in the main post), so none of the five-sentence figures is lost; this is an erratum-level change after the freeze.

@@ -301,10 +301,10 @@
    "reviewed_by": "claude-code",
    "reviewed_at": "2026-10-22"
   },
-  "a2edab05b00d": {
+  "c0a122a6e13d": {
    "type": "item",
-   "zh": "- 微信公众号（中文图文）：定时群发预约在后，截至本记录尚未发出；永久链接发出后补（预览链接不入库）。",
-   "en": "- WeChat Official Account (Chinese article): the scheduled broadcast is set for later and had not gone out as of this record; the permanent link will be added once published (preview links are not recorded).",
+   "zh": "- 微信公众号（中文图文）：https://mp.weixin.qq.com/s/MRivhju5couXJ4hcDnk9Mw （2026-10-23 02:11Z 发出，北京 10:11，较其余三平台晚约 12.7 h）。",
+   "en": "- WeChat Official Account (Chinese article): https://mp.weixin.qq.com/s/MRivhju5couXJ4hcDnk9Mw (published 2026-10-23 02:11Z, 10:11 Beijing, about 12.7 h after the other three platforms).",
    "reviewed": true,
    "translator": "claude-code",
    "translated_at": "2026-10-22",

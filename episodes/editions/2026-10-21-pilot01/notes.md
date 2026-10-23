@@ -50,5 +50,5 @@
 - YouTube（英文成片）：https://www.youtube.com/watch?v=Yh3NPT6D_NQ
 - X（英文短帖＋37 s 剪辑）：主帖 https://x.com/physicalaipg/status/2113261590179098896 ；跟帖 Post 2 https://x.com/physicalaipg/status/2113301663637496046 ；Post 3 https://x.com/physicalaipg/status/2113301986057564616
 - B 站（中文成片）：https://www.bilibili.com/video/BV1eWnz6QEJQ/
-- 微信公众号（中文图文）：定时群发预约在后，截至本记录尚未发出；永久链接发出后补（预览链接不入库）。
+- 微信公众号（中文图文）：https://mp.weixin.qq.com/s/MRivhju5couXJ4hcDnk9Mw （2026-10-23 02:11Z 发出，北京 10:11，较其余三平台晚约 12.7 h）。
 - 勘误（X Post 2 字数）：跟帖第二条按 X 加权计数（中日韩字计 2）为 290，超 280 上限；手发用裁字稿＝原稿去「（4134 步）」＝279（该数字已在主帖英文给出），五句数字不丢；属冻结后勘误级改动。
