@@ -1,6 +1,6 @@
 4a6a4d1a855b8c1ac270ce6460e1b3051c7dcc005aec74206f222f50f364e7ca  episodes/editions/2026-10-21-pilot01/human-hours.csv
 dd463dd089a913d51f7efe8c736173d2d50e244f6b6af578eb898e5943342b80  episodes/editions/2026-10-21-pilot01/i18n/notes.backtranslation-2026-10-14.md
-a9105d3fe75e803ecd6c49c18dfb34848b798b7dc8ce4f5c2d0f2d7a894f9d2d  episodes/editions/2026-10-21-pilot01/i18n/notes.tm.json
+f171c94d031b0aa8fabef99d6d71634089d63dc5980ece2a2e20b4040ff50d31  episodes/editions/2026-10-21-pilot01/i18n/notes.tm.json
 cc337eae304cdd4603e9b6c782934b1e71e01ebe4d3bb78303bfc341895d3775  episodes/editions/2026-10-21-pilot01/logs/astar/seed1000.jsonl
 a14965b62c36ca7c105ca86a50d1949b12ae757c1b7cc919fa01396f1d53dc9d  episodes/editions/2026-10-21-pilot01/logs/astar/seed1001.jsonl
 3dd09e9284485760eb4272a7b811eda9d8609f170c482779b1af8b16bfeeaa69  episodes/editions/2026-10-21-pilot01/logs/astar/seed1002.jsonl
@@ -181,8 +181,8 @@ afc710c1c87ed9e46d73e25a27adb864d712f9b1874e9f003e1336500937819f  episodes/editi
 7d1ea9178b41b7fbe2be32a3e03f881a555bcb9c5a07db9a36188375f7ef7e8c  episodes/editions/2026-10-21-pilot01/logs/random/seed1029.jsonl
 230fe4f226d967be8612c80c5676a1b519cf19483a855a09ee5c30873b8e8e38  episodes/editions/2026-10-21-pilot01/logs/random/seed1030.jsonl
 98550f3ea0db00bbdb2b1d91d45dd0ba3b169881c74ba5faebe96fd04b108412  episodes/editions/2026-10-21-pilot01/logs/random/seed1031.jsonl
-9de7333724f352ef748fe74ce44fcf63aa9b39e0fa9ff24a11365e3274157d0e  episodes/editions/2026-10-21-pilot01/notes.en.md
-b63220a8de181611d7f0a558f00f42358e29fd242caf0aba6e3d265b7574307c  episodes/editions/2026-10-21-pilot01/notes.md
+5015d509cdbc6c30ee9a8071dede5bcd750d852e90b5769cd3305d251e5bc757  episodes/editions/2026-10-21-pilot01/notes.en.md
+31c942367478169a8c6aff1a3ed74b93734bea30a9220413685668d055f9308d  episodes/editions/2026-10-21-pilot01/notes.md
 bd92ca7f1967d0b85d790fb16275c7964d6ffb7db9e30d943905f1c72889e335  episodes/editions/2026-10-21-pilot01/posts/bilibili.md
 5aafd5ce07dec28e67d2e29ce5bdf3af3b28db14de1fb985b63b1d997a9def65  episodes/editions/2026-10-21-pilot01/posts/wechat.md
 eca76489363445c2bfd9bf089b73cd908b0f9dabf7d627850adbd52b6e9d0561  episodes/editions/2026-10-21-pilot01/posts/x.md

@@ -7,7 +7,7 @@
  "editions": [
   {
    "id": "2026-10-21-pilot01",
-   "status": "planned",
+   "status": "quick",
    "course": "course01",
    "protocol_version": "v0",
    "title": {
@@ -16,7 +16,7 @@
    },
    "trigger_model": "",
    "trigger_released_at": "",
-   "published_at": "",
+   "published_at": "2026-10-22T13:30:00Z",
    "hours_to_publish": null,
    "notes": {
     "zh": "候 10-22 13:00Z 发布（反转裁定则 10-23；裁定 2026-10-20-01 改日）：本期公开数据＝v1 跑批（≤10-16 落地后换批，runs.csv sim_run 随之改指；裁定 2026-10-09-09 ③／-11 ②）；验收批 c174ad7 见 prereg 记录（audits/first-issue-due-diligence/），只作对照；真机列「待锚（第二期）」——目标窗 11 月底～12 月初，11-02 定日（裁定 2026-10-10-03）；公开征集＝仿真按协议复跑（protocol-v0-prereg）＋真机复跑意向登记，真机协议 v0 第二期前发布；基线与天花板列＝预注册基线数据（非新跑）＋附真值提示行（诊断跑批）。期次目录名随发布日改（内部工单 D，10-14）。",
@@ -367,7 +367,7 @@
   }
  },
  "sources": {
-  "episodes/editions.csv": "6e09eb966126560aca002e3a55ebf695b7bb0df0f6f556b5ba680a7bece31300",
+  "episodes/editions.csv": "15d9f1e47076e7862b73b6661aba7c80d16a43e678a292407c45a5dafaf37b86",
   "episodes/editions/2026-10-21-pilot01/runs.csv": "952936091ce9cbfb73d7a14bdcb840e90c172fd363ad0adffbf4b347c5601e3d",
   "episodes/editions/2026-10-21-pilot01/video.csv": "5e39be1c46d892824dac033b2387ed22f81c02a377b979e890e22ac596187cf3",
   "episodes/runs/2026-09-25-pilot01-baselines/meta.json": "7ce285500fb1ae97041f072c37d849a8a01e297189d902618f5ab940b7ccfa2a",
