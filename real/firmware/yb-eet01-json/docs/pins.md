@@ -1,4 +1,4 @@
-# YB-EET01 V2.0 管脚表（CC 自写）
+# YB-EET01 V2.0 管脚表（维护者自写）
 
 > 来源：板卡厂商随产品分发的《microROS控制板简介.md》里的「GPIO管脚分配」表。厂商原件不入本仓（sha256 前 16 位 `20cac9032a91ea81`）。
 > 本表只列管脚号与功能，逐脚对应 `main/yb_config.h`。模组 ESP32-S3-WROOM-1U-N4R2。

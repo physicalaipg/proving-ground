@@ -11,9 +11,9 @@
   行身份 ＝ runs.csv 的 model（＝models.yaml 键＝模型 ID＋思考档＋端点）；endpoint／thinking／vendor 取自该 run summary.csv；
            verified ∈ rerun（操作方已复跑）| self-reported（自报）取自 runs.csv
   成本   ＝ usd_* 与 cny_*（人民币＝美元×meta.fx_cny_per_usd）并列；price_tier 注明峰谷时段
-  迁移差／孪生保真度 ＝ 调 harness/scoring.py 的 transfer_gap／fidelity（补丁 3 P7 迁入；本脚本不再自带公式）：
+  迁移差／孪生保真度 ＝ 调 harness/scoring.py 的 transfer_gap／fidelity（内部工单迁入；本脚本不再自带公式）：
            迁移差＝真机分 − 仿真分（负值＝真机比仿真差），成功率差同理；保真度＝各模型 |迁移差| 均值，模型数 ≥5 另给 Spearman
-  辅助列（补丁 3 P3，取 summary.csv 现成列不新算）＝ 到达占比 reached_frac_mean、接触事件/回合 collision_events_mean
+  辅助列（内部工单，取 summary.csv 现成列不新算）＝ 到达占比 reached_frac_mean、接触事件/回合 collision_events_mean
   每次成功美元 ＝ usd_per_success；每步延迟 ＝ api_latency_mean_s（P95 一并带出）
 输入：
   episodes/editions.csv                    期索引（一行一期；status ∈ planned|quick|formal）
@@ -151,7 +151,7 @@ class Builder:
         for name in RUN_COPY:
             if (d / name).is_file():
                 if name == "meta.json":
-                    # 站点副本里的绝对路径字段改为仓根相对（冻结件 episodes/ 内原件不动；裁定 2026-09-25-24 补丁 2 P4b）
+                    # 站点副本里的绝对路径字段改为仓根相对（冻结件 episodes/ 内原件不动；裁定 2026-09-25-24 内部工单b）
                     (dst / name).write_text(json.dumps(_relativize_paths(m), ensure_ascii=False, indent=1), encoding="utf-8")
                 else:
                     shutil.copyfile(d / name, dst / name)

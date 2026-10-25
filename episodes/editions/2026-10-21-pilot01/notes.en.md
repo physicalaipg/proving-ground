@@ -1,4 +1,4 @@
-<!-- GENERATED FILE — rendered from episodes/editions/2026-10-21-pilot01/notes.md (sha256 efa192b972a68888…) by tools/render_en.py on 2026-10-22. Do not edit the text here except under a review mark; edit the Chinese source and rerun. -->
+<!-- GENERATED FILE — rendered from episodes/editions/2026-10-21-pilot01/notes.md (sha256 5701118b275f0ccc…) by tools/render_en.py on 2026-10-25. Do not edit the text here except under a review mark; edit the Chinese source and rerun. -->
 
 > **Chinese version governs; English is a convenience translation.** 中文为准；英文为便利译本。Where the two differ, `episodes/editions/2026-10-21-pilot01/notes.md` applies.
 >
@@ -19,7 +19,7 @@
 
 - Open call: **sim re-runs under the protocol (`protocol-v0-prereg`) + registration of intent for real-robot re-runs; the real-robot protocol v0 is published before Edition 02** (internal work order ④, replacing the former sentence "submit real-robot re-runs under the protocol"). Score = the sim score of protocol §5; submitted rows are marked "re-run / self-reported" per protocol §8.
 
-- The real-robot reference platform is published with `real-v0-prereg` before Edition 02 (internal work order Patch 1 D-2; the real-robot section of `protocol/v0.md` is unchanged, pending the real-prereg tag).
+- The real-robot reference platform is published with `real-v0-prereg` before Edition 02 (internal work order D-2; the real-robot section of `protocol/v0.md` is unchanged, pending the real-prereg tag).
 
 - Public data for this edition = the v1 batch `runs/2026-10-15-v1` (three models × N=30 plus the three scripted baselines; finished 2026-10-15 06:00Z, $0.68; ruling 2026-10-09-09 ③ / -11 ②; regression gate ⑭: astar vs d4af9ae and greedy vs the in-tag baseline both 0 differences). The acceptance batch c174ad7 is in the prereg record (`audits/first-issue-due-diligence/`), used for comparison only, not as a data source (internal work order patch 2 A-4). Data rows and hashes were swapped to v1 on 10-20; failure-mode table `audits/first-issue-due-diligence/failure-modes-2026-10-15-v1.md`.
 
@@ -35,7 +35,7 @@
 
 - ⑤ "Ground-truth hint 10/10" sits in the same column as the three ground-truth-reading scripts, "Baselines & ceiling (reads ground truth · non-visual)", and is not on the model leaderboard.
 
-### Sources of the numbers in the five sentences (internal work order Patch 2 B, ruling 2026-10-14-06: numbers are refilled from the public batch v1, same source as the pipeline outputs, never hand-written; wording, order and conclusions unchanged; if any conclusion flips, stop and report to the CSO)
+### Sources of the numbers in the five sentences (internal work order B, ruling 2026-10-14-06: numbers are refilled from the public batch v1, same source as the pipeline outputs, never hand-written; wording, order and conclusions unchanged; if any conclusion flips, stop and report to the reviewer)
 
 | Sentence | Number | Source file | Column / aggregation |
 |---|---|---|---|
@@ -58,7 +58,7 @@
 
 - Leaderboard footnote (criteria, ruling 2026-10-10-05 ③): the 0.40 m displacement gate ≈ two steps (median single forward step without contact 0.186 m); F2 = the model stops on its own or turns in place, F3 = collision or step cap exceeded.
 
-- The three-class failure-mode table (internal work order Patch 13, pre-registered criteria: completed / F1 invalid steps ≥ half / F2 displacement < 0.40 m / F3 everything else) is in `audits/first-issue-due-diligence/failure-modes-<run>.md`; reading note (Patch 15 footnote): the 0.40 m criterion is of the same order as a single-step displacement (one step `forward_m` = 0.20 m, so the threshold is exactly two steps); `traveled_m` (including step 0) and the sum of logged pose increments differ by about one step, and in a few episodes the two measures give opposite verdicts — these are all counted as F3 under the pre-registered measure and the table is not changed; the per-model counts under the alternative measure are in that table's footnote, and the cross-check against the (a) action-parsing comparison is delivered with the (a) receipt.
+- The three-class failure-mode table (internal work order internal work order, pre-registered criteria: completed / F1 invalid steps ≥ half / F2 displacement < 0.40 m / F3 everything else) is in `audits/first-issue-due-diligence/failure-modes-<run>.md`; reading note (internal work order footnote): the 0.40 m criterion is of the same order as a single-step displacement (one step `forward_m` = 0.20 m, so the threshold is exactly two steps); `traveled_m` (including step 0) and the sum of logged pose increments differ by about one step, and in a few episodes the two measures give opposite verdicts — these are all counted as F3 under the pre-registered measure and the table is not changed; the per-model counts under the alternative measure are in that table's footnote, and the cross-check against the (a) action-parsing comparison is delivered with the (a) receipt.
 
 ## Anomalies and errata
 

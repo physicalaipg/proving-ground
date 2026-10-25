@@ -4,7 +4,7 @@
 ffmpeg 须含 libass（subtitles 滤镜）与 freetype（drawtext 滤镜）：Homebrew 瘦身版 `ffmpeg` 公式两者都没有。本机（brew 前缀 ~/.brew，Tier 3 无 bottle）
 `brew install ffmpeg-full` 会从源码编 47 个依赖且 09-25 实测下载 libthai 失败；改用 ffmpeg 官方源码只编精简版到 ~/.local/ffmpeg-libass
 （configure --enable-gpl --enable-libx264 --enable-libass --enable-libfreetype --enable-libfontconfig，依赖用 brew 已装的 libass/freetype/x264）；
-步骤已脚本化为 tools/setup_ffmpeg.sh（补丁 3 P8），换机 `bash tools/setup_ffmpeg.sh` 即重建，`--check` 只核对。
+步骤已脚本化为 tools/setup_ffmpeg.sh（内部工单），换机 `bash tools/setup_ffmpeg.sh` 即重建，`--check` 只核对。
 本脚本按 --ffmpeg → $FFMPEG → PATH 里的 ffmpeg → ~/.local/ffmpeg-libass/bin/ffmpeg → `brew --prefix ffmpeg-full`/bin/ffmpeg 的顺序找，并核对滤镜存在。
 示例产物（基线批 greedy seed1003 真实日志，非 dry-run）：docs/examples/pilot01-baselines_greedy_seed1003_dual.mp4（内部工单 P4）。
 
@@ -17,7 +17,7 @@ ffmpeg 须含 libass（subtitles 滤镜）与 freetype（drawtext 滤镜）：Ho
       只作用于 --overhead（实拍机位）。顺序：10-bit 解码 → gbrp16le → lut3d 四面体插值 → lanczos 缩放 → yuv420p（误差扩散抖动）→ 全片标 bt709／tv；
       机载（仿真）侧同按 bt709 转换与标注，两侧在同一色彩空间合成。LUT 不入仓：路径取 --lut 或 $PG_DLOGM_LUT，sha256 不符即报错退出 2。
       --master-out 另出 LUT 后 4K 10-bit HEVC Rec.709 交付副本（二级母版；hevc_videotoolbox，仅 macOS），并在同目录 SHA256SUMS 记一行。发布前过 tools/color_gate.py。
-      一级母版＝相机原片原样归档（不经本工具）。二级副本码率不低于原片：--master-bitrate 缺省取 ffprobe 读到的原片视频码率，另给的值低于原片时抬到原片（补丁 11 验收单 P2）。
+      一级母版＝相机原片原样归档（不经本工具）。二级副本码率不低于原片：--master-bitrate 缺省取 ffprobe 读到的原片视频码率，另给的值低于原片时抬到原片（内部工单验收单 P2）。
   加 --dry-run 只打印命令；--font／--font-name 指定字体（macOS 默认 Hiragino Sans GB，Linux 请给 Noto Sans CJK 路径与名字）。
 """
 from __future__ import annotations

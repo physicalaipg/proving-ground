@@ -48,7 +48,7 @@ from twin.robot_twin import TwinRobot  # noqa: E402
 HINT_TPL = ('\nNavigation aid for this diagnostic run: a map-aware planner has computed that the correct next action '
             'from the robot\'s current position is "{action}". Use exactly this action for this step '
             '(still answer in the required one-line JSON).')
-# 送达探针（补丁13）：只问可见几个有色检查点牌及颜色；不带 system 提示
+# 送达探针（内部工单）：只问可见几个有色检查点牌及颜色；不带 system 提示
 PROBE_TEXT = ('This is one photo from a small robot\'s forward camera. How many checkpoint signs with a colored border '
               'are visible in this photo, and what is the border color of each visible sign? Answer in one short line.')
 
@@ -62,7 +62,7 @@ def attach_request_hook(llm, ctx: dict, sink: list) -> None:
     hc = getattr(getattr(llm, "client", None), "_client", None)
     hooks = getattr(hc, "event_hooks", None)
     if hooks is None or "request" not in hooks:
-        raise SystemExit(f"{llm.name}: 无法在调用侧挂 HTTP 钩子（客户端无 event_hooks）；按补丁3 ⑤ 停工报 CSO")
+        raise SystemExit(f"{llm.name}: 无法在调用侧挂 HTTP 钩子（客户端无 event_hooks）；按内部工单 ⑤ 停工报审定方")
 
     def on_request(request) -> None:
         rec = {k: ctx.get(k) for k in ("agent", "seed", "step", "attempt", "phase")}

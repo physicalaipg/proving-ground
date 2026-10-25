@@ -14,7 +14,7 @@ X 剪辑＝头条 → 五路同步 → 待锚＋征集＋链接。
 
 用法（仓根）：
   .venv/bin/python tools/make_edition_video.py --edition 2026-10-21-pilot01 [--lang zh,en] [--step-seconds 0.15] [--skip-replay]
-      [--run-models episodes/runs/<批>] [--run-baselines episodes/runs/<基线批>]      # v1 落地后换 run，回合表按规则自动重算（补丁1 B）
+      [--run-models episodes/runs/<批>] [--run-baselines episodes/runs/<基线批>]      # v1 落地后换 run，回合表按规则自动重算（内部工单 B）
 文字卡停留＝按字数算（中文 ≤5 字/s、英文 ≤3 词/s，取整秒、下限 6 s）；主片 120–180 s、X 剪辑 30–45 s 为硬限，越界即退出。
 站点地址唯一真源＝site/config.json site_url（页脚与片尾读此；posts/ 四篇与 notes 两版须一致，工具自检不符即退出）。
 产物（不入仓，`episodes/editions/*/video/` 在 .gitignore）：<edition>/video/<edition>_main_<lang>.mp4、<edition>_x_<lang>.mp4、
@@ -55,7 +55,7 @@ RUN_MODELS = "episodes/runs/2026-09-25-pilot01"
 RUN_BASE = "episodes/runs/2026-09-25-pilot01-baselines"
 RUN_HINT = "audits/first-issue-due-diligence/runs/a-hint-oracle-20261010"
 FM_CSV = "audits/first-issue-due-diligence/failure-modes-2026-09-25-pilot01.csv"
-SITE_URL = json.load(open(ROOT / "site/config.json", encoding="utf-8"))["site_url"]   # 唯一真源（补丁1 C）
+SITE_URL = json.load(open(ROOT / "site/config.json", encoding="utf-8"))["site_url"]   # 唯一真源（内部工单 C）
 MAIN_LIMIT, X_LIMIT = (120.0, 180.0), (30.0, 45.0)                                      # 2～3 分钟硬限、X 30～45 s
 READ_ZH, READ_EN, CARD_MIN = 5.0, 3.0, 6.0                                             # 中文 ≤5 字/s、英文 ≤3 词/s、下限 6 s
 
@@ -119,7 +119,7 @@ def select() -> dict:
 
 
 def check_site_url(ed: Path) -> None:
-    """站点地址唯一真源自检：posts/ 四篇与 notes 两版里出现的 github.io 地址须全等于 site/config.json（补丁1 C）。"""
+    """站点地址唯一真源自检：posts/ 四篇与 notes 两版里出现的 github.io 地址须全等于 site/config.json（内部工单 C）。"""
     bad = []
     for p in sorted(list((ed / "posts").glob("*.md")) + [ed / "notes.md", ed / "notes.en.md"]):
         if not p.exists():
@@ -209,7 +209,7 @@ def table_png(title: str, cols: list[str], rows: list[list[str]], out: Path, hea
 
 
 def read_secs(text: str, lang: str) -> float:
-    """停留时长：中文按非空白字符数 /5、英文按词数 /3，向上取整秒，下限 6 s（补丁1 C）。"""
+    """停留时长：中文按非空白字符数 /5、英文按词数 /3，向上取整秒，下限 6 s（内部工单 C）。"""
     import math as _m
     if lang == "zh":
         cjk = len(re.findall(r"[\u3000-\u9fff\uff00-\uffef]", text))              # 中文字（含全角标点）按 5 字/s
@@ -241,7 +241,7 @@ def sync_seg(ffmpeg: str, frames: Path, agents: list[str], seed: int, fps: float
     from PIL import ImageFont
     P, BAND, GAP = 468, 60, 8                      # 格宽、标题带高、行距；3＋2 栅格 2×(P+BAND)+GAP ≤ 1080
     def fit(text: str, max_size: int, min_size: int = 14) -> int:
-        """按实际字体量宽，缩到本格宽内；缩到下限仍超宽＝渲染失败（补丁1 C 自检）。"""
+        """按实际字体量宽，缩到本格宽内；缩到下限仍超宽＝渲染失败（内部工单 C 自检）。"""
         for s in range(max_size, min_size - 1, -1):
             if ImageFont.truetype(FONT, s).getlength(text) <= P - 16:
                 return s
@@ -394,19 +394,19 @@ def main(argv=None) -> int:
         report[lang] = {"main": [(n, d) for n, _, d in timeline], "x": [(n, d) for n, _, d in xcut]}
         print(f"✔ {lang}: main {tm:.1f} s（{len(timeline)} 段）, x {tx:.1f} s")
 
-    # 3 候选段表（入仓件）：栏一＝规则（主理人拍板对象，补丁1 B／裁定 2026-10-14-02）；栏二＝当前批次按规则算出的回合表（自动）
+    # 3 候选段表（入仓件）：栏一＝规则（主理人拍板对象，内部工单 B／裁定 2026-10-14-02）；栏二＝当前批次按规则算出的回合表（自动）
     import hashlib as _h
     def sha12(p):
         return _h.sha256((ROOT / p).read_bytes()).hexdigest()[:12]
     lines = [f"# 首期视频选段（内部工单 B；工具 `tools/make_edition_video.py`，每步 {a.step_seconds} s）", "",
-             "## 栏一 · 选段规则（定剪对象＝本栏六条＋版式；状态：**已定 10-14**——主理人 10-14 委托 CSO 裁「准」，裁定 2026-10-14-05 ①；CSO 复核若有改以补丁出，不重拍、不改日期；裁定 2026-10-14-02；CSO 复核补丁＝内部工单 C（10-14）：第 1 条两处半句）", "",
+             "## 栏一 · 选段规则（定剪对象＝本栏六条＋版式；状态：**已定 10-14**——主理人 10-14 委托审定方裁「准」，裁定 2026-10-14-05 ①；审定方复核若有改以内部工单出，不重拍、不改日期；裁定 2026-10-14-02；审定方复核内部工单＝内部工单 C（10-14）：第 1 条两处半句）", "",
              "1. 每家取**中位仿真分回合一个**（中位＝N=30 取 `sim_score` 降序第 15 位，同分取种子号小者）＋**最高分回合一个**（若最高分回合即 seed 1000，取次高分者；seed 1000 只在五路同步段出现），同分取种子号小者（`results.csv` `sim_score`）。",
              "2. **五路同步段**（俯视、3＋2 栅格）取 **seed 1000**：三家＋A*＋random，同布局横向可比。",
              "3. 备选按**次高分**各列三个（去掉已选与 seed 1000），只供替换同类段。",
              "4. 版式：讲法①卡 → 五路同步 → 三家最高分（双画框）→ 三家中位（双画框）→ ②③卡＋三分类表 → ④⑤卡＋基线表 → 真机待锚＋征集卡 → 片尾链接；X 剪辑＝①卡＋五路同步＋待锚一句＋链接。",
              "5. 文字卡停留＝中文 ≤5 字/s、英文 ≤3 词/s 取整秒、下限 6 s；主片 120–180 s、X 30–45 s 硬限；表格数字只读流水线 CSV。",
              "6. 素材只取当前批次与其基线批（见栏二批次标识），由 `tools/replay_frames.py` 按日志回放（位姿与既有帧逐字节核对）；**v1 落地后换 `--run-models`／`--run-baselines` 重跑本工具，栏二自动重算**，成片按规则自动产出，主理人只留否决权。",
-             "7. 讲法五句的数字位随公开批（v1）重填，与流水线产物同源、不手写（来源表见 `notes.md`「五句数字位来源」）；句式、顺序、结论不改；10-21 不再拍数字；v1 使任一结论反转（胜者换位、差距符号反转、未达门槛）即停、报 CSO 裁，不自改结论句（裁定 2026-10-14-06）。", "",
+             "7. 讲法五句的数字位随公开批（v1）重填，与流水线产物同源、不手写（来源表见 `notes.md`「五句数字位来源」）；句式、顺序、结论不改；10-21 不再拍数字；v1 使任一结论反转（胜者换位、差距符号反转、未达门槛）即停、报审定方裁，不自改结论句（裁定 2026-10-14-06）。", "",
              f"## 栏二 · 当前批次按规则算出的回合表（自动；批次＝`{RUN_MODELS}`（results.csv `{sha12(RUN_MODELS + '/results.csv')}`）＋ `{RUN_BASE}`（`{sha12(RUN_BASE + '/results.csv')}`））", "",
              "| 段 | run | agent | seed | 仿真分 | 到达 | 碰撞事件 | 步数 | 主片时间码（zh） | 主片时间码（en） |", "|---|---|---|---|---|---|---|---|---|---|"]
     tcs = {}

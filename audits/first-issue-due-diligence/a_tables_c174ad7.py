@@ -4,7 +4,7 @@
 读：episodes/runs/2026-09-25-pilot01/{results.csv,logs/<agent>/seed<N>.jsonl}、基线批 random 日志（如在）、
     audits/first-issue-due-diligence/failure-modes-2026-09-25-pilot01.csv（内部工单 三分类）。不改任何输入。
 写（本目录）：a2-action-mapping-c174ad7.csv、a3-step-displacement.csv、a3-glm-f2-review.csv，并打印摘要。
-② 口径：每家取补丁13 分类为 F3 的回合、按种子升序前 5 个；逐步「模型输出原文（日志 raw_text，c174ad7 批最长 233 字，未截断）→ Action.parse 解析动作 → 日志 action（实际执行）」；
+② 口径：每家取内部工单分类为 F3 的回合、按种子升序前 5 个；逐步「模型输出原文（日志 raw_text，c174ad7 批最长 233 字，未截断）→ Action.parse 解析动作 → 日志 action（实际执行）」；
    一致＝解析动作==执行动作（解析为 None 时执行应为 stop）。
 ③ 口径：单步位移＝日志相邻位姿欧氏距离（第 1 步起；第 0 步无起点行，不计），按 agent×动作×是否碰撞分组；比值＝该组中位数／0.40。
    glm F2 回合：全部 11 个列出，抽检 3 个＝种子升序前 3；判读由机械规则给出：invalid 步数 >0 → 「空解析」；末步 action==stop 且 JSON 有效 → 「模型自行 stop」；否则 → 「仅原地转向」。

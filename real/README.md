@@ -17,9 +17,9 @@ PYTHONDONTWRITEBYTECODE=1 pytest tests/real -q -p no:cacheprovider
 
 ## 接线与到货运行
 
-由 CC 在到货后核实 USB 串口设备路径与 USB 相机编号。主机 USB 接底盘控制板的串口接口，USB 相机接主机；底盘电源、接插件及物理断电操作按到货手册核对，本卡不推断管脚或电压。串口使用 115200、8N1、逐行 JSON。
+由维护者在到货后核实 USB 串口设备路径与 USB 相机编号。主机 USB 接底盘控制板的串口接口，USB 相机接主机；底盘电源、接插件及物理断电操作按到货手册核对，本卡不推断管脚或电压。串口使用 115200、8N1、逐行 JSON。
 
-CC 核实固件、型号、闭环行为与物理急停后，可使用以下 API 组装环境（本卡未执行）：
+维护者核实固件、型号、闭环行为与物理急停后，可使用以下 API 组装环境（本卡未执行）：
 
 ```python
 from real.ugv02 import UGV02, UGV02Config
@@ -35,7 +35,7 @@ robot = RealRobotUGV02(driver, camera, course=calibrated_course)
 
 `UGV02Config` 集中保存轮径、编码器脉冲数、轮距、型号、闭环状态、急停命令和超时。型号与闭环字段记录待核实的物理配置，不自动改写固件型号。默认急停始终发 T=1 零轮速；可附加经核实的非运动急停命令。`CameraConfig` 的前五个字段与 twin 同名，取值独立配置，其余字段见「真机拖线件」节；注入 `frame_source` 时必须返回配置尺寸的 RGB uint8 图，USB OpenCV 帧由 BGR 转 RGB。
 
-### 到货核对（CC 合并 X1 时追加，2026-09-27；协议量另见 `real/docs/ugv02-protocol.md` §5）
+### 到货核对（维护者合并 X1 时追加，2026-09-27；协议量另见 `real/docs/ugv02-protocol.md` §5）
 
 1. **相机缓冲旧帧。** `Camera.read()` 每次只取一帧，USB 相机驱动有缓冲，停稳后取到的可能是运动中的旧帧。实机核对观测帧的时刻，必要时先丢弃缓冲帧再取。
 2. **开串口复位 ESP32，丢头几条指令。** 打开串口可能触发底盘 ESP32 复位，`UGV02.__init__` 开头发的关回显、设看门狗、零速三条可能在启动期间丢失。实机核对开口后的就绪时间，确认三条均生效。
@@ -44,11 +44,11 @@ robot = RealRobotUGV02(driver, camera, course=calibrated_course)
 
 #### 到货首测卡（内部工单 P3，2026-09-28；四条按序做，命令未经实机执行；第 8 条为 内部工单 所加）
 
-每条的「其他」分支都一样：停下，把屏幕或照片原样贴回，不猜修。两段脚本要用 pyserial 与 opencv-python，当前 `.venv` 里都没有，到货前由 CC 装。
+每条的「其他」分支都一样：停下，把屏幕或照片原样贴回，不猜修。两段脚本要用 pyserial 与 opencv-python，当前 `.venv` 里都没有，到货前由维护者装。
 
 5. **开机 OLED 版本行。** 装好电池后开机，拍下 OLED 四行。
    - 显示 `UGV Rover Version:0.96`：免烧录，进第 6 条。
-   - 不是这一行：抄下四行原文，只记录、不烧录，报 CSO。固件源码 `ugv_base_ros` 开机写的是 `ugv_base_ros.git`／`version: 0.96` 两行，见到这一组也按本分支记录。
+   - 不是这一行：抄下四行原文，只记录、不烧录，报审定方。固件源码 `ugv_base_ros` 开机写的是 `ugv_base_ros.git`／`version: 0.96` 两行，见到这一组也按本分支记录。
    - 其他（屏不亮、乱码、电池模块上的反接灯亮）：关电，停下贴回。
 6. **台架首动。** 四轮离地，物理断电随手可及。串口以 0.1 s 间隔发 `{"T":1,"L":0.1,"R":0.1}`，三秒后停发，看固件心跳自停。
    ```bash
@@ -82,7 +82,7 @@ robot = RealRobotUGV02(driver, camera, course=calibrated_course)
    - 记录：末行原文。掉帧数＝失败次数；帧率另与不接延长线时的同一脚本结果对比。
    - 10-06 实跑（MF-200 → hub → Mac，**未经 5 m 延长线**，主理人 10-06 报）：`取到 1750 帧，失败 0 次，29.2 帧/秒`；另 5 秒样本 30.8 帧/秒。这是无延长线的对照值。**经 5 m 有源延长线（Mac → hub → 延长线 → MF-200，主理人 10-06 接）同脚本再跑**：`取到 1742 帧，失败 0 次，29.0 帧/秒`，帧间隔中位 33.1 ms、最大 70 ms、无 >100 ms 停顿；`uvc-util -d` 仍列出（LocationID 变 0x01110000），控制读回 `8 157 true 4600`。掉帧 0，延长线不影响取帧与 UVC 控制；本条办完。
    - 其他（打不开相机、帧尺寸不是 1280×720、中途卡住不出末行）：停下贴回。
-8. **控制项清单与回读比对。**（裁定 2026-09-28-13）相机直连主机，先装 `uvc-util`（CC 办）。命令与控制项次序见下文「曝光与白平衡」节。
+8. **控制项清单与回读比对。**（裁定 2026-09-28-13）相机直连主机，先装 `uvc-util`（维护者办）。命令与控制项次序见下文「曝光与白平衡」节。
    ```bash
    uvc-util -l                                   # 找到相机的 VID:PID
    uvc-util -V <VID:PID> -c                      # 控制项清单
@@ -91,7 +91,7 @@ robot = RealRobotUGV02(driver, camera, course=calibrated_course)
    ```
    - 预期：清单里有上面四个控制项名；回读的两个数与所设的相同。
    - 记录：清单原文贴进回执；所设值与回读值各两个数。控制项名以这份清单为准，与上面写的不一致就照清单改。
-   - 回读相符之后 CC 才补代码：`meta.json` 的 `uvc_lock` 改记设后回读值，回读与所设不一致即报错不开回合；在此之前 `MF200` 预设的两个锁定值留空，按自动跑。
+   - 回读相符之后维护者才补代码：`meta.json` 的 `uvc_lock` 改记设后回读值，回读与所设不一致即报错不开回合；在此之前 `MF200` 预设的两个锁定值留空，按自动跑。
    - 其他（清单里没有这几项、设不进去、回读与所设不同、取帧开始后回读值变了）：保持自动，两个字段留空，把输出贴回。
 
 ## 真机 smoke（内部工单，2026-09-28；未经实机执行）
@@ -127,7 +127,7 @@ robot = RealRobotUGV02(driver, camera, course=calibrated_course)
 
 ## 真机拖线件（内部工单，2026-09-28；未经实机执行）
 
-参数来源＝京东店铺规格页截图与绿联官方页，由令文转述，截图未入库。标「算」的是按传感器有效面推算的数，标「待实测」的到货后由 CC 实测覆盖。
+参数来源＝京东店铺规格页截图与绿联官方页，由令文转述，截图未入库。标「算」的是按传感器有效面推算的数，标「待实测」的到货后由维护者实测覆盖。
 
 | 件 | 型号与参数 | 状态 |
 |---|---|---|
@@ -137,8 +137,8 @@ robot = RealRobotUGV02(driver, camera, course=calibrated_course)
 
 - **可疑口**：hub 最右口内芯颜色与另两口不同，疑为充电专用口，未验前不接数据设备。
 - **拓扑**：MacBook USB-C ←转接头← 5 m 有源线 ←hub（控制板左侧边条）← 相机自带线；hub ← A 转 C 短线 → YB-EET01 Type-C（CP2102）。
-- **布置**（修订3 T1，09-28 改判；尺寸为 CSO 据照片所给，未经实物核对）：
-  - 车头空板区约 94×70 mm，只放相机：底座居中，中心孔对准前区大孔，或两槽各一颗 M3；手头 M3×30 铜柱抬高（公母型则 30＋20 叠至 50，母母型 30 单用），镜头压前缘。天线座若与底座相碰即拧掉，JSON 串口路线不用 WiFi。（修订4 补丁2 R1，09-28 改判：原写「四根 M3×50 铜柱」，不另购。）
+- **布置**（修订3 T1，09-28 改判；尺寸为审定方据照片所给，未经实物核对）：
+  - 车头空板区约 94×70 mm，只放相机：底座居中，中心孔对准前区大孔，或两槽各一颗 M3；手头 M3×30 铜柱抬高（公母型则 30＋20 叠至 50，母母型 30 单用），镜头压前缘。天线座若与底座相碰即拧掉，JSON 串口路线不用 WiFi。（修订4 内部工单 R1，09-28 改判：原写「四根 M3×50 铜柱」，不另购。）
   - hub 放控制板左侧边条（约 3 cm 宽、中段约 11 cm、无螺丝），纵向魔术贴，口朝车尾。A 转 C 短线沿板尾绕到右后 Serial 口。
   - 延长线接头扎在同一边条尾端，出线车尾正中，再绕一圈扎带。
   - 镜头离地高与俯仰仍待实测。不为凑 0.15 m 以外的理由再垫。
@@ -177,7 +177,7 @@ robot = RealRobotUGV02(driver, camera, course=calibrated_course)
 
 - `exposure`、`wb_temperature` 两个字段缺省为空，即自动。`meta.json` 记 `exposure_mode`、`white_balance_mode`（`auto` 或 `locked`）与 `uvc_lock`（实际设下去的控制项，自动时为空表）。
 - OpenCV 的 AVFoundation 后端对相机只认宽、高、帧率三项设置（同上源文件），曝光与白平衡经它设不进去。锁定走 `uvc-util`（命令行工具，直接发 UVC 控制请求）：相机打开之后、取第一帧之前用 `subprocess` 设一次。不引 libuvc、pyuvc，不改 OpenCV 后端。
-- 设的控制项与次序：`auto-exposure-mode=1`（手动）、`exposure-time-abs=<值>`、`auto-white-balance-temp=0`、`white-balance-temp=<值>`。第三项是 CC 加的：自动白平衡开着时色温多半设不进去。
+- 设的控制项与次序：`auto-exposure-mode=1`（手动）、`exposure-time-abs=<值>`、`auto-white-balance-temp=0`、`white-balance-temp=<值>`。第三项是维护者加的：自动白平衡开着时色温多半设不进去。
 - 两个字段填了值而 `uvc-util` 不在、设不进去、或相机是按编号选的，`Camera` 打不开并报错，不会悄悄退回自动；要按自动跑就把两个字段清空。这样 `meta.json` 记的与实际的曝光条件不会两样。
 
 **10-06 实机已试（MF-200 接 Mac，内部工单 B）**：`uvc-util` brew 没有，自 GitHub jtfrey/uvc-util（`8110da7`，2024-02-26）源码 `clang -fno-objc-arc -framework Foundation -framework IOKit` 编译，装在 `~/.local/bin/uvc-util`（PATH 内）。实际用法与下面原记不同：列设备是 `-d`（不是 `-l`），`-V` 的 VID:PID **必须带 `0x` 前缀**（`0c45:636b` 会被当十进制、报 `invalid product id`；`real/camera.py` 的 `uvc_target()` 已按此拼）。MF-200 控制项 14 个，含 `auto-exposure-mode`（位图，当前 8＝光圈优先，手动＝1）、`exposure-time-abs`（1–5000，缺省 157）、`auto-white-balance-temp`（布尔，缺省 true）、`white-balance-temp`（2800–6500，缺省 4600）。锁定往返：设手动 1／157／false／4600 读回逐项相符，改 200／5000 亦相符；自动模式下 `exposure-time-abs` 写入报错（正常）；已复原自动。首季仍按自动跑，两个字段留空；读回原文记 `real/config/camera.yaml`。取帧开始后锁定值是否被复位**仍待实测**（装车后在回合里核）。
@@ -209,7 +209,7 @@ uvc-util -V <VID:PID> -o exposure-time-abs -o white-balance-temp     # 读回核
 
 ## 交付说明
 
-已完成串口封装、注入式 RGB 相机、Robot 契约适配、可回放 mock、四步 smoke 回合，以及契约／心跳超时／急停优先／故障测试。所有新增文件限于 real/ 与 tests/real/；只读协议摘要未改。由 CC 验收，本执行结果不替代验收。
+已完成串口封装、注入式 RGB 相机、Robot 契约适配、可回放 mock、四步 smoke 回合，以及契约／心跳超时／急停优先／故障测试。所有新增文件限于 real/ 与 tests/real/；只读协议摘要未改。由维护者验收，本执行结果不替代验收。
 
 验收命令及输出尾行（运行时设置 `PYTHONDONTWRITEBYTECODE=1`；pytest 加 `-p no:cacheprovider` 避免白名单外缓存）：
 
@@ -220,7 +220,7 @@ uvc-util -V <VID:PID> -o exposure-time-abs -o white-balance-temp     # 读回核
 
 未核实：实机固件版本、轮径／脉冲数／轮距、型号编号、速度闭环、急停命令、相机标定、实际固定步长精度。源码默认型号 2 为开环，定时速度指令在 mock 上满足步长，实机精度不可据此确认。采样与串口时延也会影响里程积分和实际动作时长。
 
-待办／下一令（CC）：准备含 mujoco／numpy 的离线环境，重跑预注册核对；真实串口／相机使用前准备 pyserial 与 opencv-python（当前 Python 两者均未安装）；到货后核实配置并验收实机行为、完成俯拍标定；按卡验收后合并。四条验收命令尚未全过，当前提交为待 CC 补验产物。
+待办／下一令（维护者）：准备含 mujoco／numpy 的离线环境，重跑预注册核对；真实串口／相机使用前准备 pyserial 与 opencv-python（当前 Python 两者均未安装）；到货后核实配置并验收实机行为、完成俯拍标定；按卡验收后合并。四条验收命令尚未全过，当前提交为待维护者补验产物。
 
 移交主理人：到货后的物理接线与断电验证。
 
@@ -230,7 +230,7 @@ uvc-util -V <VID:PID> -o exposure-time-abs -o white-balance-temp     # 读回核
 
 > 所用模型：gpt-6-astra ｜ effort：low ｜ codex 0.157.1
 
-四项返修完成：截止先零速、周期扣除反馈耗时；可配置停稳阈值；非负睡眠、时间越界报告与共用锁存、意外异常先停车再原样抛出；构造时校验急停附加命令。mock 与 smoke 支持注入时延。新增 55 条测试，X1 原有 20 条未改且通过。分支 `codex/内部工单`，由 CC 验收后合并。
+四项返修完成：截止先零速、周期扣除反馈耗时；可配置停稳阈值；非负睡眠、时间越界报告与共用锁存、意外异常先停车再原样抛出；构造时校验急停附加命令。mock 与 smoke 支持注入时延。新增 55 条测试，X1 原有 20 条未改且通过。分支 `codex/内部工单`，由维护者验收后合并。
 
 验收命令使用主检出 `<仓根>/.venv/bin/` 的 Python／pytest；设置 `PYTHONDONTWRITEBYTECODE=1`，pytest 加 `-p no:cacheprovider`，避免白名单外缓存：
 
@@ -246,7 +246,7 @@ R2／③a：`test_duration_overrun_latches_with_write_pause` 按 0／20／50 ms 
 
 未核实：实机通信、固件与停车精度；模型行按卡片声明填写，未独立核实启动参数与 CLI 版本。本轮仅离线 mock 自测，未运行预注册核对与三基线。
 
-待办／下一令（CC）：按卡验收，合并时运行预注册核对。无新增依赖缺口。
+待办／下一令（维护者）：按卡验收，合并时运行预注册核对。无新增依赖缺口。
 
 移交主理人：无。
 

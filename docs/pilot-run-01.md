@@ -1,10 +1,10 @@
 # 试跑 01（Pilot Run 01）· Twin-01 v0 × 首季三行 × N=30
 
-> 依据：内部工单 Q4／Q5、补丁 4 P2（修订 1／2）P4（CSO 2026-09-25）。协议与常量见 `protocol/v0.md`（预注册 tag `protocol-v0-prereg`）；模型与单价见 `harness/models.yaml`。
+> 依据：内部工单 Q4／Q5、内部工单（修订 1／2）P4（审定方 2026-09-25）。协议与常量见 `protocol/v0.md`（预注册 tag `protocol-v0-prereg`）；模型与单价见 `harness/models.yaml`。
 > **状态（2026-09-26）：真模型已跑——三行 × N=30 全部完成，护栏未触发，总花费 $0.665（≈¥4.7），run `episodes/runs/2026-09-25-pilot01/`（§5）；正式 N 按 §6 实测改写＝100。** 三家密钥 09-25 落 `.env`，试跑 ≤$60 由主理人 09-25 会话授权。
 > 首季三行（国产三厂各一，均思考关·官方端点）：`qwen3-vl-plus--nothink--official`、`glm-5v-turbo--nothink--official`、`deepseek-flash--nothink--official`。
 
-## 1 前置：密钥十分钟（主理人只做开户与充值两件；其余 CC 办）
+## 1 前置：密钥十分钟（主理人只做开户与充值两件；其余维护者办）
 
 | 行 | 官方控制台入口 | 开户 | 充值（最低额） | `.env` 变量名 |
 |---|---|---|---|---|
@@ -41,7 +41,7 @@ bash tools/prereg_check.sh                       # 监视表与 tag protocol-v0-
 | greedy | 基线（贪心真值导航，不避障） | 是（非视觉） | **0.707 ± 0.106** | −1.245 | 0.87 | 0.900 | 2.1 | 21.5 | 1.21 | 46.9 |
 | random | 基线（随机） | 否 | **0.010 ± 0.014** | −2.934 | 0.00 | 0.087 | 5.0 | 30.7 | — | 47.1 |
 
-- 读法：模型仿真分应落在 random（≈0）与 astar（1）之间；greedy 0.71 是「看得见真值但不避障」的参照。旧口径两项为负、不在 [0,1]，故补丁 4 P1 改用 v2 仿真分（`protocol/v0.md` §5.3）。
+- 读法：模型仿真分应落在 random（≈0）与 astar（1）之间；greedy 0.71 是「看得见真值但不避障」的参照。旧口径两项为负、不在 [0,1]，故内部工单改用 v2 仿真分（`protocol/v0.md` §5.3）。
 - 复现：`.venv/bin/python -m harness.run_batch --agents astar,greedy,random --n 30`（18 s）。
 
 ## 4 预计花费（P2 修订 1；估算口径见 `protocol/v0.md` §7）
@@ -78,5 +78,5 @@ bash tools/prereg_check.sh                       # 监视表与 tag protocol-v0-
 ## 7 记录
 
 - 2026-09-25：基线批完成（astar／greedy／random × 30，18 s，$0）；A* 修三处后零碰撞（起点夹墙内、目标态须可原地转、余下计划从真实位姿复核＋按真值打滑缩放步长）；真模型待密钥。
-- 2026-09-25（补丁 4）：榜单分改为协议 §5 仿真分（v2），基线重算见 §3；首季三行换国产三厂（Qwen／智谱／DeepSeek，思考关·官方），海外行转候选「待投稿／待合规通道」；预注册 tag `protocol-v0-prereg`，开跑前 `tools/prereg_check.sh`。
+- 2026-09-25（内部工单）：榜单分改为协议 §5 仿真分（v2），基线重算见 §3；首季三行换国产三厂（Qwen／智谱／DeepSeek，思考关·官方），海外行转候选「待投稿／待合规通道」；预注册 tag `protocol-v0-prereg`，开跑前 `tools/prereg_check.sh`。
 - 2026-09-26（Q4 完成）：三行 × N=30 真模型批完成（`episodes/runs/2026-09-25-pilot01/`，北京时间 09-26 14:44–16:13 周六闲时），总花费 $0.665，护栏未触发，不可解析／API 错均 0；开跑前 `tools/prereg_check.sh` 通过（监视表差异 3 件均已登记，三基线逐位一致）。§5 结果、§6 正式 N=100（实测 Σc $0.0222）已填；`protocol/v0.md` §9.2 结果区、`episodes/editions.csv` 备注同步。

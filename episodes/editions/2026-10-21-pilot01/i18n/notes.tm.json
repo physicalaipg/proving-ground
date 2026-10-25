@@ -154,7 +154,7 @@
   "13c1ce1f4385": {
    "type": "item",
    "zh": "- 真机参考平台随 `real-v0-prereg` 在第二期前公布（内部工单 D-2；`protocol/v0.md` 真机段不动，候 real-prereg tag）。",
-   "en": "- The real-robot reference platform is published with `real-v0-prereg` before Edition 02 (internal work order Patch 1 D-2; the real-robot section of `protocol/v0.md` is unchanged, pending the real-prereg tag).",
+   "en": "- The real-robot reference platform is published with `real-v0-prereg` before Edition 02 (internal work order D-2; the real-robot section of `protocol/v0.md` is unchanged, pending the real-prereg tag).",
    "reviewed": true,
    "translator": "claude-code",
    "translated_at": "2026-10-20",
@@ -181,10 +181,10 @@
    "reviewed_by": "claude-code",
    "reviewed_at": "2026-10-20"
   },
-  "e2833770fad0": {
+  "76e83ba2f829": {
    "type": "heading",
-   "zh": "### 五句数字位来源（内部工单 B，裁定 2026-10-14-06：数字随公开批 v1 重填、与流水线产物同源不手写；句式、顺序、结论不改；任一结论反转即停报 CSO）",
-   "en": "### Sources of the numbers in the five sentences (internal work order Patch 2 B, ruling 2026-10-14-06: numbers are refilled from the public batch v1, same source as the pipeline outputs, never hand-written; wording, order and conclusions unchanged; if any conclusion flips, stop and report to the CSO)",
+   "zh": "### 五句数字位来源（内部工单 B，裁定 2026-10-14-06：数字随公开批 v1 重填、与流水线产物同源不手写；句式、顺序、结论不改；任一结论反转即停报审定方）",
+   "en": "### Sources of the numbers in the five sentences (internal work order B, ruling 2026-10-14-06: numbers are refilled from the public batch v1, same source as the pipeline outputs, never hand-written; wording, order and conclusions unchanged; if any conclusion flips, stop and report to the reviewer)",
    "reviewed": true,
    "translator": "claude-code",
    "translated_at": "2026-10-20",
@@ -221,10 +221,10 @@
    "reviewed_by": "claude-code",
    "reviewed_at": "2026-10-20"
   },
-  "d455f6ca7132": {
+  "0970773ea256": {
    "type": "item",
-   "zh": "- 失败模式三分类表（内部工单，预登记判据：完成／F1 无效步≥一半／F2 位移<0.40 m／F3 其余）见 `audits/first-issue-due-diligence/failure-modes-<run>.md`；读法（补丁15 脚注）：0.40 m 判据与单步位移同量级（单步 `forward_m`＝0.20 m，阈值恰为两步），`traveled_m`（含第 0 步）与日志位姿累加两种口径相差约一步，有少数回合两口径判断相反，一律按预登记口径计入 F3，表不改；替代口径下的各家计数列在该表脚注，与 (a) 动作解析对照的矛盾核对随 (a) 回执交。",
-   "en": "- The three-class failure-mode table (internal work order Patch 13, pre-registered criteria: completed / F1 invalid steps ≥ half / F2 displacement < 0.40 m / F3 everything else) is in `audits/first-issue-due-diligence/failure-modes-<run>.md`; reading note (Patch 15 footnote): the 0.40 m criterion is of the same order as a single-step displacement (one step `forward_m` = 0.20 m, so the threshold is exactly two steps); `traveled_m` (including step 0) and the sum of logged pose increments differ by about one step, and in a few episodes the two measures give opposite verdicts — these are all counted as F3 under the pre-registered measure and the table is not changed; the per-model counts under the alternative measure are in that table's footnote, and the cross-check against the (a) action-parsing comparison is delivered with the (a) receipt.",
+   "zh": "- 失败模式三分类表（内部工单，预登记判据：完成／F1 无效步≥一半／F2 位移<0.40 m／F3 其余）见 `audits/first-issue-due-diligence/failure-modes-<run>.md`；读法（内部工单脚注）：0.40 m 判据与单步位移同量级（单步 `forward_m`＝0.20 m，阈值恰为两步），`traveled_m`（含第 0 步）与日志位姿累加两种口径相差约一步，有少数回合两口径判断相反，一律按预登记口径计入 F3，表不改；替代口径下的各家计数列在该表脚注，与 (a) 动作解析对照的矛盾核对随 (a) 回执交。",
+   "en": "- The three-class failure-mode table (internal work order internal work order, pre-registered criteria: completed / F1 invalid steps ≥ half / F2 displacement < 0.40 m / F3 everything else) is in `audits/first-issue-due-diligence/failure-modes-<run>.md`; reading note (internal work order footnote): the 0.40 m criterion is of the same order as a single-step displacement (one step `forward_m` = 0.20 m, so the threshold is exactly two steps); `traveled_m` (including step 0) and the sum of logged pose increments differ by about one step, and in a few episodes the two measures give opposite verdicts — these are all counted as F3 under the pre-registered measure and the table is not changed; the per-model counts under the alternative measure are in that table's footnote, and the cross-check against the (a) action-parsing comparison is delivered with the (a) receipt.",
    "reviewed": true,
    "translator": "claude-code",
    "translated_at": "2026-10-20",

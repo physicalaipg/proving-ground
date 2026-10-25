@@ -1,7 +1,7 @@
 # 首期视频模板（内部工单）· 无旁白 · 双语字幕 · 俯拍＋机载双画框
 
 > 依据：内部工单 卡 D「首期视频模板（无旁白、双语字幕）」、裁定 2026-09-25-12（一个真源、两个渲染，发布日同时出）。
-> 工具：`tools/make_subtitles.py`（日志→双语字幕）、`tools/compose_video.py`（双画框合成，ffmpeg）。本机 ffmpeg 须含 libass／freetype（瘦身版 `ffmpeg` 公式缺 `subtitles`／`drawtext` 滤镜，09-25 实测；`brew install ffmpeg-full` 在本机 ~/.brew 前缀无 bottle、源码编依赖失败）→ 用官方源码编精简版到 `~/.local/ffmpeg-libass`（脚本化：`bash tools/setup_ffmpeg.sh`，`--check` 只核对；补丁 3 P8），`compose_video.py` 自动查找。
+> 工具：`tools/make_subtitles.py`（日志→双语字幕）、`tools/compose_video.py`（双画框合成，ffmpeg）。本机 ffmpeg 须含 libass／freetype（瘦身版 `ffmpeg` 公式缺 `subtitles`／`drawtext` 滤镜，09-25 实测；`brew install ffmpeg-full` 在本机 ~/.brew 前缀无 bottle、源码编依赖失败）→ 用官方源码编精简版到 `~/.local/ffmpeg-libass`（脚本化：`bash tools/setup_ffmpeg.sh`，`--check` 只核对；内部工单），`compose_video.py` 自动查找。
 > 示例产物（内部工单 P4，基线批 greedy seed 1000 真实日志、非 dry-run）：`docs/examples/pilot01-baselines_greedy_seed1000_dual.mp4`＋同名 `.srt`／`.zh.srt`／`.en.srt`＋首帧 `.png`；俯拍用色块占位（孪生无俯拍）。
 > 原则：**视频只是日志的可视化**——画面来自录像，字幕来自 `logs/*.jsonl`，数字来自 `summary.csv`；不配音、不加评论、不剪掉失败。
 
@@ -11,7 +11,7 @@
 |---|---|
 | 素材 | **纯仿真渲染**（孪生第一人称回放＋俯视渲染），不用真机或实拍；主理人无拍摄项；俯拍／机载双画框与实拍色彩门首期不适用 |
 | 时长与版本 | 横版 2～3 分钟；同一剪辑出中英两版（YouTube 英文、B 站中文）；无人声，只用字幕卡 |
-| 结构 | 头条结论 → 三家第一人称回放与 A*、random 并排 → 补丁13 三分类表 → 真机列「待锚」＋按协议投稿复跑入口 → 片尾站点链接 |
+| 结构 | 头条结论 → 三家第一人称回放与 A*、random 并排 → 内部工单三分类表 → 真机列「待锚」＋按协议投稿复跑入口 → 片尾站点链接 |
 | 选段 | 每家取中位仿真分回合一个、最高分回合一个，同分取种子号小者（取代 §1「总分最接近中位数」的首期用法）；规则先提交、后渲染；种子号写 `notes.md` |
 | 衍生件 | X：30～45 秒剪辑＋链接；公众号：中文图文（榜单图、三分类表、GIF、链接） |
 | 数字 | 画面内一切数字只来自 build 流水线，不手打 |

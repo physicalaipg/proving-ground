@@ -8,13 +8,13 @@
 |---|---|---|
 | L1 布局常量 | `real/course/L1.yaml`（twin 块＝种子 1017）＋ `real/course/L1-measured.yaml`（登记实测值即常量） | twin 块已定；实测件候 A3 登记照 |
 | 相机实测值 | `real/config/camera.yaml` | 候 B 实测（VID:PID、高度、前移、水平视场、锁定回读） |
-| 动作与回合常量 | 前进 **0.20 m**、转向 30°、线速 ≤0.20 m/s、角速 ≤60°/s、动作后静置 0.30 s、到达半径 **0.40 m**、回合上限 **80 步**（`harness/interface.py` MotionSpec、`twin/configs/course01.yaml`，与 `protocol/v0.md` §4 同一组数） | 已冻结于 `protocol-v0-prereg`；令文 C 段「步长 0.30」与之不符，CC 按协议 0.20 m 记、0.30 为静置秒数，候 CSO 认 |
+| 动作与回合常量 | 前进 **0.20 m**、转向 30°、线速 ≤0.20 m/s、角速 ≤60°/s、动作后静置 0.30 s、到达半径 **0.40 m**、回合上限 **80 步**（`harness/interface.py` MotionSpec、`twin/configs/course01.yaml`，与 `protocol/v0.md` §4 同一组数） | 已冻结于 `protocol-v0-prereg`；令文 C 段「步长 0.30」与之不符，维护者按协议 0.20 m 记、0.30 为静置秒数，候审定方认 |
 | 碰撞口径（真机） | 接触＝车体外廓矩形（`L1.yaml` physical.robot.footprint）与障碍脚印膨胀 `collision_margin_m`（0.02）相交，或任一角出 2×2 边界（＝孪生的墙）；计**接触起始事件**，仿真分公式同 `protocol/v0.md` §5.1（0.1/事件、封顶 0.5、不低于 0）；判定来源＝俯拍离线计分（`real/score_overhead`），按回合日志时间对齐到步 | 代码已入，人工推车视频验证候素材 |
 | 黄金用例定义 | oracle＝`real/oracle.py`：按 L1 已知坐标（登记后取实测）用孪生 A* 规划一次、开环回放、不看图不看位姿；N=10、只做一次、不进榜；用途＝校准路程比分母与可达性 | 已入 |
 | 被测模型与 API 版本 | `harness/models.yaml` 首季三行：`qwen3-vl-plus--nothink--official`（model qwen3-vl-plus，dashscope compatible-mode v1）、`glm-5v-turbo--nothink--official`（model glm-5v-turbo，open.bigmodel.cn paas/v4）、`deepseek-flash--nothink--official`（model deepseek-flash，DeepSeek 官方端点）；配置即身份，改任一项＝新行 | 已冻结于 `protocol-v0-prereg` |
 | N | 真机每模型 **N=10**（标 pilot；裁定 2026-09-25-04 首期 N=10） | — |
 | 平台 | 旧车 **YB-EET01 V2.0，标「非参考平台」**（参考平台仍为 §2 同类差速底盘 UGV02 类；固件 `yb-eet01-json` 0.2.0，JSON 串口子集） | — |
-| 提示词 | `protocol/prompt_v0.md`，sha256 同 `protocol-v0-prereg`；真机的 `{next_checkpoint}`／`{next_color}` 由离线计分事后给不出——**真机回合内进度提示由上位机按 L1 已知坐标＋车载里程计估算给出**（候 CSO 认；与仿真同一模板） | 候定 |
+| 提示词 | `protocol/prompt_v0.md`，sha256 同 `protocol-v0-prereg`；真机的 `{next_checkpoint}`／`{next_color}` 由离线计分事后给不出——**真机回合内进度提示由上位机按 L1 已知坐标＋车载里程计估算给出**（候审定方认；与仿真同一模板） | 候定 |
 
 ## 2 真机分、迁移差、保真度
 

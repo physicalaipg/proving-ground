@@ -30,7 +30,7 @@ bash tools/setup_ffmpeg.sh --check                                   # 发布日
 | `site/` | 双语静态榜单站（GitHub Pages；数据只来自 `episodes/`，`tools/build_site.py` 生成） |
 | `tools/` | `build_site.py`（站点数据）、`manifest.py`（sha256 清单）、`render_en.py`（中→英渲染流水线）、`make_subtitles.py`／`compose_video.py`（双语字幕与双画框成片） |
 
-## 工程约束（CLAUDE.md ⑤）
+## 工程约束
 
 干净起建；接口先于实现；不改变发布数字的仿真工作不算进展；真机侧安全＝固件限速、离散有界动作、三层急停。
 

@@ -15,5 +15,5 @@ python3 -m http.server -d site 8000      # 打开 http://localhost:8000/ （file
 ## 部署（GitHub Pages）
 
 - 工作流 `.github/workflows/pages.yml`：push 到 `main` → `build_site.py --check`＋`selftest_site.py` → 上传 `site/` → 部署。
-- 仓库 Settings → Pages → Source 选 **GitHub Actions**（一次性，主理人或 CC 经 `gh` 办）。私有仓的 Pages 需付费方案；本仓 10-22 13:00Z 随首期公开，公开后即免费可用。预期地址 `https://<用户名>.github.io/proving-ground/`（公开后写入 内部治理仓 护照 PG 锚点节）。
+- 仓库 Settings → Pages → Source 选 **GitHub Actions**（一次性，主理人或维护者经 `gh` 办）。私有仓的 Pages 需付费方案；本仓 10-22 13:00Z 随首期公开，公开后即免费可用。预期地址 `https://<用户名>.github.io/proving-ground/`（公开后写入 内部治理仓 护照 PG 锚点节）。
 - 页面资源全部相对路径，子路径部署无需改动。

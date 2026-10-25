@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# setup_ffmpeg.sh —— 重建带 libass／freetype 的精简 ffmpeg（内部工单 P8；把补丁 2 P4 的手工编译步骤脚本化，换机能重建）。
+# setup_ffmpeg.sh —— 重建带 libass／freetype 的精简 ffmpeg（内部工单 P8；把内部工单的手工编译步骤脚本化，换机能重建）。
 # 为什么不用 brew ffmpeg：瘦身公式缺 subtitles／drawtext 两滤镜；ffmpeg-full 在非默认 brew 前缀（如 ~/.brew，Tier 3）无 bottle、
 # 源码编 47 个依赖且 09-25 实测下载 libthai 失败。改用 ffmpeg 官方源码只编精简版，依赖用 brew 已装件。
 # 用法（任意目录）：bash tools/setup_ffmpeg.sh [--prefix DIR] [--version 9.0.2] [--jobs N] [--check] [--keep-src]
