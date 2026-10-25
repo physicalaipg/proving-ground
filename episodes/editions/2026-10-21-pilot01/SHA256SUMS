@@ -1,6 +1,6 @@
 4a6a4d1a855b8c1ac270ce6460e1b3051c7dcc005aec74206f222f50f364e7ca  episodes/editions/2026-10-21-pilot01/human-hours.csv
-dd463dd089a913d51f7efe8c736173d2d50e244f6b6af578eb898e5943342b80  episodes/editions/2026-10-21-pilot01/i18n/notes.backtranslation-2026-10-14.md
-b0e688f616d282b736733c1cfe950dcc3875ec47bca705877b8688067886f14c  episodes/editions/2026-10-21-pilot01/i18n/notes.tm.json
+28b03581381c047c7ac68d86a8fb56187d4722a5ebd1760c2e3d1a8f61e7e9ae  episodes/editions/2026-10-21-pilot01/i18n/notes.backtranslation-2026-10-14.md
+60c0fc9752034cedf1160d8ab3f131a434deda16e58e388aa2ad2023e1b5283e  episodes/editions/2026-10-21-pilot01/i18n/notes.tm.json
 cc337eae304cdd4603e9b6c782934b1e71e01ebe4d3bb78303bfc341895d3775  episodes/editions/2026-10-21-pilot01/logs/astar/seed1000.jsonl
 a14965b62c36ca7c105ca86a50d1949b12ae757c1b7cc919fa01396f1d53dc9d  episodes/editions/2026-10-21-pilot01/logs/astar/seed1001.jsonl
 3dd09e9284485760eb4272a7b811eda9d8609f170c482779b1af8b16bfeeaa69  episodes/editions/2026-10-21-pilot01/logs/astar/seed1002.jsonl
@@ -181,14 +181,14 @@ afc710c1c87ed9e46d73e25a27adb864d712f9b1874e9f003e1336500937819f  episodes/editi
 7d1ea9178b41b7fbe2be32a3e03f881a555bcb9c5a07db9a36188375f7ef7e8c  episodes/editions/2026-10-21-pilot01/logs/random/seed1029.jsonl
 230fe4f226d967be8612c80c5676a1b519cf19483a855a09ee5c30873b8e8e38  episodes/editions/2026-10-21-pilot01/logs/random/seed1030.jsonl
 98550f3ea0db00bbdb2b1d91d45dd0ba3b169881c74ba5faebe96fd04b108412  episodes/editions/2026-10-21-pilot01/logs/random/seed1031.jsonl
-0e00cb2be64fbb9d2eb6cf2fec9b9ba933b4b048476b759a7f160f85a724480b  episodes/editions/2026-10-21-pilot01/notes.en.md
-efa192b972a68888bdf569b947f4c5492d92f9932da3ff9bdb0fc7cf4d97becb  episodes/editions/2026-10-21-pilot01/notes.md
+b9a0c44f40501ef24c7f1e65b6f29432535541cb9f31acae0ffd7af19f99dbdb  episodes/editions/2026-10-21-pilot01/notes.en.md
+5701118b275f0ccc29d6057e365c9b0c0e8943a29e054ae221bc636d66a26ec2  episodes/editions/2026-10-21-pilot01/notes.md
 bd92ca7f1967d0b85d790fb16275c7964d6ffb7db9e30d943905f1c72889e335  episodes/editions/2026-10-21-pilot01/posts/bilibili.md
 5aafd5ce07dec28e67d2e29ce5bdf3af3b28db14de1fb985b63b1d997a9def65  episodes/editions/2026-10-21-pilot01/posts/wechat.md
 eca76489363445c2bfd9bf089b73cd908b0f9dabf7d627850adbd52b6e9d0561  episodes/editions/2026-10-21-pilot01/posts/x.md
 f052a00d3e3119e527a0a2e1db1511a6d87f63e2a80481b231265a064d27bdf7  episodes/editions/2026-10-21-pilot01/posts/youtube.md
 952936091ce9cbfb73d7a14bdcb840e90c172fd363ad0adffbf4b347c5601e3d  episodes/editions/2026-10-21-pilot01/runs.csv
-1521f3ea81766f473f8fb961fd8ad333007f02828caa5219f7deb9280c706fd2  episodes/editions/2026-10-21-pilot01/video-cut.md
+71ec622f47b36f96cdd1cfdc00b010e47a508f3f5991e15aebeef2d2b5124707  episodes/editions/2026-10-21-pilot01/video-cut.md
 5e39be1c46d892824dac033b2387ed22f81c02a377b979e890e22ac596187cf3  episodes/editions/2026-10-21-pilot01/video.csv
 4802825cde29039799538c3b6ba1b71be97f5fb7a0ff42e2d5015dd5607efd37  episodes/runs/2026-10-15-v1/meta.json
 620c731bbdd3cc5ee237d1e2f93600fb4ddabdc3fca02e0de52258c3ead51386  episodes/runs/2026-10-15-v1/results.csv
